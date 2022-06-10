@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { IHexaMapMetadata } from '../../types';
-import { Page } from '../../components';
+import { Page, Stage } from '../../components';
 
 export const CampaignStagePage: React.FC = () => {
 	const params = useParams();
@@ -34,9 +34,6 @@ export const CampaignStagePage: React.FC = () => {
 	}, [stageId]);
 
 	return (
-		<Page title={`campaign stage / ${stageId}`}>
-			<pre>{JSON.stringify(stage, null, 2)}</pre>
-			<pre>{JSON.stringify(hexamap, null, 2)}</pre>
-		</Page>
+		<Page title={`campaign stage / ${stageId}`}>{stage && hexamap && <Stage stage={stage} hexamap={hexamap} />}</Page>
 	);
 };

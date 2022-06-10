@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import metadata from '../_data/metadata.json';
 import { IMetadata } from '../types';
-import { metadataReducer } from '../reducers';
+import { metadataReducer, stageReducer } from '../reducers';
 
 export const store = configureStore({
 	preloadedState: {
@@ -11,6 +11,7 @@ export const store = configureStore({
 	},
 	reducer: {
 		metadata: metadataReducer,
+		stage: stageReducer,
 	},
 });
 
