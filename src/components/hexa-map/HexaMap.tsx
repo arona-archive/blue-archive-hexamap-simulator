@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { deselectTile, getActiveTile, selectTile } from '../../reducers';
-import { ITile } from '../../types';
+import { IEnemyUnit, ITile } from '../../types';
+import { findActiveEnemyUnit, isUnitPositionEquals } from '../../utils';
 import { HexaMapTile } from './HexaMapTile';
 
 const Root = styled.div<{
@@ -17,10 +18,11 @@ const Root = styled.div<{
 
 interface Props {
 	tiles: ITile[];
+	enemyUnits: IEnemyUnit[];
 }
 
 export const HexaMap: React.FC<Props> = (props) => {
-	const { tiles } = props;
+	const { tiles, enemyUnits } = props;
 
 	const activeTile = useAppSelector(getActiveTile);
 
@@ -56,7 +58,17 @@ export const HexaMap: React.FC<Props> = (props) => {
 			{tiles.map((tile) => {
 				const active = activeTile?.id === tile.id;
 
-				return <HexaMapTile key={tile.id} active={active} tile={tile} onClick={handleClickTile(tile.id)} />;
+				const enemyUnit = findActiveEnemyUnit(enemyUnits, isUnitPositionEquals(tile.position));
+
+				return (
+					<HexaMapTile
+						key={tile.id}
+						active={active}
+						tile={tile}
+						enemyUnit={enemyUnit}
+						onClick={handleClickTile(tile.id)}
+					/>
+				);
 			})}
 		</Root>
 	);

@@ -1,4 +1,4 @@
-import { ITile, IPosition, ITileMetadata } from '../types';
+import { ITile, IPosition, ITileMetadata, IEnemyUnitMetadata, IEnemyUnit } from '../types';
 
 export const createTiles = (tilesMetadata: ITileMetadata[]): ITile[] => {
 	const minX = Math.min(...tilesMetadata.map((x) => x.position[0]));
@@ -36,4 +36,29 @@ export const createTiles = (tilesMetadata: ITileMetadata[]): ITile[] => {
 	}
 
 	return tiles;
+};
+
+export const createEnemyUnits = (enemyUnitsMetadata: IEnemyUnitMetadata[]): IEnemyUnit[] => {
+	const enemyUnits: IEnemyUnit[] = [];
+
+	for (const enemyUnitMetadata of enemyUnitsMetadata) {
+		enemyUnits.push({
+			id: enemyUnitMetadata.id,
+			rank: enemyUnitMetadata.enemyRank,
+			defenceType: enemyUnitMetadata.defenceType,
+			movementType: enemyUnitMetadata.movementType,
+			position: enemyUnitMetadata.position,
+			defeated: false,
+			hidden: false,
+		});
+	}
+
+	return enemyUnits.sort((a, b) => a.id - b.id);
+};
+
+export const findActiveEnemyUnit = (
+	enemyUnits: IEnemyUnit[],
+	predicate: (value: IEnemyUnit) => boolean
+): IEnemyUnit | undefined => {
+	return enemyUnits.find((x) => !x.hidden && predicate(x));
 };

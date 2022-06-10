@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { getTiles, initialize, setHexamap } from '../../reducers';
+import { getEnemyUnits, getTiles, initialize, setHexamap } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
 import { HexaMap } from '../hexa-map';
 
@@ -22,6 +22,7 @@ export const Stage: React.FC<Props> = (props) => {
 	const { stage, hexamap } = props;
 
 	const tiles = useAppSelector(getTiles);
+	const enemyUnits = useAppSelector(getEnemyUnits);
 
 	const dispatch = useAppDispatch();
 
@@ -33,7 +34,7 @@ export const Stage: React.FC<Props> = (props) => {
 	return (
 		<div className="row">
 			<HexamapWrapper className="col">
-				<HexaMap tiles={tiles} />
+				<HexaMap tiles={tiles} enemyUnits={enemyUnits} />
 			</HexamapWrapper>
 		</div>
 	);

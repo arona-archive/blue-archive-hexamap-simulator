@@ -1,5 +1,5 @@
 import { StageState } from '../reducers';
-import { createTiles } from '../utils';
+import { createEnemyUnits, createTiles } from '../utils';
 
 export class StageHelper {
 	public constructor(private readonly state: StageState) {}
@@ -10,6 +10,7 @@ export class StageHelper {
 		}
 
 		this.state.tiles = createTiles(this.state.hexamap.tiles);
+		this.state.enemyUnits = createEnemyUnits(this.state.hexamap.enemyUnits);
 	}
 
 	public process() {
