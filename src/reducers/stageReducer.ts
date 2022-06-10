@@ -1,13 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
 import { StageHelper } from '../helpers';
-import { IEnemyUnit, IHexaMapMetadata, ITile } from '../types';
+import { IEnemyUnit, IHexaMapMetadata, IItemUnit, ITile } from '../types';
 
 export interface StageState {
 	hexamap: IHexaMapMetadata | null;
 	activeTileId: number;
 	tiles: ITile[];
 	enemyUnits: IEnemyUnit[];
+	itemUnits: IItemUnit[];
 }
 
 const initialState: StageState = {
@@ -15,6 +16,7 @@ const initialState: StageState = {
 	activeTileId: -1,
 	tiles: [],
 	enemyUnits: [],
+	itemUnits: [],
 };
 
 const stageSlice = createSlice({
@@ -42,5 +44,6 @@ export const { initialize, setHexamap, selectTile, deselectTile } = stageSlice.a
 export const getActiveTile = (state: RootState) => state.stage.tiles.find((x) => x.id === state.stage.activeTileId);
 export const getTiles = (state: RootState) => state.stage.tiles;
 export const getEnemyUnits = (state: RootState) => state.stage.enemyUnits;
+export const getItemUnits = (state: RootState) => state.stage.itemUnits;
 
 export const stageReducer = stageSlice.reducer;

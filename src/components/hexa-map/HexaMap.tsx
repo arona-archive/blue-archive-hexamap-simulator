@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { deselectTile, getActiveTile, selectTile } from '../../reducers';
-import { IEnemyUnit, ITile } from '../../types';
-import { findActiveEnemyUnit, isUnitPositionEquals } from '../../utils';
+import { IEnemyUnit, IItemUnit, ITile } from '../../types';
+import { findActiveEnemyUnit, findActiveItemUnit, isUnitPositionEquals } from '../../utils';
 import { HexaMapTile } from './HexaMapTile';
 
 const Root = styled.div<{
@@ -19,10 +19,11 @@ const Root = styled.div<{
 interface Props {
 	tiles: ITile[];
 	enemyUnits: IEnemyUnit[];
+	itemUnits: IItemUnit[];
 }
 
 export const HexaMap: React.FC<Props> = (props) => {
-	const { tiles, enemyUnits } = props;
+	const { tiles, enemyUnits, itemUnits } = props;
 
 	const activeTile = useAppSelector(getActiveTile);
 
@@ -59,6 +60,7 @@ export const HexaMap: React.FC<Props> = (props) => {
 				const active = activeTile?.id === tile.id;
 
 				const enemyUnit = findActiveEnemyUnit(enemyUnits, isUnitPositionEquals(tile.position));
+				const itemUnit = findActiveItemUnit(itemUnits, isUnitPositionEquals(tile.position));
 
 				return (
 					<HexaMapTile
@@ -66,6 +68,7 @@ export const HexaMap: React.FC<Props> = (props) => {
 						active={active}
 						tile={tile}
 						enemyUnit={enemyUnit}
+						itemUnit={itemUnit}
 						onClick={handleClickTile(tile.id)}
 					/>
 				);

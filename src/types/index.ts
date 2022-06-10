@@ -1,4 +1,4 @@
-import { DefenceType, EnemyRank, MovementType } from '../constants';
+import { DefenceType, EnemyRank, ItemType, MovementType } from '../constants';
 import { IPosition } from './metadata';
 
 export * from './metadata';
@@ -25,5 +25,12 @@ export interface IEnemyUnit {
 	position: IPosition;
 	nextDirection?: IDirection;
 	defeated: boolean;
+	hidden: boolean;
+}
+
+export interface IItemUnit {
+	readonly id: number;
+	readonly type: ItemType;
+	readonly position: IPosition;
 	hidden: boolean;
 }
