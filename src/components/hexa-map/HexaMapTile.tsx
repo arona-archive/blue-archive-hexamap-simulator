@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { TILE_SIZE } from '../../constants';
 import { Hexagon } from './Hexagon';
-import { IEnemyUnit, IItemUnit, ITile, ITileEvent } from '../../types';
-import { EnemyUnit, ItemUnit } from './units';
-import { TileEvent } from './units/TileEvent';
+import { IEnemyUnit, IItemUnit, IPlayerUnit, ITile, ITileEvent } from '../../types';
+import { EnemyUnit, ItemUnit, PlayerUnit, TileEvent } from './units';
 
 const Root = styled.div<{ x: number; y: number }>`
 	position: absolute;
@@ -44,6 +43,7 @@ const Content = styled.div`
 interface Props {
 	active?: boolean;
 	tile: ITile;
+	playerUnit?: IPlayerUnit;
 	enemyUnit?: IEnemyUnit;
 	itemUnit?: IItemUnit;
 	tileEvent?: ITileEvent;
@@ -51,7 +51,7 @@ interface Props {
 }
 
 export const HexaMapTile: React.FC<Props> = (props) => {
-	const { active, tile, enemyUnit, itemUnit, tileEvent, onClick } = props;
+	const { active, tile, playerUnit, enemyUnit, itemUnit, tileEvent, onClick } = props;
 
 	return (
 		<Root x={tile.tilePosition[0]} y={tile.tilePosition[1]}>
@@ -68,6 +68,7 @@ export const HexaMapTile: React.FC<Props> = (props) => {
 				{tileEvent && <TileEvent tileEvent={tileEvent} />}
 				{itemUnit && <ItemUnit itemUnit={itemUnit} />}
 				{enemyUnit && <EnemyUnit enemyUnit={enemyUnit} />}
+				{playerUnit && <PlayerUnit playerUnit={playerUnit} />}
 			</HexagonWrapper>
 			<Content>
 				<p>{`id=${tile.id}`}</p>

@@ -8,6 +8,7 @@ import {
 	IItemUnit,
 	ITileEventMetadata,
 	ITileEvent,
+	IPlayerUnit,
 } from '../types';
 
 export const createTiles = (tilesMetadata: ITileMetadata[]): ITile[] => {
@@ -96,6 +97,13 @@ export const createTileEvents = (tileEventsMetadata: ITileEventMetadata[]): ITil
 	}
 
 	return tileEvents.sort((a, b) => a.id - b.id);
+};
+
+export const findActivePlayerUnit = (
+	playerUnits: IPlayerUnit[],
+	predicate: (playerUnit: IPlayerUnit) => boolean
+): IPlayerUnit | undefined => {
+	return playerUnits.find((x) => !x.hidden && predicate(x));
 };
 
 export const findActiveEnemyUnit = (

@@ -1,4 +1,4 @@
-import { DefenceType, EnemyRank, ItemType, MovementType, TileEventType } from '../constants';
+import { AttackType, DefenceType, EnemyRank, ItemType, MovementType, TileEventType } from '../constants';
 import { IPosition } from './metadata';
 
 export * from './metadata';
@@ -14,6 +14,17 @@ export interface ITile {
 	readonly id: number;
 	readonly position: IPosition;
 	tilePosition: IPosition;
+	hidden: boolean;
+}
+
+export interface IPlayerUnit {
+	readonly id: number;
+	readonly attackType: AttackType;
+	position: IPosition;
+	nextDirections: IDirection[];
+	items: ItemType[];
+	movable: boolean;
+	movementOrder: number;
 	hidden: boolean;
 }
 

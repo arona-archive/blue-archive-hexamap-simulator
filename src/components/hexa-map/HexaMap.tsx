@@ -3,8 +3,14 @@ import styled from 'styled-components';
 import { TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { deselectTile, getActiveTile, selectTile } from '../../reducers';
-import { IEnemyUnit, IItemUnit, ITile, ITileEvent } from '../../types';
-import { findActiveEnemyUnit, findActiveItemUnit, findActiveTileEvent, isUnitPositionEquals } from '../../utils';
+import { IEnemyUnit, IItemUnit, IPlayerUnit, ITile, ITileEvent } from '../../types';
+import {
+	findActiveEnemyUnit,
+	findActiveItemUnit,
+	findActivePlayerUnit,
+	findActiveTileEvent,
+	isUnitPositionEquals,
+} from '../../utils';
 import { HexaMapTile } from './HexaMapTile';
 
 const Root = styled.div<{
@@ -18,13 +24,15 @@ const Root = styled.div<{
 
 interface Props {
 	tiles: ITile[];
+	playerUnits: IPlayerUnit[];
 	enemyUnits: IEnemyUnit[];
 	itemUnits: IItemUnit[];
 	tileEvents: ITileEvent[];
+	onClickTile: (tileId: number) => void;
 }
 
 export const HexaMap: React.FC<Props> = (props) => {
-	const { tiles, enemyUnits, itemUnits, tileEvents } = props;
+	const { tiles, playerUnits, enemyUnits, itemUnits, tileEvents, onClickTile } = props;
 
 	const activeTile = useAppSelector(getActiveTile);
 
@@ -45,13 +53,14 @@ export const HexaMap: React.FC<Props> = (props) => {
 		};
 	}, [tiles]);
 
-	const handleClickTile = (id: number) => {
+	const handleClickTile = (tileId: number) => {
 		return () => {
-			if (activeTile?.id === id) {
+			if (activeTile?.id === tileId) {
 				dispatch(deselectTile());
 			} else {
-				dispatch(selectTile(id));
+				dispatch(selectTile(tileId));
 			}
+			onClickTile(tileId);
 		};
 	};
 
@@ -60,6 +69,7 @@ export const HexaMap: React.FC<Props> = (props) => {
 			{tiles.map((tile) => {
 				const active = activeTile?.id === tile.id;
 
+				const playerUnit = findActivePlayerUnit(playerUnits, isUnitPositionEquals(tile.position));
 				const enemyUnit = findActiveEnemyUnit(enemyUnits, isUnitPositionEquals(tile.position));
 				const itemUnit = findActiveItemUnit(itemUnits, isUnitPositionEquals(tile.position));
 				const tileEvent = findActiveTileEvent(tileEvents, isUnitPositionEquals(tile.position));
@@ -69,6 +79,7 @@ export const HexaMap: React.FC<Props> = (props) => {
 						key={tile.id}
 						active={active}
 						tile={tile}
+						playerUnit={playerUnit}
 						enemyUnit={enemyUnit}
 						itemUnit={itemUnit}
 						tileEvent={tileEvent}
