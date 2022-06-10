@@ -1,7 +1,17 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch } from '../../hooks';
-import { initialize, setHexamap } from '../../reducers';
+import styled from 'styled-components';
+import { TILE_SIZE } from '../../constants';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { getTiles, initialize, setHexamap } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
+import { HexaMap } from '../hexa-map';
+
+const HexamapWrapper = styled.div`
+	padding: ${TILE_SIZE}px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 
 interface Props {
 	stage: IStageMetadata;
@@ -10,6 +20,8 @@ interface Props {
 
 export const Stage: React.FC<Props> = (props) => {
 	const { stage, hexamap } = props;
+
+	const tiles = useAppSelector(getTiles);
 
 	const dispatch = useAppDispatch();
 
@@ -20,8 +32,9 @@ export const Stage: React.FC<Props> = (props) => {
 
 	return (
 		<div className="row">
-			<pre>{JSON.stringify(stage, null, 2)}</pre>
-			<pre>{JSON.stringify(hexamap, null, 2)}</pre>
+			<HexamapWrapper className="col">
+				<HexaMap tiles={tiles} />
+			</HexamapWrapper>
 		</div>
 	);
 };
