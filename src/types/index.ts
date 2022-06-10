@@ -1,4 +1,4 @@
-import { DefenceType, EnemyRank, ItemType, MovementType } from '../constants';
+import { DefenceType, EnemyRank, ItemType, MovementType, TileEventType } from '../constants';
 import { IPosition } from './metadata';
 
 export * from './metadata';
@@ -32,5 +32,14 @@ export interface IItemUnit {
 	readonly id: number;
 	readonly type: ItemType;
 	readonly position: IPosition;
+	hidden: boolean;
+}
+
+export interface ITileEvent {
+	readonly id: number;
+	readonly type: TileEventType;
+	readonly targetEventTileId?: number;
+	readonly position: IPosition;
+	active: boolean;
 	hidden: boolean;
 }

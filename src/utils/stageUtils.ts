@@ -1,4 +1,14 @@
-import { ITile, IPosition, ITileMetadata, IEnemyUnitMetadata, IEnemyUnit, IItemMetadata, IItemUnit } from '../types';
+import {
+	ITile,
+	IPosition,
+	ITileMetadata,
+	IEnemyUnitMetadata,
+	IEnemyUnit,
+	IItemMetadata,
+	IItemUnit,
+	ITileEventMetadata,
+	ITileEvent,
+} from '../types';
 
 export const createTiles = (tilesMetadata: ITileMetadata[]): ITile[] => {
 	const minX = Math.min(...tilesMetadata.map((x) => x.position[0]));
@@ -71,6 +81,23 @@ export const createItemUnits = (itemsMetadata: IItemMetadata[]): IItemUnit[] => 
 	return itemUnits.sort((a, b) => a.id - b.id);
 };
 
+export const createTileEvents = (tileEventsMetadata: ITileEventMetadata[]): ITileEvent[] => {
+	const tileEvents: ITileEvent[] = [];
+
+	for (const tileEventMetadata of tileEventsMetadata) {
+		tileEvents.push({
+			id: tileEventMetadata.id,
+			type: tileEventMetadata.type,
+			targetEventTileId: tileEventMetadata.targetTileEventId,
+			position: tileEventMetadata.position,
+			active: true,
+			hidden: tileEventMetadata.hidden,
+		});
+	}
+
+	return tileEvents.sort((a, b) => a.id - b.id);
+};
+
 export const findActiveEnemyUnit = (
 	enemyUnits: IEnemyUnit[],
 	predicate: (value: IEnemyUnit) => boolean
@@ -83,4 +110,11 @@ export const findActiveItemUnit = (
 	predicate: (value: IItemUnit) => boolean
 ): IItemUnit | undefined => {
 	return itemUnits.find((x) => !x.hidden && predicate(x));
+};
+
+export const findActiveTileEvent = (
+	tileEvents: ITileEvent[],
+	predicate: (value: ITileEvent) => boolean
+): ITileEvent | undefined => {
+	return tileEvents.find(predicate);
 };
