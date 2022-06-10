@@ -1,0 +1,245 @@
+{
+  "id": 117201,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        -4,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -4,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -3,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -2,
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        -1,
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "position": [
+        -4,
+        3
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        -1,
+        3
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -4,
+        4
+      ]
+    },
+    {
+      "id": 9,
+      "position": [
+        -7,
+        5
+      ]
+    },
+    {
+      "id": 10,
+      "position": [
+        -4,
+        5
+      ]
+    },
+    {
+      "id": 11,
+      "position": [
+        -3,
+        5
+      ]
+    },
+    {
+      "id": 12,
+      "position": [
+        -7,
+        6
+      ]
+    },
+    {
+      "id": 13,
+      "position": [
+        -6,
+        6
+      ]
+    },
+    {
+      "id": 14,
+      "position": [
+        -5,
+        6
+      ]
+    },
+    {
+      "id": 15,
+      "position": [
+        -5,
+        7
+      ]
+    },
+    {
+      "id": 16,
+      "position": [
+        -5,
+        8
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 3,
+      "defenceType": "heavy_armor",
+      "movementType": "b",
+      "position": [
+        -4,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": 3,
+      "defenceType": "heavy_armor",
+      "movementType": "b",
+      "position": [
+        -4,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "enemyRank": 3,
+      "defenceType": "light_armor",
+      "movementType": "b",
+      "position": [
+        -5,
+        7
+      ]
+    },
+    {
+      "id": 4,
+      "enemyRank": 3,
+      "defenceType": "light_armor",
+      "movementType": "c",
+      "position": [
+        -1,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "enemyRank": "boss",
+      "defenceType": "light_armor",
+      "movementType": "b",
+      "position": [
+        -7,
+        5
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "type": "pyroxene_box",
+      "position": [
+        -4,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "type": "light_drone",
+      "position": [
+        -5,
+        6
+      ]
+    }
+  ],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -3,
+        5
+      ],
+      "hidden": false
+    },
+    {
+      "id": 2,
+      "type": "start_tile",
+      "position": [
+        -5,
+        8
+      ],
+      "hidden": false
+    },
+    {
+      "id": 3,
+      "type": "switch_tile",
+      "position": [
+        -4,
+        4
+      ],
+      "hidden": false,
+      "targetTileEventId": 4
+    },
+    {
+      "id": 4,
+      "type": "switch_target_tile",
+      "position": [
+        -6,
+        6
+      ],
+      "hidden": true
+    },
+    {
+      "id": 5,
+      "type": "switch_tile",
+      "position": [
+        -7,
+        6
+      ],
+      "hidden": false,
+      "targetTileEventId": 6
+    },
+    {
+      "id": 6,
+      "type": "switch_target_tile",
+      "position": [
+        -3,
+        2
+      ],
+      "hidden": false
+    }
+  ]
+}

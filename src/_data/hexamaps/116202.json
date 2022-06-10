@@ -1,0 +1,207 @@
+{
+  "id": 116202,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        -5,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -6,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -5,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -7,
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        -5,
+        5
+      ]
+    },
+    {
+      "id": 6,
+      "position": [
+        -7,
+        6
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        -6,
+        6
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -9,
+        7
+      ]
+    },
+    {
+      "id": 9,
+      "position": [
+        -7,
+        7
+      ]
+    },
+    {
+      "id": 10,
+      "position": [
+        -9,
+        8
+      ]
+    },
+    {
+      "id": 11,
+      "position": [
+        -8,
+        8
+      ]
+    },
+    {
+      "id": 12,
+      "position": [
+        -7,
+        8
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 3,
+      "defenceType": "special_armor",
+      "movementType": "b",
+      "position": [
+        -5,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": 3,
+      "defenceType": "special_armor",
+      "movementType": "a",
+      "position": [
+        -7,
+        7
+      ]
+    },
+    {
+      "id": 3,
+      "enemyRank": 3,
+      "defenceType": "heavy_armor",
+      "movementType": "b",
+      "position": [
+        -7,
+        8
+      ]
+    },
+    {
+      "id": 4,
+      "enemyRank": 3,
+      "defenceType": "heavy_armor",
+      "movementType": "a",
+      "position": [
+        -9,
+        8
+      ]
+    },
+    {
+      "id": 5,
+      "enemyRank": "boss",
+      "defenceType": "heavy_armor",
+      "movementType": "a",
+      "position": [
+        -9,
+        7
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "type": "pyroxene_box",
+      "position": [
+        -6,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "type": "light_drone",
+      "position": [
+        -7,
+        6
+      ]
+    }
+  ],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -5,
+        5
+      ],
+      "hidden": false
+    },
+    {
+      "id": 2,
+      "type": "start_tile",
+      "position": [
+        -7,
+        5
+      ],
+      "hidden": false
+    },
+    {
+      "id": 3,
+      "type": "button_tile",
+      "position": [
+        -5,
+        4
+      ],
+      "hidden": false,
+      "targetTileEventId": 4
+    },
+    {
+      "id": 4,
+      "type": "button_target_tile",
+      "position": [
+        -8,
+        8
+      ],
+      "hidden": false
+    },
+    {
+      "id": 5,
+      "type": "broken_tile",
+      "position": [
+        -6,
+        6
+      ],
+      "hidden": false
+    }
+  ]
+}

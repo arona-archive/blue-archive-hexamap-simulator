@@ -1,0 +1,1338 @@
+{
+  "campaigns": [
+    {
+      "id": 101,
+      "stages": [
+        {
+          "id": 101101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 2,
+            "phase": 4
+          }
+        },
+        {
+          "id": 101102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 2,
+            "phase": 4
+          }
+        },
+        {
+          "id": 101103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 2,
+            "phase": 4
+          }
+        },
+        {
+          "id": 101104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 101105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 101201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 2,
+            "phase": 4
+          }
+        },
+        {
+          "id": 101202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 2,
+            "phase": 3
+          }
+        },
+        {
+          "id": 101203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "stages": [
+        {
+          "id": 102101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 102102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 102103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 102104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 102105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 102201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 102202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 102203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "stages": [
+        {
+          "id": 103101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 103102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 103103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 103104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 103105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 103201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 103202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 103203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "stages": [
+        {
+          "id": 104101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 104102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 104103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 104104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 104105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 104201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 104202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 104203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "stages": [
+        {
+          "id": 105101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 105102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 105103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 105104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 105105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 105201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 105202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 105203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "stages": [
+        {
+          "id": 106101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 106102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 106103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 106104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 106105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 106201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 106202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 106203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "stages": [
+        {
+          "id": 107101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 107102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 107103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 107104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 107105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 107201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 107202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 3
+          }
+        },
+        {
+          "id": 107203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "stages": [
+        {
+          "id": 108101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 108102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 108103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 108104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 108105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 7
+          }
+        },
+        {
+          "id": 108201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 108202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 108203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "stages": [
+        {
+          "id": 109101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 109102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 109103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 109104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 109105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 109201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 3
+          }
+        },
+        {
+          "id": 109202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 109203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "stages": [
+        {
+          "id": 110101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 110102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 110103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 110104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 110105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 110201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 110202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 110203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "stages": [
+        {
+          "id": 111101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 111102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 111103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 111104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 111105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 7
+          }
+        },
+        {
+          "id": 111201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 111202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 111203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "stages": [
+        {
+          "id": 112101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 112102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 112103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 112104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 112105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 112201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 112202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 112203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "stages": [
+        {
+          "id": 113101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 113102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 113103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 113104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 113105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 113201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 113202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 113203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "stages": [
+        {
+          "id": 114101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 114102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 114103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 114104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 114105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 6
+          }
+        },
+        {
+          "id": 114201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 114202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 114203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "stages": [
+        {
+          "id": 115101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 115102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 115103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 115104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 6
+          }
+        },
+        {
+          "id": 115105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 115201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 115202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 115203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 7,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "stages": [
+        {
+          "id": 116101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 116102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 116103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 7
+          }
+        },
+        {
+          "id": 116104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 116105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 116201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 116202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 116203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 7,
+            "phase": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "stages": [
+        {
+          "id": 117101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 117102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 117103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 117104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 117105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 117201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 117202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 117203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 7,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "stages": [
+        {
+          "id": 118101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 118102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 118103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 118104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 118105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 118201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 118202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 118203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 7,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "stages": [
+        {
+          "id": 119101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 119102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 119103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 119104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 119105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 119201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 119202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 119203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 7,
+            "phase": 5
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": 214,
+      "stages": [
+        {
+          "id": 214302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 214304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 4
+          }
+        }
+      ]
+    }
+  ]
+}
