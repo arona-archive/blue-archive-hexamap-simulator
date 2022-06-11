@@ -1,16 +1,21 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { AttackType, TileEventType, TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
 	addPlayerUnit,
 	getActivePlayerUnit,
+	getCleared,
+	getCurrentPhase,
 	getEnemyUnits,
 	getItemUnits,
 	getPlayerUnits,
+	getStageActions,
 	getTileEvents,
 	getTiles,
 	initialize,
+	nextPhase,
+	prevPhase,
 	setHexamap,
 	updatePlayerUnit,
 } from '../../reducers';
@@ -37,11 +42,14 @@ export const Stage: React.FC<Props> = (props) => {
 
 	const activePlayerUnit = useAppSelector(getActivePlayerUnit);
 
+	const currentPhase = useAppSelector(getCurrentPhase);
 	const tiles = useAppSelector(getTiles);
 	const playerUnits = useAppSelector(getPlayerUnits);
 	const enemyUnits = useAppSelector(getEnemyUnits);
 	const itemUnits = useAppSelector(getItemUnits);
 	const tileEvents = useAppSelector(getTileEvents);
+	const stageActions = useAppSelector(getStageActions);
+	const cleared = useAppSelector(getCleared);
 
 	const dispatch = useAppDispatch();
 
@@ -60,6 +68,14 @@ export const Stage: React.FC<Props> = (props) => {
 
 		setAttackType(activePlayerUnit.attackType);
 	}, [activePlayerUnit]);
+
+	const isPrevPhaseButtonDisabled = useMemo(() => {
+		return currentPhase === 0;
+	}, [currentPhase]);
+
+	const isNextPhaseButtonDisabled = useMemo(() => {
+		return playerUnits.length === 0 || cleared;
+	}, [playerUnits.length, cleared]);
 
 	const handleChangeAttackType = useCallback(
 		(event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -116,6 +132,14 @@ export const Stage: React.FC<Props> = (props) => {
 		[tiles, tileEvents, playerUnits]
 	);
 
+	const handleClickPrevPhase = useCallback(() => {
+		dispatch(prevPhase());
+	}, []);
+
+	const handleClickNextPhase = useCallback(() => {
+		dispatch(nextPhase());
+	}, []);
+
 	return (
 		<>
 			<div className="row">
@@ -153,6 +177,35 @@ export const Stage: React.FC<Props> = (props) => {
 					</div>
 				</div>
 			)}
+			<div className="row">
+				<div className="col-12">{`current phase=${currentPhase}`}</div>
+				<div className="col-12 btn-group">
+					<button
+						type="button"
+						className="btn btn-primary"
+						disabled={isPrevPhaseButtonDisabled}
+						onClick={handleClickPrevPhase}
+					>
+						prev phase
+					</button>
+					<button
+						type="button"
+						className="btn btn-primary"
+						disabled={isNextPhaseButtonDisabled}
+						onClick={handleClickNextPhase}
+					>
+						next phase
+					</button>
+				</div>
+			</div>
+			<div className="list-group">
+				<div className="list-group-item list-group-item-primary">stage actions</div>
+				{stageActions.map((x, i) => (
+					<div key={i} className="list-group-item">
+						<pre>{JSON.stringify(x, null, 2)}</pre>
+					</div>
+				))}
+			</div>
 		</>
 	);
 };

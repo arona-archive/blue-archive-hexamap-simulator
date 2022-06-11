@@ -1,4 +1,12 @@
-import { AttackType, DefenceType, EnemyRank, ItemType, MovementType, TileEventType } from '../constants';
+import {
+	AttackType,
+	DefenceType,
+	EnemyRank,
+	ItemType,
+	MovementType,
+	StageActionType,
+	TileEventType,
+} from '../constants';
 import { IPosition } from './metadata';
 
 export * from './metadata';
@@ -54,3 +62,23 @@ export interface ITileEvent {
 	active: boolean;
 	hidden: boolean;
 }
+
+export interface INextPhaseStageAction {
+	type: StageActionType.NEXT_PHASE;
+}
+
+export interface IAddPlayerUnitStageAction {
+	type: StageActionType.ADD_PLAYER_UNIT;
+	playerUnitId: number;
+	attackType: AttackType;
+	position: IPosition;
+}
+
+export interface IClearStageAction {
+	type: StageActionType.CLEAR;
+}
+
+export type IStageAction =
+	| INextPhaseStageAction
+	| IAddPlayerUnitStageAction
+	| IClearStageAction;
