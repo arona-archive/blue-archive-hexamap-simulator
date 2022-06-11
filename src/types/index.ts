@@ -74,6 +74,24 @@ export interface IAddPlayerUnitStageAction {
 	position: IPosition;
 }
 
+export interface IMovePlayerUnitStageAction {
+	type: StageActionType.MOVE_PLAYER_UNIT;
+	playerUnitId: number;
+	nextPosition: IPosition;
+}
+
+export interface ISwapPlayerUnitsStageAction {
+	type: StageActionType.SWAP_PLAYER_UNITS;
+	srcPlayerUnitId: number;
+	destPlayerUnitId: number;
+}
+
+export interface IBattleStageAction {
+	type: StageActionType.BATTLE;
+	playerUnitId: number;
+	enemyUnitId: number;
+}
+
 export interface IClearStageAction {
 	type: StageActionType.CLEAR;
 }
@@ -81,4 +99,7 @@ export interface IClearStageAction {
 export type IStageAction =
 	| INextPhaseStageAction
 	| IAddPlayerUnitStageAction
+	| IMovePlayerUnitStageAction
+	| ISwapPlayerUnitsStageAction
+	| IBattleStageAction
 	| IClearStageAction;

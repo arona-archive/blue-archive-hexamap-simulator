@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { TILE_SIZE } from '../../constants';
 import { Hexagon } from './Hexagon';
@@ -22,6 +22,28 @@ const HexagonWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+`;
+
+const ArrowWrapper = styled.div<{ angle: number }>`
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	transform: ${(props) => `rotate(${props.angle}deg)`};
+	pointer-events: none;
+`;
+
+const Arrow = styled.div<{ color: string }>`
+	position: absolute;
+	top: -1px;
+	right: ${-TILE_SIZE / 2 - 4}px;
+	width: ${TILE_SIZE}px;
+	height: ${TILE_SIZE}px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 48px;
+	color: ${(props) => props.color};
 `;
 
 const Content = styled.div`
@@ -53,6 +75,16 @@ interface Props {
 export const HexaMapTile: React.FC<Props> = (props) => {
 	const { active, tile, playerUnit, enemyUnit, itemUnit, tileEvent, onClick } = props;
 
+	const playerUnitNextDirections = useMemo(() => {
+		if (!playerUnit) {
+			return [];
+		}
+		if (!playerUnit.movable) {
+			return [];
+		}
+		return playerUnit.nextDirections;
+	}, [playerUnit]);
+
 	return (
 		<Root x={tile.tilePosition[0]} y={tile.tilePosition[1]}>
 			<HexagonWrapper>
@@ -70,6 +102,13 @@ export const HexaMapTile: React.FC<Props> = (props) => {
 				{enemyUnit && <EnemyUnit enemyUnit={enemyUnit} />}
 				{playerUnit && <PlayerUnit playerUnit={playerUnit} />}
 			</HexagonWrapper>
+			{playerUnitNextDirections.map((x) => (
+				<ArrowWrapper key={x.angle} angle={x.angle}>
+					<Arrow color="var(--bs-blue)">
+						<p>{'→'}</p>
+					</Arrow>
+				</ArrowWrapper>
+			))}
 			<Content>
 				<p>{`id=${tile.id}`}</p>
 				<p>{`x=${tile.position[0]} y=${tile.position[1]}`}</p>

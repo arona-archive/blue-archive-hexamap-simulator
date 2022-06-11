@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import { AttackType, TileEventType, TILE_SIZE } from '../../constants';
+import { AttackType, TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
 	addPlayerUnit,
@@ -14,13 +14,14 @@ import {
 	getTileEvents,
 	getTiles,
 	initialize,
+	movePlayerUnit,
 	nextPhase,
 	prevPhase,
 	setHexamap,
 	updatePlayerUnit,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
-import { getEnumValue, isUnitPositionEquals } from '../../utils';
+import { getEnumValue } from '../../utils';
 import { HexaMap } from '../hexa-map';
 
 const HexamapWrapper = styled.div`
@@ -69,6 +70,10 @@ export const Stage: React.FC<Props> = (props) => {
 		setAttackType(activePlayerUnit.attackType);
 	}, [activePlayerUnit]);
 
+	const isPlayerUnitAttackTypeMutable = useMemo(() => {
+		return !!activePlayerUnit && currentPhase === 0;
+	}, [activePlayerUnit, currentPhase]);
+
 	const isPrevPhaseButtonDisabled = useMemo(() => {
 		return currentPhase === 0;
 	}, [currentPhase]);
@@ -110,26 +115,29 @@ export const Stage: React.FC<Props> = (props) => {
 				return;
 			}
 
-			const tileEvent = tileEvents.find(isUnitPositionEquals(tile.position));
-			if (!tileEvent) {
-				return;
-			}
-
-			if (tileEvent.type === TileEventType.START_TILE) {
-				const playerUnit = playerUnits.find(isUnitPositionEquals(tileEvent.position));
-				if (playerUnit) {
-					return;
-				}
-
+			if (currentPhase === 0) {
 				dispatch(
 					addPlayerUnit({
 						attackType,
-						position: tileEvent.position,
+						position: tile.position,
 					})
 				);
+
+				return;
 			}
+
+			if (!activePlayerUnit) {
+				return;
+			}
+
+			dispatch(
+				movePlayerUnit({
+					id: activePlayerUnit.id,
+					position: tile.position,
+				})
+			);
 		},
-		[tiles, tileEvents, playerUnits]
+		[activePlayerUnit, currentPhase, tiles]
 	);
 
 	const handleClickPrevPhase = useCallback(() => {
@@ -154,7 +162,7 @@ export const Stage: React.FC<Props> = (props) => {
 					/>
 				</HexamapWrapper>
 			</div>
-			{activePlayerUnit && (
+			{isPlayerUnitAttackTypeMutable && (
 				<div className="row">
 					<div className="col">
 						<form className="form-inline">

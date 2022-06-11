@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
-import { AttackType, StageActionType } from '../constants';
+import { AttackType, EnemyRank, StageActionType, TileEventType } from '../constants';
 import { StageHelper } from '../helpers';
 import {
 	IEnemyUnit,
@@ -12,7 +12,14 @@ import {
 	ITile,
 	ITileEvent,
 } from '../types';
-import { findLastIndex, isUnitPositionEquals } from '../utils';
+import {
+	findActiveEnemyUnit,
+	findActivePlayerUnit,
+	findActiveTileEvent,
+	findLastIndex,
+	isNextPositionValid,
+	isUnitPositionEquals,
+} from '../utils';
 
 export interface StageState {
 	hexamap: IHexaMapMetadata | null;
@@ -59,6 +66,19 @@ const stageSlice = createSlice({
 		},
 		addPlayerUnit: (state, action: PayloadAction<{ attackType: AttackType; position: IPosition }>) => {
 			const { attackType, position } = action.payload;
+
+			const playerUnit = findActivePlayerUnit(state.playerUnits, isUnitPositionEquals(position));
+			if (playerUnit) {
+				return;
+			}
+
+			const tileEvent = findActiveTileEvent(state.tileEvents, isUnitPositionEquals(position));
+			if (!tileEvent) {
+				return;
+			}
+			if (tileEvent.type !== TileEventType.START_TILE) {
+				return;
+			}
 
 			state.stageActions.push({
 				type: StageActionType.ADD_PLAYER_UNIT,
@@ -108,6 +128,52 @@ const stageSlice = createSlice({
 			const helper = new StageHelper(state);
 			helper.process();
 		},
+		movePlayerUnit: (state, action: PayloadAction<{ id: number; position: IPosition }>) => {
+			const { id, position } = action.payload;
+
+			const playerUnit = findActivePlayerUnit(state.playerUnits, (x) => x.id === id);
+			if (!playerUnit) {
+				return;
+			}
+			if (!isNextPositionValid(playerUnit.position, position, playerUnit.nextDirections)) {
+				return;
+			}
+
+			if (playerUnit.movable) {
+				const targetPlayerUnit = findActivePlayerUnit(state.playerUnits, isUnitPositionEquals(position));
+				if (targetPlayerUnit) {
+					state.stageActions.push({
+						type: StageActionType.SWAP_PLAYER_UNITS,
+						srcPlayerUnitId: id,
+						destPlayerUnitId: targetPlayerUnit.id,
+					});
+				} else {
+					state.stageActions.push({
+						type: StageActionType.MOVE_PLAYER_UNIT,
+						playerUnitId: id,
+						nextPosition: position,
+					});
+				}
+
+				const enemyUnit = findActiveEnemyUnit(state.enemyUnits, isUnitPositionEquals(position));
+				if (enemyUnit) {
+					state.stageActions.push({
+						type: StageActionType.BATTLE,
+						playerUnitId: id,
+						enemyUnitId: enemyUnit.id,
+					});
+
+					if (enemyUnit.rank === EnemyRank.BOSS) {
+						state.stageActions.push({
+							type: StageActionType.CLEAR,
+						});
+					}
+				}
+			}
+
+			const helper = new StageHelper(state);
+			helper.process();
+		},
 	},
 });
 
@@ -120,6 +186,7 @@ export const {
 	updatePlayerUnit,
 	prevPhase,
 	nextPhase,
+	movePlayerUnit,
 } = stageSlice.actions;
 
 export const getActiveTile = (state: RootState) => state.stage.tiles.find((x) => x.id === state.stage.activeTileId);

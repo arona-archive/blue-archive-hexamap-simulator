@@ -34,5 +34,8 @@ export const DIRECTIONS: [IDirection, IDirection, IDirection, IDirection, IDirec
 export enum StageActionType {
 	NEXT_PHASE = 'NEXT_PHASE',
 	ADD_PLAYER_UNIT = 'ADD_PLAYER_UNIT',
+	MOVE_PLAYER_UNIT = 'MOVE_PLAYER_UNIT',
+	SWAP_PLAYER_UNITS = 'SWAP_PLAYER_UNITS',
+	BATTLE = 'BATTLE',
 	CLEAR = 'CLEAR',
 }

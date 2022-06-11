@@ -1,6 +1,6 @@
-import { StageActionType } from '../constants';
+import { DIRECTIONS, StageActionType } from '../constants';
 import { StageState } from '../reducers';
-import { IStageAction } from '../types';
+import { IPosition, IStageAction } from '../types';
 import { createEnemyUnits, createItemUnits, createTileEvents, createTiles, isUnitPositionEquals } from '../utils';
 
 export class StageHelper {
@@ -15,12 +15,21 @@ export class StageHelper {
 
 		this.state.currentPhase = 0;
 		this.state.tiles = createTiles(this.state.hexamap.tiles);
+		this.state.playerUnits = [];
 		this.state.enemyUnits = createEnemyUnits(this.state.hexamap.enemyUnits);
 		this.state.itemUnits = createItemUnits(this.state.hexamap.items);
 		this.state.tileEvents = createTileEvents(this.state.hexamap.tileEvents);
 		this.state.cleared = false;
 
 		this.updateTiles();
+	}
+
+	private getPlayerUnit(id?: number) {
+		return this.state.playerUnits.find((x) => x.id === id);
+	}
+
+	private getEnemyUnit(id?: number) {
+		return this.state.enemyUnits.find((x) => x.id === id);
 	}
 
 	private updateTiles() {
@@ -34,10 +43,38 @@ export class StageHelper {
 		}
 	}
 
+	private updateNextDirections() {
+		for (const playerUnit of this.state.playerUnits) {
+			if (this.state.cleared) {
+				playerUnit.nextDirections = [];
+
+				continue;
+			}
+
+			const nextDirections = DIRECTIONS.filter(({ direction }) => {
+				const x = playerUnit.position[0] + direction[0];
+				const y = playerUnit.position[1] + direction[1];
+				const targetTile = this.state.tiles.find(isUnitPositionEquals([x, y]));
+				if (!targetTile) {
+					return false;
+				}
+				return !targetTile.hidden;
+			});
+			playerUnit.nextDirections = nextDirections;
+		}
+	}
+
 	private processAction(action: IStageAction) {
 		switch (action.type) {
 			case StageActionType.NEXT_PHASE: {
 				this.state.currentPhase += 1;
+
+				for (const playerUnit of this.state.playerUnits) {
+					if (playerUnit.hidden) {
+						continue;
+					}
+					playerUnit.movable = true;
+				}
 
 				return;
 			}
@@ -57,6 +94,49 @@ export class StageHelper {
 
 				return;
 			}
+			case StageActionType.MOVE_PLAYER_UNIT: {
+				const playerUnit = this.getPlayerUnit(action.playerUnitId);
+				if (!playerUnit) {
+					return;
+				}
+
+				playerUnit.position = action.nextPosition;
+				playerUnit.movable = false;
+				playerUnit.movementOrder = this.movementOrder;
+				this.movementOrder += 1;
+
+				return;
+			}
+			case StageActionType.SWAP_PLAYER_UNITS: {
+				const srcPlayerUnit = this.getPlayerUnit(action.srcPlayerUnitId);
+				if (!srcPlayerUnit) {
+					return;
+				}
+
+				const destPlayerUnit = this.getPlayerUnit(action.destPlayerUnitId);
+				if (!destPlayerUnit) {
+					return;
+				}
+
+				const p: IPosition = [...srcPlayerUnit.position];
+				const q: IPosition = [...destPlayerUnit.position];
+
+				srcPlayerUnit.position = q;
+				destPlayerUnit.position = p;
+
+				return;
+			}
+			case StageActionType.BATTLE: {
+				const enemyUnit = this.getEnemyUnit(action.enemyUnitId);
+				if (!enemyUnit) {
+					return;
+				}
+
+				enemyUnit.defeated = true;
+				enemyUnit.hidden = true;
+
+				return;
+			}
 			case StageActionType.CLEAR: {
 				this.state.cleared = true;
 
@@ -72,6 +152,7 @@ export class StageHelper {
 			this.processAction(action);
 
 			this.updateTiles();
+			this.updateNextDirections();
 		}
 	}
 }
