@@ -17,6 +17,7 @@ import {
 	findActivePlayerUnit,
 	findActiveTileEvent,
 	findLastIndex,
+	getNextPosition,
 	isNextPositionValid,
 	isUnitPositionEquals,
 } from '../utils';
@@ -124,6 +125,41 @@ const stageSlice = createSlice({
 			state.stageActions.push({
 				type: StageActionType.NEXT_PHASE,
 			});
+
+			if (0 < state.currentPhase) {
+				for (const enemyUnit of state.enemyUnits) {
+					if (enemyUnit.hidden) {
+						continue;
+					}
+					if (!enemyUnit.nextDirection) {
+						continue;
+					}
+
+					const position = getNextPosition(enemyUnit.position, enemyUnit.nextDirection);
+					state.stageActions.push({
+						type: StageActionType.MOVE_ENEMY_UNIT,
+						enemyUnitId: enemyUnit.id,
+						nextPosition: position,
+					});
+
+					const playerUnit = findActivePlayerUnit(state.playerUnits, isUnitPositionEquals(position));
+					if (!playerUnit) {
+						continue;
+					}
+
+					state.stageActions.push({
+						type: StageActionType.BATTLE,
+						playerUnitId: playerUnit.id,
+						enemyUnitId: enemyUnit.id,
+					});
+
+					if (enemyUnit.rank === EnemyRank.BOSS) {
+						state.stageActions.push({
+							type: StageActionType.CLEAR,
+						});
+					}
+				}
+			}
 
 			const helper = new StageHelper(state);
 			helper.process();

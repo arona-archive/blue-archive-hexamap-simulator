@@ -85,6 +85,13 @@ export const HexaMapTile: React.FC<Props> = (props) => {
 		return playerUnit.nextDirections;
 	}, [playerUnit]);
 
+	const enemyUnitNextDirection = useMemo(() => {
+		if (!enemyUnit) {
+			return;
+		}
+		return enemyUnit.nextDirection;
+	}, [enemyUnit]);
+
 	return (
 		<Root x={tile.tilePosition[0]} y={tile.tilePosition[1]}>
 			<HexagonWrapper>
@@ -109,6 +116,13 @@ export const HexaMapTile: React.FC<Props> = (props) => {
 					</Arrow>
 				</ArrowWrapper>
 			))}
+			{enemyUnitNextDirection && (
+				<ArrowWrapper angle={enemyUnitNextDirection.angle}>
+					<Arrow color="var(--bs-red)">
+						<p>{'→'}</p>
+					</Arrow>
+				</ArrowWrapper>
+			)}
 			<Content>
 				<p>{`id=${tile.id}`}</p>
 				<p>{`x=${tile.position[0]} y=${tile.position[1]}`}</p>

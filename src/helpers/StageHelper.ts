@@ -1,7 +1,15 @@
-import { DIRECTIONS, StageActionType } from '../constants';
+import { DIRECTIONS, MovementType, StageActionType } from '../constants';
 import { StageState } from '../reducers';
 import { IPosition, IStageAction } from '../types';
-import { createEnemyUnits, createItemUnits, createTileEvents, createTiles, isUnitPositionEquals } from '../utils';
+import {
+	createEnemyUnits,
+	createItemUnits,
+	createTileEvents,
+	createTiles,
+	getNearestPlayerUnitDirection,
+	getNeighboringPlayerUnitDirection,
+	isUnitPositionEquals,
+} from '../utils';
 
 export class StageHelper {
 	private movementOrder = 1;
@@ -45,9 +53,9 @@ export class StageHelper {
 
 	private updateNextDirections() {
 		for (const playerUnit of this.state.playerUnits) {
-			if (this.state.cleared) {
-				playerUnit.nextDirections = [];
+			playerUnit.nextDirections = [];
 
+			if (this.state.cleared) {
 				continue;
 			}
 
@@ -61,6 +69,41 @@ export class StageHelper {
 				return !targetTile.hidden;
 			});
 			playerUnit.nextDirections = nextDirections;
+		}
+
+		for (const enemyUnit of this.state.enemyUnits) {
+			delete enemyUnit.nextDirection;
+
+			if (this.state.cleared) {
+				continue;
+			}
+
+			if (enemyUnit.hidden) {
+				continue;
+			}
+
+			const getNextDirection = () => {
+				switch (enemyUnit.movementType) {
+					case MovementType.B: {
+						return getNeighboringPlayerUnitDirection(enemyUnit.position, this.state.playerUnits);
+					}
+					case MovementType.C: {
+						return getNearestPlayerUnitDirection(
+							enemyUnit.position,
+							this.state.tiles,
+							this.state.playerUnits,
+							this.state.enemyUnits
+						);
+					}
+				}
+			};
+
+			const nextDirection = getNextDirection();
+			if (!nextDirection) {
+				continue;
+			}
+
+			enemyUnit.nextDirection = nextDirection;
 		}
 	}
 
@@ -123,6 +166,17 @@ export class StageHelper {
 
 				srcPlayerUnit.position = q;
 				destPlayerUnit.position = p;
+
+				return;
+			}
+			case StageActionType.MOVE_ENEMY_UNIT: {
+				const enemyUnit = this.getEnemyUnit(action.enemyUnitId);
+				if (!enemyUnit) {
+					return;
+				}
+
+				enemyUnit.position = action.nextPosition;
+				delete enemyUnit.nextDirection;
 
 				return;
 			}

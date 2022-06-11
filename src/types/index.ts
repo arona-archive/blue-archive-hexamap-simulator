@@ -86,6 +86,12 @@ export interface ISwapPlayerUnitsStageAction {
 	destPlayerUnitId: number;
 }
 
+export interface IMoveEnemyUnitStageAction {
+	type: StageActionType.MOVE_ENEMY_UNIT;
+	enemyUnitId: number;
+	nextPosition: IPosition;
+}
+
 export interface IBattleStageAction {
 	type: StageActionType.BATTLE;
 	playerUnitId: number;
@@ -101,5 +107,6 @@ export type IStageAction =
 	| IAddPlayerUnitStageAction
 	| IMovePlayerUnitStageAction
 	| ISwapPlayerUnitsStageAction
+	| IMoveEnemyUnitStageAction
 	| IBattleStageAction
 	| IClearStageAction;
