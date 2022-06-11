@@ -98,6 +98,12 @@ export interface IBattleStageAction {
 	enemyUnitId: number;
 }
 
+export interface IGetItemStageAction {
+	type: StageActionType.GET_ITEM;
+	playerUnitId: number;
+	itemUnitId: number;
+}
+
 export interface IClearStageAction {
 	type: StageActionType.CLEAR;
 }
@@ -109,4 +115,5 @@ export type IStageAction =
 	| ISwapPlayerUnitsStageAction
 	| IMoveEnemyUnitStageAction
 	| IBattleStageAction
+	| IGetItemStageAction
 	| IClearStageAction;

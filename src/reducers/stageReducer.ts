@@ -14,6 +14,7 @@ import {
 } from '../types';
 import {
 	findActiveEnemyUnit,
+	findActiveItemUnit,
 	findActivePlayerUnit,
 	findActiveTileEvent,
 	findLastIndex,
@@ -188,6 +189,15 @@ const stageSlice = createSlice({
 						type: StageActionType.MOVE_PLAYER_UNIT,
 						playerUnitId: id,
 						nextPosition: position,
+					});
+				}
+
+				const itemUnit = findActiveItemUnit(state.itemUnits, isUnitPositionEquals(position));
+				if (itemUnit) {
+					state.stageActions.push({
+						type: StageActionType.GET_ITEM,
+						playerUnitId: id,
+						itemUnitId: itemUnit.id,
 					});
 				}
 

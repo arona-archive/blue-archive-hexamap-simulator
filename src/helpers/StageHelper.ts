@@ -40,6 +40,10 @@ export class StageHelper {
 		return this.state.enemyUnits.find((x) => x.id === id);
 	}
 
+	private getItemUnit(id?: number) {
+		return this.state.itemUnits.find((x) => x.id === id);
+	}
+
 	private updateTiles() {
 		for (const tileEvent of this.state.tileEvents) {
 			const tile = this.state.tiles.find(isUnitPositionEquals(tileEvent.position));
@@ -188,6 +192,22 @@ export class StageHelper {
 
 				enemyUnit.defeated = true;
 				enemyUnit.hidden = true;
+
+				return;
+			}
+			case StageActionType.GET_ITEM: {
+				const playerUnit = this.getPlayerUnit(action.playerUnitId);
+				if (!playerUnit) {
+					return;
+				}
+
+				const itemUnit = this.getItemUnit(action.itemUnitId);
+				if (!itemUnit) {
+					return;
+				}
+
+				playerUnit.items.push(itemUnit.type);
+				itemUnit.hidden = true;
 
 				return;
 			}
