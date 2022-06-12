@@ -39,5 +39,6 @@ export enum StageActionType {
 	MOVE_ENEMY_UNIT = 'MOVE_ENEMY_UNIT',
 	BATTLE = 'BATTLE',
 	GET_ITEM = 'GET_ITEM',
+	TILE_EVENT = 'TILE_EVENT',
 	CLEAR = 'CLEAR',
 }

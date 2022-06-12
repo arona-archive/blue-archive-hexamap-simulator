@@ -1,4 +1,4 @@
-import { DIRECTIONS, MovementType, StageActionType } from '../constants';
+import { DIRECTIONS, MovementType, StageActionType, TileEventType } from '../constants';
 import { StageState } from '../reducers';
 import { IPosition, IStageAction } from '../types';
 import {
@@ -42,6 +42,10 @@ export class StageHelper {
 
 	private getItemUnit(id?: number) {
 		return this.state.itemUnits.find((x) => x.id === id);
+	}
+
+	private getTileEvent(id?: number) {
+		return this.state.tileEvents.find((x) => x.id === id);
 	}
 
 	private updateTiles() {
@@ -208,6 +212,23 @@ export class StageHelper {
 
 				playerUnit.items.push(itemUnit.type);
 				itemUnit.hidden = true;
+
+				return;
+			}
+			case StageActionType.TILE_EVENT: {
+				const tileEvent = this.getTileEvent(action.tileEventId);
+				if (!tileEvent) {
+					return;
+				}
+				if (tileEvent.hidden) {
+					return;
+				}
+				if (!tileEvent.active) {
+					return;
+				}
+
+				switch (tileEvent.type) {
+				}
 
 				return;
 			}

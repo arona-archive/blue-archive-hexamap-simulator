@@ -104,6 +104,12 @@ export interface IGetItemStageAction {
 	itemUnitId: number;
 }
 
+export interface ITileEventStageAction {
+	type: StageActionType.TILE_EVENT;
+	playerUnitId: number;
+	tileEventId: number;
+}
+
 export interface IClearStageAction {
 	type: StageActionType.CLEAR;
 }
@@ -116,4 +122,5 @@ export type IStageAction =
 	| IMoveEnemyUnitStageAction
 	| IBattleStageAction
 	| IGetItemStageAction
+	| ITileEventStageAction
 	| IClearStageAction;

@@ -201,6 +201,15 @@ const stageSlice = createSlice({
 					});
 				}
 
+				const tileEvent = findActiveTileEvent(state.tileEvents, isUnitPositionEquals(position));
+				if (tileEvent) {
+					state.stageActions.push({
+						type: StageActionType.TILE_EVENT,
+						playerUnitId: id,
+						tileEventId: tileEvent.id,
+					});
+				}
+
 				const enemyUnit = findActiveEnemyUnit(state.enemyUnits, isUnitPositionEquals(position));
 				if (enemyUnit) {
 					state.stageActions.push({
