@@ -6,6 +6,7 @@ import {
 	createItemUnits,
 	createTileEvents,
 	createTiles,
+	getNearestEventTile,
 	getNearestPlayerUnitDirection,
 	getNeighboringPlayerUnitDirection,
 	isUnitPositionEquals,
@@ -56,6 +57,40 @@ export class StageHelper {
 			}
 
 			tile.hidden = tileEvent.hidden;
+		}
+	}
+
+	private updatePlayerUnits() {
+		for (const playerUnit of this.state.playerUnits) {
+			const tile = this.state.tiles.find(isUnitPositionEquals(playerUnit.position));
+			if (!tile) {
+				continue;
+			}
+			if (!tile.hidden) {
+				continue;
+			}
+
+			const tileEvents = this.state.tileEvents.filter((x) => x.type === TileEventType.START_TILE);
+			const tileEvent = getNearestEventTile(playerUnit.position, tileEvents);
+			if (!tileEvent) {
+				continue;
+			}
+
+			playerUnit.position = tileEvent.position;
+		}
+	}
+
+	private updateEnemyUnits() {
+		for (const enemyUnit of this.state.enemyUnits) {
+			const tile = this.state.tiles.find(isUnitPositionEquals(enemyUnit.position));
+			if (!tile) {
+				continue;
+			}
+			if (!tile.hidden) {
+				continue;
+			}
+
+			enemyUnit.hidden = true;
 		}
 	}
 
@@ -228,6 +263,21 @@ export class StageHelper {
 				}
 
 				switch (tileEvent.type) {
+					case TileEventType.BUTTON_TILE: {
+						const targetTileEvent = this.getTileEvent(tileEvent.targetEventTileId);
+						if (!targetTileEvent) {
+							return;
+						}
+						if (!targetTileEvent.active) {
+							return;
+						}
+
+						tileEvent.active = false;
+						targetTileEvent.active = false;
+						targetTileEvent.hidden = !targetTileEvent.hidden;
+
+						return;
+					}
 				}
 
 				return;
@@ -247,6 +297,8 @@ export class StageHelper {
 			this.processAction(action);
 
 			this.updateTiles();
+			this.updateEnemyUnits();
+			this.updatePlayerUnits();
 			this.updateNextDirections();
 		}
 	}

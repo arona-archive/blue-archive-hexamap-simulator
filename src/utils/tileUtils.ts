@@ -1,5 +1,5 @@
-import { DIRECTIONS } from '../constants';
-import { IDirection, IEnemyUnit, IPlayerUnit, IPosition, ITile } from '../types';
+import { DIRECTIONS, TileEventType } from '../constants';
+import { IDirection, IEnemyUnit, IPlayerUnit, IPosition, ITile, ITileEvent } from '../types';
 
 export const isPositionEquals = (a?: IPosition, b?: IPosition): boolean => {
 	if (!a || !b) {
@@ -157,5 +157,33 @@ export const getNearestPlayerUnitDirection = (
 			continue;
 		}
 		return direction;
+	}
+};
+
+export const getNearestEventTile = (position: IPosition, tileEvents: ITileEvent[]): ITileEvent | undefined => {
+	const targetTileEvents = tileEvents.filter((x) => x.active || !x.hidden);
+	if (targetTileEvents.length === 0) {
+		return;
+	}
+
+	const positions: IPosition[] = [position];
+	const queue: IPosition[] = [position];
+	while (queue.length > 0) {
+		const position = queue.shift();
+		if (!position) {
+			return;
+		}
+		for (const direction of DIRECTIONS) {
+			const nextPosition = getNextPosition(position, direction);
+			if (positions.some((x) => isPositionEquals(x, nextPosition))) {
+				continue;
+			}
+			const targetTileEvent = targetTileEvents.find(isUnitPositionEquals(nextPosition));
+			if (targetTileEvent) {
+				return targetTileEvent;
+			}
+			queue.push(nextPosition);
+			positions.push(nextPosition);
+		}
 	}
 };
