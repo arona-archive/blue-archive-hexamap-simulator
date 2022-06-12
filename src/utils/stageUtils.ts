@@ -1,3 +1,4 @@
+import { TileEventType } from '../constants';
 import {
 	ITile,
 	IPosition,
@@ -10,6 +11,7 @@ import {
 	ITileEvent,
 	IPlayerUnit,
 } from '../types';
+import { isUnitPositionEquals } from './tileUtils';
 
 export const createTiles = (tilesMetadata: ITileMetadata[]): ITile[] => {
 	const minX = Math.min(...tilesMetadata.map((x) => x.position[0]));
@@ -125,4 +127,39 @@ export const findActiveTileEvent = (
 	predicate: (value: ITileEvent) => boolean
 ): ITileEvent | undefined => {
 	return tileEvents.find(predicate);
+};
+
+export const GetIsWrapTriggerable = (
+	playerUnit: IPlayerUnit,
+	playerUnits: IPlayerUnit[],
+	enemyUnits: IEnemyUnit[],
+	tileEvents: ITileEvent[]
+): boolean => {
+	const tileEvent = findActiveTileEvent(tileEvents, isUnitPositionEquals(playerUnit.position));
+	if (!tileEvent) {
+		return false;
+	}
+	if (tileEvent.type !== TileEventType.WARP_TILE) {
+		return false;
+	}
+
+	const targetTileEvent = findActiveTileEvent(tileEvents, (x) => x.id === tileEvent.targetEventTileId);
+	if (!targetTileEvent) {
+		return false;
+	}
+	if (targetTileEvent.type !== TileEventType.WARP_TILE) {
+		return false;
+	}
+
+	const targetPlayerUnit = findActivePlayerUnit(playerUnits, isUnitPositionEquals(targetTileEvent.position));
+	if (targetPlayerUnit) {
+		return false;
+	}
+
+	const targetEnemyUnit = findActiveEnemyUnit(enemyUnits, isUnitPositionEquals(targetTileEvent.position));
+	if (targetEnemyUnit) {
+		return false;
+	}
+
+	return true;
 };

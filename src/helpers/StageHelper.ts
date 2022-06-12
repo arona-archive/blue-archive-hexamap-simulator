@@ -9,6 +9,7 @@ import {
 	getNearestEventTile,
 	getNearestPlayerUnitDirection,
 	getNeighboringPlayerUnitDirection,
+	isPositionEquals,
 	isUnitPositionEquals,
 } from '../utils';
 
@@ -279,6 +280,44 @@ export class StageHelper {
 						return;
 					}
 				}
+
+				return;
+			}
+			case StageActionType.TRIGGER_WARP: {
+				const playerUnit = this.getPlayerUnit(action.playerUnitId);
+				if (!playerUnit) {
+					return;
+				}
+				if (playerUnit.hidden) {
+					return;
+				}
+
+				const tileEvent = this.getTileEvent(action.tileEventId);
+				if (!tileEvent) {
+					return;
+				}
+				if (tileEvent.hidden) {
+					return;
+				}
+				if (!tileEvent.active) {
+					return;
+				}
+				if (!isPositionEquals(playerUnit.position, tileEvent.position)) {
+					return;
+				}
+
+				const targetTileEvent = this.getTileEvent(tileEvent.targetEventTileId);
+				if (!targetTileEvent) {
+					return;
+				}
+				if (targetTileEvent.hidden) {
+					return;
+				}
+				if (!targetTileEvent.active) {
+					return false;
+				}
+
+				playerUnit.position = targetTileEvent.position;
 
 				return;
 			}

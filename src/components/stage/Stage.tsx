@@ -18,10 +18,11 @@ import {
 	nextPhase,
 	prevPhase,
 	setHexamap,
+	triggerWrap,
 	updatePlayerUnit,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
-import { getEnumValue } from '../../utils';
+import { getEnumValue, GetIsWrapTriggerable } from '../../utils';
 import { HexaMap } from '../hexa-map';
 
 const HexamapWrapper = styled.div`
@@ -73,6 +74,13 @@ export const Stage: React.FC<Props> = (props) => {
 	const isPlayerUnitAttackTypeMutable = useMemo(() => {
 		return !!activePlayerUnit && currentPhase === 0;
 	}, [activePlayerUnit, currentPhase]);
+
+	const isWrapTriggable = useMemo(() => {
+		if (!activePlayerUnit) {
+			return false;
+		}
+		return GetIsWrapTriggerable(activePlayerUnit, playerUnits, enemyUnits, tileEvents);
+	}, [activePlayerUnit, playerUnits, enemyUnits, tileEvents]);
 
 	const isPrevPhaseButtonDisabled = useMemo(() => {
 		return currentPhase === 0;
@@ -148,6 +156,13 @@ export const Stage: React.FC<Props> = (props) => {
 		dispatch(nextPhase());
 	}, []);
 
+	const handleClickTriggerWrap = useCallback(() => {
+		if (!activePlayerUnit) {
+			return;
+		}
+		dispatch(triggerWrap(activePlayerUnit.id));
+	}, [activePlayerUnit]);
+
 	return (
 		<>
 			<div className="row">
@@ -206,6 +221,19 @@ export const Stage: React.FC<Props> = (props) => {
 					</button>
 				</div>
 			</div>
+			{isWrapTriggable && (
+				<div className="row">
+					<div className="col-12">
+						<div className="form-inline">
+							<div className="form-group">
+								<button className="form-control" onClick={handleClickTriggerWrap}>
+									trigger warp
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			)}
 			<div className="list-group">
 				<div className="list-group-item list-group-item-primary">stage actions</div>
 				{stageActions.map((x, i) => (

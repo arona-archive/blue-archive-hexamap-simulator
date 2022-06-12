@@ -40,5 +40,6 @@ export enum StageActionType {
 	BATTLE = 'BATTLE',
 	GET_ITEM = 'GET_ITEM',
 	TILE_EVENT = 'TILE_EVENT',
+	TRIGGER_WARP = 'TRIGGER_WARP',
 	CLEAR = 'CLEAR',
 }

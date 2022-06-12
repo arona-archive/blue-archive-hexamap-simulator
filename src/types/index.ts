@@ -110,6 +110,12 @@ export interface ITileEventStageAction {
 	tileEventId: number;
 }
 
+export interface ITriggerWrapStageAction {
+	type: StageActionType.TRIGGER_WARP;
+	playerUnitId: number;
+	tileEventId: number;
+}
+
 export interface IClearStageAction {
 	type: StageActionType.CLEAR;
 }
@@ -123,4 +129,5 @@ export type IStageAction =
 	| IBattleStageAction
 	| IGetItemStageAction
 	| ITileEventStageAction
+	| ITriggerWrapStageAction
 	| IClearStageAction;

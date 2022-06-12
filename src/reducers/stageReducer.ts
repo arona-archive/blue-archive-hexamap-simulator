@@ -229,6 +229,31 @@ const stageSlice = createSlice({
 			const helper = new StageHelper(state);
 			helper.process();
 		},
+		triggerWrap: (state, action: PayloadAction<number>) => {
+			const id = action.payload;
+
+			const playerUnit = findActivePlayerUnit(state.playerUnits, (x) => x.id === id);
+			if (!playerUnit) {
+				return;
+			}
+
+			const tileEvent = findActiveTileEvent(state.tileEvents, isUnitPositionEquals(playerUnit.position));
+			if (!tileEvent) {
+				return;
+			}
+			if (tileEvent.type !== TileEventType.WARP_TILE) {
+				return;
+			}
+
+			state.stageActions.push({
+				type: StageActionType.TRIGGER_WARP,
+				playerUnitId: playerUnit.id,
+				tileEventId: tileEvent.id,
+			});
+
+			const helper = new StageHelper(state);
+			helper.process();
+		},
 	},
 });
 
@@ -242,6 +267,7 @@ export const {
 	prevPhase,
 	nextPhase,
 	movePlayerUnit,
+	triggerWrap,
 } = stageSlice.actions;
 
 export const getActiveTile = (state: RootState) => state.stage.tiles.find((x) => x.id === state.stage.activeTileId);
