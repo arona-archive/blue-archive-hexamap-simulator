@@ -131,3 +131,8 @@ export type IStageAction =
 	| ITileEventStageAction
 	| ITriggerWrapStageAction
 	| IClearStageAction;
+
+export interface IDelayedStageAction {
+	phase: number;
+	action: IStageAction;
+}

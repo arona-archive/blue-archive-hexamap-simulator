@@ -29,6 +29,7 @@ export class StageHelper {
 		this.state.enemyUnits = createEnemyUnits(this.state.hexamap.enemyUnits);
 		this.state.itemUnits = createItemUnits(this.state.hexamap.items);
 		this.state.tileEvents = createTileEvents(this.state.hexamap.tileEvents);
+		this.state.delayedStageActions = [];
 		this.state.cleared = false;
 
 		this.updateTiles();
@@ -259,12 +260,12 @@ export class StageHelper {
 				if (tileEvent.hidden) {
 					return;
 				}
-				if (!tileEvent.active) {
-					return;
-				}
 
 				switch (tileEvent.type) {
 					case TileEventType.BUTTON_TILE: {
+						if (!tileEvent.active) {
+							return;
+						}
 						const targetTileEvent = this.getTileEvent(tileEvent.targetEventTileId);
 						if (!targetTileEvent) {
 							return;
@@ -276,6 +277,28 @@ export class StageHelper {
 						tileEvent.active = false;
 						targetTileEvent.active = false;
 						targetTileEvent.hidden = !targetTileEvent.hidden;
+
+						return;
+					}
+					case TileEventType.BROKEN_TILE: {
+						if (tileEvent.active) {
+							tileEvent.active = false;
+
+							this.state.delayedStageActions.push({
+								phase: this.state.currentPhase + 1,
+								action: {
+									type: StageActionType.TILE_EVENT,
+									playerUnitId: -1,
+									tileEventId: tileEvent.id,
+								},
+							});
+						} else {
+							if (action.playerUnitId !== -1) {
+								return;
+							}
+
+							tileEvent.hidden = true;
+						}
 
 						return;
 					}

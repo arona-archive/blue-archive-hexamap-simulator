@@ -3,6 +3,7 @@ import { RootState } from '../app/store';
 import { AttackType, EnemyRank, StageActionType, TileEventType } from '../constants';
 import { StageHelper } from '../helpers';
 import {
+	IDelayedStageAction,
 	IEnemyUnit,
 	IHexaMapMetadata,
 	IItemUnit,
@@ -33,6 +34,7 @@ export interface StageState {
 	itemUnits: IItemUnit[];
 	tileEvents: ITileEvent[];
 	stageActions: IStageAction[];
+	delayedStageActions: IDelayedStageAction[];
 	cleared: boolean;
 }
 
@@ -46,6 +48,7 @@ const initialState: StageState = {
 	itemUnits: [],
 	tileEvents: [],
 	stageActions: [],
+	delayedStageActions: [],
 	cleared: false,
 };
 
@@ -160,6 +163,18 @@ const stageSlice = createSlice({
 						});
 					}
 				}
+			}
+
+			for (let i = state.delayedStageActions.length - 1; i >= 0; --i) {
+				const delayedStageAction = state.delayedStageActions[i];
+				if (!delayedStageAction) {
+					continue;
+				}
+				if (delayedStageAction.phase !== state.currentPhase) {
+					continue;
+				}
+				state.delayedStageActions.splice(i, 1);
+				state.stageActions.push(delayedStageAction.action);
 			}
 
 			const helper = new StageHelper(state);
