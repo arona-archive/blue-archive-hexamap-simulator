@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import { DifficultyType } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
-import { Page } from '../../components';
+import { CampaignNavigation, Page } from '../../components';
 import { CampaignStageEntry } from './CampaignStageEntry';
 
-export const CampaignStagesPage: React.FC = (props) => {
-	const metadata = useAppSelector(getMetadata);
+export const CampaignPage: React.FC = () => {
+	const params = useParams<{ campaignId: string }>();
 
-	const params = useParams();
+	const metadata = useAppSelector(getMetadata);
 
 	const campaignId = useMemo(() => {
 		if (!params.campaignId) {
@@ -30,18 +30,28 @@ export const CampaignStagesPage: React.FC = (props) => {
 		return campaign?.stages.filter((x) => x.difficultyType === DifficultyType.HARD);
 	}, [campaign?.stages]);
 
+	if (!campaignId) {
+		return null;
+	}
+
 	return (
-		<Page title={`campaign stages / ${campaignId}`}>
+		<Page
+			breadcrumbs={[
+				{ name: 'main', path: '/' },
+				{ name: campaignId, path: `/campaign/${campaignId}` },
+			]}
+		>
+			<CampaignNavigation campaignId={campaignId} />
 			<div className="list-group">
 				<div className="list-group-item list-group-item-primary">normal stages</div>
 				{normalStages?.map((stage) => (
-					<CampaignStageEntry key={stage.id} stage={stage} />
+					<CampaignStageEntry key={stage.id} campaignId={campaignId} stage={stage} />
 				))}
 			</div>
 			<div className="list-group">
 				<div className="list-group-item list-group-item-primary">hard stages</div>
 				{hardStages?.map((stage) => (
-					<CampaignStageEntry key={stage.id} stage={stage} />
+					<CampaignStageEntry key={stage.id} campaignId={campaignId} stage={stage} />
 				))}
 			</div>
 		</Page>

@@ -7,7 +7,7 @@ export const MainPage: React.FC = () => {
 	const metadata = useAppSelector(getMetadata);
 
 	return (
-		<Page title="main">
+		<Page breadcrumbs={[{ name: 'main', path: '/' }]}>
 			<pre>{JSON.stringify(metadata, null, 2)}</pre>
 		</Page>
 	);

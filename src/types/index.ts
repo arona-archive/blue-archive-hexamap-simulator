@@ -136,3 +136,13 @@ export interface IDelayedStageAction {
 	phase: number;
 	action: IStageAction;
 }
+
+export interface IBreadcrumbItem {
+	name: number | string;
+	path: string;
+}
+
+export interface INavigationPath {
+	path: string;
+	name: number | string;
+}

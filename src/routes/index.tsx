@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-	CampaignsPage,
-	CampaignStagePage,
-	CampaignStagesPage,
-	EventsPage,
-	EventStagePage,
-	EventStagesPage,
-	MainPage,
-} from '../pages';
+import { CampaignStagePage, EventStagePage, MainPage } from '../pages';
+import { CampaignPage } from '../pages/campaign/CampaignPage';
+import { EventPage } from '../pages/event/EventPage';
 
 export interface Route {
 	index?: boolean;
@@ -19,10 +13,8 @@ export interface Route {
 
 export const routes: Route[] = [
 	{ path: '/', name: 'main', index: true, root: false, element: <MainPage /> },
-	{ path: '/campaigns', name: 'campaigns', root: true, element: <CampaignsPage />, index: true },
-	{ path: '/campaign_stages/:campaignId', name: 'campaign stages', element: <CampaignStagesPage /> },
-	{ path: '/campaign_stage/:stageId', name: 'campaign stage', element: <CampaignStagePage /> },
-	{ path: '/events', name: 'events', root: true, element: <EventsPage /> },
-	{ path: '/event_stages/:eventId', name: 'event stages', element: <EventStagesPage /> },
-	{ path: '/event_stage/:stageId', name: 'event stage', element: <EventStagePage /> },
+	{ path: '/campaign/:campaignId', name: 'campaign stages', element: <CampaignPage /> },
+	{ path: '/campaign/:campaignId/:stageId', name: 'campaign stage', element: <CampaignStagePage /> },
+	{ path: '/event/:eventId', name: 'event stages', element: <EventPage /> },
+	{ path: '/event/:eventId/:stageId', name: 'event stage', element: <EventStagePage /> },
 ];
