@@ -35,6 +35,7 @@ interface Props {
 	active?: boolean;
 	clickable?: boolean;
 	hidden?: boolean;
+	opacity?: number;
 	onHover?: () => void;
 	onClick?: () => void;
 	children?: React.ReactNode;
@@ -48,6 +49,7 @@ export const Hexagon: React.FC<Props> = (props) => {
 		active = false,
 		clickable = false,
 		hidden = false,
+		opacity = 1,
 		onHover,
 		onClick,
 		children,
@@ -104,6 +106,7 @@ export const Hexagon: React.FC<Props> = (props) => {
 				width={size}
 				height={size}
 				strokeColor={strokeColor}
+				opacity={opacity}
 				onClick={handleClick}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}

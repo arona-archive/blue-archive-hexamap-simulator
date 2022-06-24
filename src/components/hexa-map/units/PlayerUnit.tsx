@@ -8,6 +8,10 @@ const Text = styled.p`
 	font-weight: bold;
 	color: var(--bs-gray-dark);
 	white-space: nowrap;
+
+	& > *:not(:first-child) {
+		margin-left: 4px;
+	}
 `;
 
 interface Props {
@@ -16,6 +20,32 @@ interface Props {
 
 export const PlayerUnit: React.FC<Props> = (props) => {
 	const { playerUnit } = props;
+
+	const itemEl = useMemo<React.ReactElement>(() => {
+		return (
+			<>
+				{playerUnit.items
+					.map((type) => {
+						switch (type) {
+							case ItemType.HEAL: {
+								return <i className="bi bi-plus-circle" />;
+							}
+							case ItemType.ATTACK_BUFF:
+							case ItemType.DEFENCE_BUFF: {
+								return <i className="bi bi-arrow-up-circle" />;
+							}
+							case ItemType.PYROXENE_BOX:
+							case ItemType.LIGHT_DRONE: {
+								return null;
+							}
+						}
+					})
+					.map((x, index) => (
+						<React.Fragment key={index}>{x}</React.Fragment>
+					))}
+			</>
+		);
+	}, [playerUnit.items]);
 
 	const color = useMemo<string>(() => {
 		switch (playerUnit.attackType) {
@@ -31,35 +61,18 @@ export const PlayerUnit: React.FC<Props> = (props) => {
 		}
 	}, [playerUnit.attackType]);
 
-	const itemStr = useMemo<string>(() => {
-		return playerUnit.items
-			.map((x) => {
-				switch (x) {
-					case ItemType.HEAL: {
-						return '+';
-					}
-					case ItemType.ATTACK_BUFF:
-					case ItemType.DEFENCE_BUFF: {
-						return '↑';
-					}
-					case ItemType.PYROXENE_BOX: {
-						return '◆';
-					}
-					case ItemType.LIGHT_DRONE: {
-						return '*';
-					}
-				}
-			})
-			.join(' ');
-	}, [playerUnit.items]);
-
-	const text = useMemo(() => {
-		return [playerUnit.id, itemStr].join(' ').trim();
-	}, [playerUnit.id, itemStr]);
+	const textEl = useMemo<React.ReactElement>(() => {
+		return (
+			<>
+				<span>{playerUnit.id}</span>
+				{itemEl}
+			</>
+		);
+	}, [playerUnit.id, itemEl]);
 
 	return (
 		<Hexagon size={TILE_SIZE * 0.6} fillColor="#ffffff" strokeColor={color}>
-			<Text>{text}</Text>
+			<Text>{textEl}</Text>
 		</Hexagon>
 	);
 };

@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { TILE_SIZE } from '../../constants';
-import { Hexagon } from './Hexagon';
+import { useAppSelector } from '../../hooks';
+import { getDebugFlag } from '../../reducers';
 import { IEnemyUnit, IItemUnit, IPlayerUnit, ITile, ITileEvent } from '../../types';
+import { Hexagon } from './Hexagon';
 import { EnemyUnit, ItemUnit, PlayerUnit, TileEvent } from './units';
 
 const Root = styled.div<{ x: number; y: number }>`
@@ -75,6 +77,8 @@ interface Props {
 export const HexaMapTile: React.FC<Props> = (props) => {
 	const { active, tile, playerUnit, enemyUnit, itemUnit, tileEvent, onClick } = props;
 
+	const debugFlag = useAppSelector(getDebugFlag);
+
 	const playerUnitNextDirections = useMemo(() => {
 		if (!playerUnit) {
 			return [];
@@ -123,10 +127,12 @@ export const HexaMapTile: React.FC<Props> = (props) => {
 					</Arrow>
 				</ArrowWrapper>
 			)}
-			<Content>
-				<p>{`id=${tile.id}`}</p>
-				<p>{`x=${tile.position[0]} y=${tile.position[1]}`}</p>
-			</Content>
+			{debugFlag && (
+				<Content>
+					<p>{`id=${tile.id}`}</p>
+					<p>{`x=${tile.position[0]} y=${tile.position[1]}`}</p>
+				</Content>
+			)}
 		</Root>
 	);
 };

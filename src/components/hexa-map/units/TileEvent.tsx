@@ -8,6 +8,10 @@ const Text = styled.p<{ color?: string }>`
 	font-weight: bold;
 	color: ${(props) => props.color ?? '#ffffff'};
 	white-space: nowrap;
+
+	& i {
+		font-size: 2em;
+	}
 `;
 
 interface Props {
@@ -17,28 +21,31 @@ interface Props {
 export const TileEvent: React.FC<Props> = (props) => {
 	const { tileEvent } = props;
 
-	const typeStr = useMemo<string>(() => {
+	const typeEl = useMemo<React.ReactElement>(() => {
 		switch (tileEvent.type) {
 			case TileEventType.START_TILE: {
-				return 'START';
+				return <>START</>;
 			}
 			case TileEventType.BUTTON_TILE: {
-				return 'Button';
+				return <i className="bi bi-circle" />;
 			}
 			case TileEventType.BUTTON_TARGET_TILE: {
-				return 'ButtonTarget';
+				return <i className="bi bi-slash-circle" />;
 			}
 			case TileEventType.WARP_TILE: {
-				return 'Wrap';
+				if (!tileEvent.targetEventTileId) {
+					return <i className="bi bi-slash-square" />;
+				}
+				return <i className="bi bi-caret-up-square" />;
 			}
 			case TileEventType.BROKEN_TILE: {
-				return 'Broken';
+				return <i className="bi bi-x-square" />;
 			}
 			case TileEventType.SWITCH_TILE: {
-				return 'Switch';
+				return <i className="bi bi-code-square" />;
 			}
 			case TileEventType.SWITCH_TARGET_TILE: {
-				return 'SwitchTarget';
+				return <i className="bi bi-dash-square" />;
 			}
 		}
 	}, [tileEvent.type]);
@@ -57,14 +64,14 @@ export const TileEvent: React.FC<Props> = (props) => {
 	if (tileEvent.type === TileEventType.START_TILE) {
 		return (
 			<Hexagon size={TILE_SIZE * 0.8} strokeColor={color}>
-				<Text color={color}>{typeStr}</Text>
+				<Text color={color}>{typeEl}</Text>
 			</Hexagon>
 		);
 	}
 
 	return (
 		<Hexagon size={TILE_SIZE * 0.8} fillColor={color}>
-			<Text>{typeStr}</Text>
+			<Text>{typeEl}</Text>
 		</Hexagon>
 	);
 };

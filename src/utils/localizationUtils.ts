@@ -103,3 +103,8 @@ export const getDefaultLanguageCode = (): LanguageCode => {
 
 	return LanguageCode.JA;
 };
+
+export const getDefaultDebugFlag = (): boolean => {
+	const params = new URLSearchParams(window.location.search);
+	return params.has('debug');
+};

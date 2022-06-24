@@ -4,10 +4,12 @@ import { LanguageCode } from '../constants';
 
 export interface MainState {
 	languageCode: LanguageCode;
+	debugFlag: boolean;
 }
 
 const initialState: MainState = {
 	languageCode: LanguageCode.EN,
+	debugFlag: false,
 };
 
 const mainSlice = createSlice({
@@ -23,5 +25,6 @@ const mainSlice = createSlice({
 export const { setLanguageCode } = mainSlice.actions;
 
 export const getLanguageCode = (state: RootState) => state.main.languageCode;
+export const getDebugFlag = (state: RootState) => state.main.debugFlag;
 
 export const mainReducer = mainSlice.reducer;

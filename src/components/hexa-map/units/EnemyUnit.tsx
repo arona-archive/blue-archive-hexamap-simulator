@@ -17,33 +17,48 @@ interface Props {
 export const EnemyUnit: React.FC<Props> = (props) => {
 	const { enemyUnit } = props;
 
-	const rankStr = useMemo<string>(() => {
+	const rankEl = useMemo<React.ReactElement>(() => {
 		switch (enemyUnit.rank) {
 			case EnemyRank._1: {
-				return '1';
+				return (
+					<>
+						<i className="bi bi-suit-diamond-fill" />
+						<span>1</span>
+					</>
+				);
 			}
 			case EnemyRank._2: {
-				return '2';
+				return (
+					<>
+						<i className="bi bi-suit-diamond-fill" />
+						<span>2</span>
+					</>
+				);
 			}
 			case EnemyRank._3: {
-				return '3';
+				return (
+					<>
+						<i className="bi bi-suit-diamond-fill" />
+						<span>3</span>
+					</>
+				);
 			}
 			case EnemyRank.BOSS: {
-				return 'BOSS';
+				return <>BOSS</>;
 			}
 		}
 	}, [enemyUnit.rank]);
 
-	const movementTypeStr = useMemo<string>(() => {
+	const movementTypeEl = useMemo<React.ReactElement | null>(() => {
 		switch (enemyUnit.movementType) {
 			case MovementType.A: {
-				return '';
+				return null;
 			}
 			case MovementType.B: {
-				return '!';
+				return <i className="bi bi-exclamation-lg" />;
 			}
 			case MovementType.C: {
-				return '<';
+				return <i className="bi bi-chevron-double-left" />;
 			}
 		}
 	}, [enemyUnit.movementType]);
@@ -62,13 +77,18 @@ export const EnemyUnit: React.FC<Props> = (props) => {
 		}
 	}, [enemyUnit.defenceType]);
 
-	const text = useMemo(() => {
-		return [rankStr, movementTypeStr].join(' ').trim();
-	}, [rankStr, movementTypeStr]);
+	const textEl = useMemo<React.ReactNode>(() => {
+		return (
+			<>
+				{movementTypeEl}
+				{rankEl}
+			</>
+		);
+	}, [rankEl, movementTypeEl]);
 
 	return (
 		<Hexagon size={TILE_SIZE * 0.6} fillColor={color}>
-			<Text>{text}</Text>
+			<Text>{textEl}</Text>
 		</Hexagon>
 	);
 };
