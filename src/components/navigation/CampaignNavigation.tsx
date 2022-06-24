@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { INavigationPath } from '../../types';
+import { getCampaignName } from '../../utils';
 import { Navigation } from './Navigation';
 
 interface Props {
@@ -22,7 +23,7 @@ export const CampaignNavigation: React.FC<Props> = (props) => {
 
 		return {
 			path: `/campaign/${campaign.id}`,
-			name: campaign.id,
+			name: getCampaignName(campaign.id),
 		};
 	}, [campaignId]);
 
@@ -35,7 +36,7 @@ export const CampaignNavigation: React.FC<Props> = (props) => {
 
 		return {
 			path: `/campaign/${campaign.id}`,
-			name: campaign.id,
+			name: getCampaignName(campaign.id),
 		};
 	}, [campaignId]);
 

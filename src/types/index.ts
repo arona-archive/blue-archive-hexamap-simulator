@@ -7,8 +7,10 @@ import {
 	StageActionType,
 	TileEventType,
 } from '../constants';
+import { IText } from './localization';
 import { IPosition } from './metadata';
 
+export * from './localization';
 export * from './metadata';
 
 type IDirectionType = -1 | 0 | 1;
@@ -137,12 +139,7 @@ export interface IDelayedStageAction {
 	action: IStageAction;
 }
 
-export interface IBreadcrumbItem {
-	name: number | string;
-	path: string;
-}
-
 export interface INavigationPath {
 	path: string;
-	name: number | string;
+	name: IText;
 }

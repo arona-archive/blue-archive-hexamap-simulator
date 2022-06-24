@@ -1,6 +1,11 @@
 import { IDirection } from '../types';
 
+export * from './localization';
 export * from './metadata';
+
+export enum LocalStorageKey {
+	LANGUAGE_CODE = 'language-code',
+}
 
 export const TILE_SIZE = 100;
 

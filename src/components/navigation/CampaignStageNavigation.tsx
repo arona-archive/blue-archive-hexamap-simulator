@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { INavigationPath } from '../../types';
+import { getStageName } from '../../utils';
 import { Navigation } from './Navigation';
 
 interface Props {
@@ -32,7 +33,7 @@ export const CampaignStageNavigation: React.FC<Props> = (props) => {
 
 		return {
 			path: `/campaign/${campaign.id}/${stage.id}`,
-			name: stage.id,
+			name: getStageName(stage.id),
 		};
 	}, [metadata, stages, campaignId, stageId]);
 
@@ -50,7 +51,7 @@ export const CampaignStageNavigation: React.FC<Props> = (props) => {
 
 		return {
 			path: `/campaign/${campaign.id}/${stage.id}`,
-			name: stage.id,
+			name: getStageName(stage.id),
 		};
 	}, [metadata, stages, campaignId, stageId]);
 

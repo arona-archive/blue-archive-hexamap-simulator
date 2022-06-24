@@ -1,9 +1,16 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import { EventNavigation, Page } from '../../components';
+import { DifficultyType, LocalizationTextTable } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
-import { EventNavigation, Page } from '../../components';
+import { getEventName } from '../../utils';
 import { EventStageEntry } from './EventStageEntry';
+
+const ListHeader = styled.div`
+	user-select: none;
+`;
 
 export const EventPage: React.FC = () => {
 	const params = useParams<{ eventId: string }>();
@@ -17,28 +24,50 @@ export const EventPage: React.FC = () => {
 		return parseInt(params.eventId, 10);
 	}, [params.eventId]);
 
-	const event = useMemo(() => {
-		return metadata.events.find((x) => x.id === eventId);
-	}, [eventId]);
+	const event = useMemo(() => metadata.events.find((x) => x.id === eventId), [eventId]);
 
-	if (!eventId) {
+	const questStages = useMemo(() => {
+		if (!event?.stages) {
+			return [];
+		}
+		return event.stages.filter((x) => x.difficultyType === DifficultyType.HARD);
+	}, [event?.stages]);
+
+	const challengeStages = useMemo(() => {
+		if (!event?.stages) {
+			return [];
+		}
+		return event.stages.filter((x) => x.difficultyType === DifficultyType.CHALLENGE);
+	}, [event?.stages]);
+
+	if (!event) {
 		return null;
 	}
 
 	return (
 		<Page
 			breadcrumbs={[
-				{ name: 'main', path: '/' },
-				{ name: eventId, path: `/event/${eventId}` },
+				{ name: LocalizationTextTable.main_page, path: '/' },
+				{ name: getEventName(event.id), path: `/event/${event.id}` },
 			]}
 		>
-			<EventNavigation eventId={eventId} />
-			<div className="list-group">
-				<div className="list-group-item list-group-item-primary">event stages</div>
-				{event?.stages.map((x) => (
-					<EventStageEntry key={x.id} eventId={eventId} stageId={x.id} />
-				))}
-			</div>
+			<EventNavigation eventId={event.id} />
+			{questStages.length > 0 && (
+				<div className="list-group">
+					<ListHeader className="list-group-item list-group-item-primary">Quest</ListHeader>
+					{questStages.map((stage) => (
+						<EventStageEntry key={stage.id} eventId={event.id} stageId={stage.id} />
+					))}
+				</div>
+			)}
+			{challengeStages.length > 0 && (
+				<div className="list-group">
+					<ListHeader className="list-group-item list-group-item-primary">Challenge</ListHeader>
+					{challengeStages.map((stage) => (
+						<EventStageEntry key={stage.id} eventId={event.id} stageId={stage.id} />
+					))}
+				</div>
+			)}
 		</Page>
 	);
 };
