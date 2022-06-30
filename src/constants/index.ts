@@ -48,3 +48,11 @@ export enum StageActionType {
 	TRIGGER_WARP = 'TRIGGER_WARP',
 	CLEAR = 'CLEAR',
 }
+
+export const UserActionTypes: Array<StageActionType> = [
+	StageActionType.ADD_PLAYER_UNIT,
+	StageActionType.MOVE_PLAYER_UNIT,
+	StageActionType.SWAP_PLAYER_UNITS,
+	StageActionType.NEXT_PHASE,
+	StageActionType.TRIGGER_WARP,
+];

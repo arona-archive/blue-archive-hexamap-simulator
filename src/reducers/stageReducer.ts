@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
-import { AttackType, EnemyRank, StageActionType, TileEventType } from '../constants';
+import { AttackType, EnemyRank, StageActionType, TileEventType, UserActionTypes } from '../constants';
 import { StageHelper } from '../helpers';
 import {
 	IDelayedStageAction,
@@ -269,6 +269,13 @@ const stageSlice = createSlice({
 			const helper = new StageHelper(state);
 			helper.process();
 		},
+		prevAction: (state, action: PayloadAction<void>) => {
+			const index = findLastIndex(state.stageActions, (x) => UserActionTypes.includes(x.type));
+			state.stageActions = state.stageActions.slice(0, index);
+
+			const helper = new StageHelper(state);
+			helper.process();
+		},
 	},
 });
 
@@ -283,6 +290,7 @@ export const {
 	nextPhase,
 	movePlayerUnit,
 	triggerWrap,
+	prevAction,
 } = stageSlice.actions;
 
 export const getActiveTile = (state: RootState) => state.stage.tiles.find((x) => x.id === state.stage.activeTileId);
