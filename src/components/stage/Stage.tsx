@@ -20,6 +20,7 @@ import {
 	setHexamap,
 	triggerWrap,
 	updatePlayerUnit,
+	prevAction,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
 import { getEnumValue, GetIsWrapTriggerable } from '../../utils';
@@ -90,6 +91,10 @@ export const Stage: React.FC<Props> = (props) => {
 		return playerUnits.length === 0 || cleared;
 	}, [playerUnits.length, cleared]);
 
+	const isPrevActionButtonDisabled = useMemo(() => {
+		return stageActions.length === 0;
+	}, [stageActions.length]);
+
 	const handleChangeAttackType = useCallback(
 		(event: React.ChangeEvent<HTMLSelectElement>) => {
 			const attackType = getEnumValue(AttackType)(event.target.value);
@@ -156,6 +161,10 @@ export const Stage: React.FC<Props> = (props) => {
 		dispatch(nextPhase());
 	}, []);
 
+	const handleClickPrevAction = useCallback(() => {
+		dispatch(prevAction());
+	}, []);
+
 	const handleClickTriggerWrap = useCallback(() => {
 		if (!activePlayerUnit) {
 			return;
@@ -218,6 +227,14 @@ export const Stage: React.FC<Props> = (props) => {
 						onClick={handleClickNextPhase}
 					>
 						next phase
+					</button>
+					<button
+						type="button"
+						className="btn btn-primary"
+						disabled={isPrevActionButtonDisabled}
+						onClick={handleClickPrevAction}
+					>
+						undo
 					</button>
 				</div>
 			</div>
