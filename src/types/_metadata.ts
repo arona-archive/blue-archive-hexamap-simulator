@@ -1,4 +1,5 @@
 import { DefenceType, DifficultyType, EnemyRank, ItemType, MovementType, TileEventType } from '../constants';
+import { IText } from './_localization';
 
 export type IPosition = [number, number];
 
@@ -9,16 +10,19 @@ export interface IMetadata {
 
 export interface ICampaignMetadata {
 	readonly id: number;
+	readonly name: IText;
 	readonly stages: IStageMetadata[];
 }
 
 export interface IEventMetadata {
 	readonly id: number;
+	readonly name: IText;
 	readonly stages: IStageMetadata[];
 }
 
 export interface IStageMetadata {
 	readonly id: number;
+	// readonly name: IText;
 	readonly difficultyType: DifficultyType;
 	readonly starConditions: IStageStarConditionsMetadata;
 }
