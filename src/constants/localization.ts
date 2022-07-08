@@ -1,11 +1,5 @@
 import { IText } from '../types';
 
-export enum LanguageCode {
-	EN = 'en',
-	KO = 'ko',
-	JA = 'ja',
-}
-
 export const emptyText: IText = {
 	en: '',
 	ko: '',

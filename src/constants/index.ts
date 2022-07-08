@@ -1,7 +1,8 @@
 import { IDirection } from '../types';
 
+export * from './_metadata';
+export * from './_localization';
 export * from './localization';
-export * from './metadata';
 
 export enum LocalStorageKey {
 	LANGUAGE_CODE = 'language-code',
