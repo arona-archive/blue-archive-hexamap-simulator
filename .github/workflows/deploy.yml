@@ -12,14 +12,12 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
-      - name: send deploy event
-        uses: slackapi/slack-github-action@v1.18.0
+      - uses: slackapi/slack-github-action@v1.18.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
-      - name: send slack message
-        if: always()
+      - if: always()
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
