@@ -7,11 +7,11 @@ import {
 	StageActionType,
 	TileEventType,
 } from '../constants';
-import { IText } from './_localization';
-import { IPosition } from './_metadata';
+import { IPosition } from './_metadata/hexamapMetadata';
+import { IText } from './_metadata/localizationMetadata';
 
-export * from './_localization';
-export * from './_metadata';
+export * from './_metadata/hexamapMetadata';
+export * from './_metadata/localizationMetadata';
 
 type IDirectionType = -1 | 0 | 1;
 

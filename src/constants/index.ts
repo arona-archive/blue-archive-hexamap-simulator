@@ -1,7 +1,7 @@
 import { IDirection } from '../types';
 
-export * from './_metadata';
-export * from './_localization';
+export * from './_metadata/hexamapMetadata';
+export * from './_metadata/localizationMetadata';
 export * from './localization';
 
 export enum LocalStorageKey {
