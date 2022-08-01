@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { EventNavigation, Page } from '../../components';
-import { DifficultyType, LocalizationTextTable } from '../../constants';
+import { DifficultyType, LocalizationTextKey, LocalizationTextTable } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { getEventName } from '../../utils';
@@ -47,7 +47,7 @@ export const EventPage: React.FC = () => {
 	return (
 		<Page
 			breadcrumbs={[
-				{ name: LocalizationTextTable.main_page, path: '/' },
+				{ name: LocalizationTextTable[LocalizationTextKey.HOME], path: '/' },
 				{ name: getEventName(event.id), path: `/event/${event.id}` },
 			]}
 		>

@@ -1,18 +1,32 @@
 import { useMemo } from 'react';
-import { emptyText } from '../constants';
+import { emptyText, LanguageCode, LocalizationTextKey, LocalizationTextTable } from '../constants';
 import { getLanguageCode } from '../reducers';
 import { IText } from '../types';
 import { useAppSelector } from './useAppSelector';
 
-export const useTranslation = (text?: IText | (() => IText | undefined)) => {
-	const languageCode = useAppSelector(getLanguageCode);
+export const useTranslation = (
+	key?: (LocalizationTextKey | IText) | (() => LocalizationTextKey | IText),
+	languageCode?: LanguageCode
+) => {
+	const appLanguageCode = useAppSelector(getLanguageCode);
 
-	const _text = useMemo<IText>(() => {
-		if (typeof text === 'function') {
-			return text() ?? emptyText;
+	const _languageCode = useMemo(() => {
+		return languageCode ?? appLanguageCode;
+	}, [languageCode, appLanguageCode]);
+
+	const _key = useMemo(() => {
+		if (typeof key === 'function') {
+			return key();
 		}
-		return text ?? emptyText;
-	}, [text]);
+		return key;
+	}, [key]);
 
-	return useMemo(() => _text[languageCode], [_text, languageCode]);
+	const text = useMemo<IText>(() => {
+		if (typeof _key === 'number') {
+			return LocalizationTextTable[_key] ?? emptyText;
+		}
+		return _key ?? emptyText;
+	}, [_key]);
+
+	return useMemo(() => text[_languageCode], [text, languageCode]);
 };

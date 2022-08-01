@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CampaignStageNavigation, Page, Stage } from '../../components';
-import { LocalizationTextTable } from '../../constants';
+import { LocalizationTextKey, LocalizationTextTable } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { IHexaMapMetadata } from '../../types';
@@ -49,7 +49,7 @@ export const CampaignStagePage: React.FC = () => {
 	return (
 		<Page
 			breadcrumbs={[
-				{ name: LocalizationTextTable.main_page, path: '/' },
+				{ name: LocalizationTextTable[LocalizationTextKey.HOME], path: '/' },
 				{ name: getCampaignName(campaignId), path: `/campaign/${campaignId}` },
 				{ name: getStageName(stage.id), path: `/campaign/${campaignId}/${stage.id}` },
 			]}

@@ -1,10 +1,11 @@
 import React, { useCallback, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { LanguageCode, LocalizationTextTable } from '../../constants';
+import { LanguageCode, LocalizationTextKey } from '../../constants';
 import { useAppDispatch, useAppSelector, useTranslation } from '../../hooks';
 import { getLanguageCode, getMetadata, setLanguageCode } from '../../reducers';
-import { getCampaignName, getEventName, getText } from '../../utils';
+import { getCampaignName, getEventName } from '../../utils';
+import { LanguageItem } from './LanguageItem';
 
 const Nav = styled.nav`
 	user-select: none;
@@ -34,13 +35,11 @@ export const Header: React.FC = () => {
 		}));
 	}, [metadata.events, languageCode]);
 
-	const languageItems = useMemo(() => {
-		return Object.values(LanguageCode).map((x) => ({ key: x, label: LocalizationTextTable.language[x] }));
-	}, []);
+	const languageCodes = useMemo(() => Object.values(LanguageCode), []);
 
-	const languageText = useTranslation(LocalizationTextTable.language);
-	const campaignText = useTranslation(getText(1));
-	const eventText = useTranslation(getText(2));
+	const languageText = useTranslation(LocalizationTextKey.LANGUAGES);
+	const campaignText = useTranslation(LocalizationTextKey.CAMPAIGNS);
+	const eventText = useTranslation(LocalizationTextKey.EVENTS);
 
 	const handleClickLanguageCode = useCallback((code: LanguageCode) => {
 		return () => dispatch(setLanguageCode(code));
@@ -126,16 +125,13 @@ export const Header: React.FC = () => {
 								>
 									{languageText}
 								</button>
-								<ul className="dropdown-menu">
-									{languageItems.map((languageItem) => (
-										<li key={languageItem.key}>
-											<a
-												className={`dropdown-item ${languageCode === languageItem.key ? 'current' : ''}`}
-												onClick={handleClickLanguageCode(languageItem.key)}
-											>
-												{languageItem.label}
-											</a>
-										</li>
+								<ul className="dropdown-menu dropdown-menu-end">
+									{languageCodes.map((languageCode) => (
+										<LanguageItem
+											key={languageCode}
+											languageCode={languageCode}
+											onClick={handleClickLanguageCode(languageCode)}
+										/>
 									))}
 								</ul>
 							</li>
