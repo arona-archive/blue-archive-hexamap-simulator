@@ -1,16 +1,11 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
-import { CampaignNavigation, Page } from '../../components';
+import { CampaignNavigation, List, Page } from '../../components';
 import { DifficultyType, LocalizationTextKey, LocalizationTextTable } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { getCampaignName } from '../../utils';
 import { CampaignStageEntry } from './CampaignStageEntry';
-
-const ListHeader = styled.div`
-	user-select: none;
-`;
 
 export const CampaignPage: React.FC = () => {
 	const params = useParams<{ campaignId: string }>();
@@ -52,18 +47,16 @@ export const CampaignPage: React.FC = () => {
 			]}
 		>
 			<CampaignNavigation campaignId={campaign.id} />
-			<div className="list-group">
-				<ListHeader className="list-group-item list-group-item-primary">Normal</ListHeader>
+			<List title="Normal">
 				{normalStages.map((stage) => (
 					<CampaignStageEntry key={stage.id} campaignId={campaign.id} stageId={stage.id} />
 				))}
-			</div>
-			<div className="list-group">
-				<ListHeader className="list-group-item list-group-item-primary">Hard</ListHeader>
+			</List>
+			<List title="Hard">
 				{hardStages.map((stage) => (
 					<CampaignStageEntry key={stage.id} campaignId={campaign.id} stageId={stage.id} />
 				))}
-			</div>
+			</List>
 		</Page>
 	);
 };

@@ -25,6 +25,7 @@ import {
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
 import { getEnumValue, GetIsWrapTriggerable } from '../../utils';
 import { HexaMap } from '../hexa-map';
+import { List } from '../list';
 
 const HexamapWrapper = styled.div`
 	padding: ${TILE_SIZE}px;
@@ -251,14 +252,13 @@ export const Stage: React.FC<Props> = (props) => {
 					</div>
 				</div>
 			)}
-			<div className="list-group">
-				<div className="list-group-item list-group-item-primary">stage actions</div>
+			<List title="stage actions">
 				{stageActions.map((x, i) => (
 					<div key={i} className="list-group-item">
 						<pre>{JSON.stringify(x, null, 2)}</pre>
 					</div>
 				))}
-			</div>
+			</List>
 		</>
 	);
 };

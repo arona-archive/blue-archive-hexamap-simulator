@@ -1,16 +1,11 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
-import { EventNavigation, Page } from '../../components';
+import { EventNavigation, List, Page } from '../../components';
 import { DifficultyType, LocalizationTextKey, LocalizationTextTable } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { getEventName } from '../../utils';
 import { EventStageEntry } from './EventStageEntry';
-
-const ListHeader = styled.div`
-	user-select: none;
-`;
 
 export const EventPage: React.FC = () => {
 	const params = useParams<{ eventId: string }>();
@@ -53,20 +48,18 @@ export const EventPage: React.FC = () => {
 		>
 			<EventNavigation eventId={event.id} />
 			{questStages.length > 0 && (
-				<div className="list-group">
-					<ListHeader className="list-group-item list-group-item-primary">Quest</ListHeader>
+				<List title="Quest">
 					{questStages.map((stage) => (
 						<EventStageEntry key={stage.id} eventId={event.id} stageId={stage.id} />
 					))}
-				</div>
+				</List>
 			)}
 			{challengeStages.length > 0 && (
-				<div className="list-group">
-					<ListHeader className="list-group-item list-group-item-primary">Challenge</ListHeader>
+				<List title="Challenge">
 					{challengeStages.map((stage) => (
 						<EventStageEntry key={stage.id} eventId={event.id} stageId={stage.id} />
 					))}
-				</div>
+				</List>
 			)}
 		</Page>
 	);
