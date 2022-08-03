@@ -1,4 +1,4 @@
-import { emptyText, LanguageCode, LocalizationTextTable, LocalStorageKey, LocalizationTextKey } from '../constants';
+import { emptyText, EventNameLocalizationTable, LanguageCode, LocalizationKey, LocalStorageKey } from '../constants';
 import { IText } from '../types';
 import { getEnumValue } from './globalUtils';
 
@@ -26,8 +26,8 @@ export const getCampaignName = (campaignId: number): IText => {
 	};
 };
 
-export const getEventName = (eventId: LocalizationTextKey): IText => {
-	return LocalizationTextTable[eventId] ?? emptyText;
+export const getEventName = (eventId: LocalizationKey): IText => {
+	return EventNameLocalizationTable[eventId] ?? emptyText;
 };
 
 export const getStageName = (stageId: number): IText => {

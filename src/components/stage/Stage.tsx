@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import { AttackType, TILE_SIZE } from '../../constants';
+import { AttackType, LocalizationKey, TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
 	addPlayerUnit,
@@ -252,7 +252,7 @@ export const Stage: React.FC<Props> = (props) => {
 					</div>
 				</div>
 			)}
-			<List title="stage actions">
+			<List titleKey={LocalizationKey.STAGE_ACTIONS}>
 				{stageActions.map((x, i) => (
 					<div key={i} className="list-group-item">
 						<pre>{JSON.stringify(x, null, 2)}</pre>

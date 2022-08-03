@@ -3,7 +3,7 @@ export const getEnumValue = <T extends string, TEnum extends string>(value: { [k
 	return (value?: string): TEnum | null => (enumValues.includes(value) ? (value as TEnum) : null);
 };
 
-export const isNotNullable = <T extends object>(value: T | undefined): value is NonNullable<T> => {
+export const isNotNullable = <T extends object>(value: T | null | undefined): value is NonNullable<T> => {
 	return !!value;
 };
 

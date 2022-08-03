@@ -1,5 +1,5 @@
 import React from 'react';
-import { LanguageCode, LocalizationTextKey } from '../../constants';
+import { LanguageCode, LocalizationKey } from '../../constants';
 import { useAppSelector, useTranslation } from '../../hooks';
 import { getLanguageCode } from '../../reducers';
 
@@ -12,7 +12,7 @@ export const LanguageItem: React.FC<IProps> = (props) => {
 	const { languageCode, onClick } = props;
 
 	const appLanguageCode = useAppSelector(getLanguageCode);
-	const label = useTranslation(LocalizationTextKey.LANGUAGES, languageCode);
+	const label = useTranslation(LocalizationKey.LANGUAGES, languageCode);
 
 	const handleClick = () => {
 		onClick();
@@ -20,7 +20,7 @@ export const LanguageItem: React.FC<IProps> = (props) => {
 
 	return (
 		<li key={languageCode}>
-			<a className={`dropdown-item ${languageCode === appLanguageCode ? 'current' : ''}`} onClick={handleClick}>
+			<a className={`dropdown-item ${languageCode === appLanguageCode && 'current'}`} onClick={handleClick}>
 				{label}
 			</a>
 		</li>

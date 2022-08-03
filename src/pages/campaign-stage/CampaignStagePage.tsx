@@ -1,11 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CampaignStageNavigation, Page, Stage } from '../../components';
-import { LocalizationTextKey, LocalizationTextTable } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { IHexaMapMetadata } from '../../types';
-import { getCampaignName, getStageName } from '../../utils';
 
 export const CampaignStagePage: React.FC = () => {
 	const params = useParams<{ campaignId: string; stageId: string }>();
@@ -47,13 +45,7 @@ export const CampaignStagePage: React.FC = () => {
 	}
 
 	return (
-		<Page
-			breadcrumbs={[
-				{ name: LocalizationTextTable[LocalizationTextKey.HOME], path: '/' },
-				{ name: getCampaignName(campaignId), path: `/campaign/${campaignId}` },
-				{ name: getStageName(stage.id), path: `/campaign/${campaignId}/${stage.id}` },
-			]}
-		>
+		<Page>
 			<CampaignStageNavigation campaignId={campaignId} stageId={stage.id} />
 			{hexamap && <Stage stage={stage} hexamap={hexamap} />}
 		</Page>

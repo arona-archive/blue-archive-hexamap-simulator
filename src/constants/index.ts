@@ -4,6 +4,8 @@ export * from './_metadata/hexamapMetadata';
 export * from './_metadata/localizationMetadata';
 export * from './localization';
 
+export const APP_TITLE = 'blue-archive-hexamap-simulator';
+
 export enum LocalStorageKey {
 	LANGUAGE_CODE = 'language-code',
 }

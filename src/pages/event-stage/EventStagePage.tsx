@@ -1,11 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { EventStageNavigation, Page, Stage } from '../../components';
-import { LocalizationTextKey, LocalizationTextTable } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { IHexaMapMetadata } from '../../types';
-import { getEventName, getStageName } from '../../utils';
 
 export const EventStagePage: React.FC = () => {
 	const params = useParams<{ eventId: string; stageId: string }>();
@@ -45,13 +43,7 @@ export const EventStagePage: React.FC = () => {
 	}
 
 	return (
-		<Page
-			breadcrumbs={[
-				{ name: LocalizationTextTable[LocalizationTextKey.HOME], path: '/' },
-				{ name: getEventName(eventId), path: `/event/${eventId}` },
-				{ name: getStageName(stage.id), path: `/event/${eventId}/${stage.id}` },
-			]}
-		>
+		<Page>
 			<EventStageNavigation eventId={eventId} stageId={stage.id} />
 			{hexamap && <Stage stage={stage} hexamap={hexamap} />}
 		</Page>

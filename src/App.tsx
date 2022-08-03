@@ -12,7 +12,7 @@ export const App: React.FC = () => {
 				<Header />
 				<Routes>
 					{routes.map((route) => (
-						<Route key={route.name} {...route} />
+						<Route key={route.path} {...route} />
 					))}
 					<Route path="*" element={<Navigate to={routes[0]?.path || '/'} replace={true} />} />
 				</Routes>

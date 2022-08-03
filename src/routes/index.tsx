@@ -1,20 +1,37 @@
 import React from 'react';
+import { LocalizationKey } from '../constants';
 import { CampaignStagePage, EventStagePage, MainPage } from '../pages';
 import { CampaignPage } from '../pages/campaign/CampaignPage';
 import { EventPage } from '../pages/event/EventPage';
 
-export interface Route {
+export interface IRoute {
 	index?: boolean;
 	path: string;
-	name: string;
+	localizationKey: LocalizationKey;
 	root?: boolean;
 	element: React.ReactNode;
 }
 
-export const routes: Route[] = [
-	{ path: '/', name: 'main', index: true, root: false, element: <MainPage /> },
-	{ path: '/campaign/:campaignId', name: 'campaign stages', element: <CampaignPage /> },
-	{ path: '/campaign/:campaignId/:stageId', name: 'campaign stage', element: <CampaignStagePage /> },
-	{ path: '/event/:eventId', name: 'event stages', element: <EventPage /> },
-	{ path: '/event/:eventId/:stageId', name: 'event stage', element: <EventStagePage /> },
+export const routes: IRoute[] = [
+	{ path: '/', localizationKey: LocalizationKey.HOME, index: true, root: false, element: <MainPage /> },
+	{
+		path: '/campaign/:campaignId',
+		localizationKey: LocalizationKey.CAMPAIGN_NAME,
+		element: <CampaignPage />,
+	},
+	{
+		path: '/campaign/:campaignId/:stageId',
+		localizationKey: LocalizationKey.CAMPAIGN_STAGE_NAME,
+		element: <CampaignStagePage />,
+	},
+	{
+		path: '/event/:eventId',
+		localizationKey: LocalizationKey.EVENT_NAME,
+		element: <EventPage />,
+	},
+	{
+		path: '/event/:eventId/:stageId',
+		localizationKey: LocalizationKey.EVENT_STAGE_NAME,
+		element: <EventStagePage />,
+	},
 ];

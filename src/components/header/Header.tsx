@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { LanguageCode, LocalizationTextKey } from '../../constants';
+import { LanguageCode, LocalizationKey } from '../../constants';
 import { useAppDispatch, useAppSelector, useTranslation } from '../../hooks';
 import { getLanguageCode, getMetadata, setLanguageCode } from '../../reducers';
 import { getCampaignName, getEventName } from '../../utils';
@@ -37,9 +37,9 @@ export const Header: React.FC = () => {
 
 	const languageCodes = useMemo(() => Object.values(LanguageCode), []);
 
-	const languageText = useTranslation(LocalizationTextKey.LANGUAGES);
-	const campaignText = useTranslation(LocalizationTextKey.CAMPAIGNS);
-	const eventText = useTranslation(LocalizationTextKey.EVENTS);
+	const languageText = useTranslation(LocalizationKey.LANGUAGES);
+	const campaignText = useTranslation(LocalizationKey.CAMPAIGNS);
+	const eventText = useTranslation(LocalizationKey.EVENTS);
 
 	const handleClickLanguageCode = useCallback((code: LanguageCode) => {
 		return () => dispatch(setLanguageCode(code));

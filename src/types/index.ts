@@ -3,6 +3,7 @@ import {
 	DefenceType,
 	EnemyRank,
 	ItemType,
+	LocalizationKey,
 	MovementType,
 	StageActionType,
 	TileEventType,
@@ -142,4 +143,10 @@ export interface IDelayedStageAction {
 export interface INavigationPath {
 	path: string;
 	name: IText;
+}
+
+export interface IBreadcrumb {
+	active: boolean;
+	path: string;
+	localizationKey: LocalizationKey;
 }

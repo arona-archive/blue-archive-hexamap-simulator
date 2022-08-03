@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { CampaignNavigation, List, Page } from '../../components';
-import { DifficultyType, LocalizationTextKey, LocalizationTextTable } from '../../constants';
+import { DifficultyType, LocalizationKey } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
-import { getCampaignName } from '../../utils';
 import { CampaignStageEntry } from './CampaignStageEntry';
 
 export const CampaignPage: React.FC = () => {
@@ -40,19 +39,14 @@ export const CampaignPage: React.FC = () => {
 	}
 
 	return (
-		<Page
-			breadcrumbs={[
-				{ name: LocalizationTextTable[LocalizationTextKey.HOME], path: '/' },
-				{ name: getCampaignName(campaign.id), path: `/campaign/${campaign.id}` },
-			]}
-		>
+		<Page>
 			<CampaignNavigation campaignId={campaign.id} />
-			<List title="Normal">
+			<List titleKey={LocalizationKey.NORMAL}>
 				{normalStages.map((stage) => (
 					<CampaignStageEntry key={stage.id} campaignId={campaign.id} stageId={stage.id} />
 				))}
 			</List>
-			<List title="Hard">
+			<List titleKey={LocalizationKey.HARD}>
 				{hardStages.map((stage) => (
 					<CampaignStageEntry key={stage.id} campaignId={campaign.id} stageId={stage.id} />
 				))}

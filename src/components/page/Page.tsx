@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
-import { Helmet } from 'react-helmet';
 import { matchPath, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { useAppSelector } from '../../hooks';
 import { getLanguageCode } from '../../reducers';
 import { routes } from '../../routes';
-import { INavigationPath } from '../../types';
+import { IBreadcrumb } from '../../types';
+import { Breadcrumb } from './Breadcrumb';
 
 const Root = styled.div`
 	margin-top: 24px;
@@ -26,49 +26,51 @@ const Container = styled.div`
 `;
 
 interface Props {
-	breadcrumbs: INavigationPath[];
 	children?: React.ReactNode;
 }
 
 export const Page: React.FC<Props> = (props) => {
-	const { breadcrumbs } = props;
-
 	const languageCode = useAppSelector(getLanguageCode);
 
 	const location = useLocation();
 
-	const siteTitle = useMemo(() => {
-		const title = 'blue-archive-hexamap-simulator';
-		const subTitle = routes.find((x) => !!matchPath(x.path, location.pathname))?.name;
-		return subTitle ? `${title} | ${subTitle}` : title;
-	}, [location]);
+	const breadcrumbs = useMemo<IBreadcrumb[]>(() => {
+		const breadcrumbs: IBreadcrumb[] = [];
 
-	const bredcrumbItems = useMemo(() => {
-		return breadcrumbs.map((breadcrumb, index) => ({
-			key: index,
-			label: breadcrumb.name[languageCode],
-			path: breadcrumb.path,
-		}));
-	}, [breadcrumbs, languageCode]);
+		let pathname = location.pathname;
+		while (true) {
+			const route = routes.find((route) => matchPath(route.path, pathname));
+			if (route) {
+				const breadcrumb: IBreadcrumb = {
+					active: pathname === location.pathname,
+					path: pathname,
+					localizationKey: route.localizationKey,
+				};
+				breadcrumbs.push(breadcrumb);
+			}
+
+			if (pathname === '/') {
+				break;
+			}
+
+			const index = pathname.lastIndexOf('/');
+			if (index === 0) {
+				pathname = '/';
+				continue;
+			}
+			pathname = pathname.slice(0, index);
+		}
+
+		return breadcrumbs.reverse();
+	}, [languageCode]);
 
 	return (
 		<Root className="container-lg">
-			<Helmet>
-				<title>{siteTitle}</title>
-			</Helmet>
 			<Breadcrumbs aria-label="breadcrumb">
 				<ol className="breadcrumb">
-					{bredcrumbItems.map((bredcrumbItem, index) =>
-						bredcrumbItems.length - 1 === index ? (
-							<li key={bredcrumbItem.key} className="breadcrumb-item active">
-								{bredcrumbItem.label}
-							</li>
-						) : (
-							<li key={index} className="breadcrumb-item">
-								<a href={bredcrumbItem.path}>{bredcrumbItem.label}</a>
-							</li>
-						)
-					)}
+					{breadcrumbs.map((breadcrumb, index) => (
+						<Breadcrumb key={breadcrumb.path} breadcrumb={breadcrumb} active={breadcrumbs.length - 1 === index} />
+					))}
 				</ol>
 			</Breadcrumbs>
 			<Container>{props.children}</Container>

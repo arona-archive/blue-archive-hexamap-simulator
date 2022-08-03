@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { EventNavigation, List, Page } from '../../components';
-import { DifficultyType, LocalizationTextKey, LocalizationTextTable } from '../../constants';
+import { DifficultyType, LocalizationKey } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
-import { getEventName } from '../../utils';
 import { EventStageEntry } from './EventStageEntry';
 
 export const EventPage: React.FC = () => {
@@ -40,22 +39,17 @@ export const EventPage: React.FC = () => {
 	}
 
 	return (
-		<Page
-			breadcrumbs={[
-				{ name: LocalizationTextTable[LocalizationTextKey.HOME], path: '/' },
-				{ name: getEventName(event.id), path: `/event/${event.id}` },
-			]}
-		>
+		<Page>
 			<EventNavigation eventId={event.id} />
 			{questStages.length > 0 && (
-				<List title="Quest">
+				<List titleKey={LocalizationKey.QUEST}>
 					{questStages.map((stage) => (
 						<EventStageEntry key={stage.id} eventId={event.id} stageId={stage.id} />
 					))}
 				</List>
 			)}
 			{challengeStages.length > 0 && (
-				<List title="Challenge">
+				<List titleKey={LocalizationKey.CHALLENGE}>
 					{challengeStages.map((stage) => (
 						<EventStageEntry key={stage.id} eventId={event.id} stageId={stage.id} />
 					))}
