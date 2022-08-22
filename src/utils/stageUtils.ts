@@ -1,4 +1,6 @@
-import { TileEventType } from '../constants';
+import { STAGE_ACTIONS_SHARE_PREFIX, TileEventType } from '../constants';
+import { ShareHelper } from '../helpers';
+import { DatabaseService } from '../services';
 import {
 	ITile,
 	IPosition,
@@ -10,6 +12,7 @@ import {
 	ITileEventMetadata,
 	ITileEvent,
 	IPlayerUnit,
+	IStageAction,
 } from '../types';
 import { isUnitPositionEquals } from './tileUtils';
 

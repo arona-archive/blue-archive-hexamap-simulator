@@ -5,9 +5,11 @@ import {
 	getCurrentPhase,
 	getPlayerUnits,
 	getStageActions,
+	initializeStage,
 	nextPhase,
 	prevAction,
 	prevPhase,
+	setStageActions,
 } from '../../reducers';
 
 export const StageActionMenu: React.FC = () => {
@@ -38,6 +40,10 @@ export const StageActionMenu: React.FC = () => {
 		dispatch(nextPhase());
 	}, []);
 
+	const handleClickResetStageActions = useCallback(() => {
+		dispatch(setStageActions([]));
+	}, []);
+
 	const handleClickPrevAction = useCallback(() => {
 		dispatch(prevAction());
 	}, []);
@@ -66,6 +72,14 @@ export const StageActionMenu: React.FC = () => {
 			</div>
 			<div className="row">
 				<div className="col-12 btn-group">
+					<button
+						type="button"
+						className="btn btn-outline-primary"
+						disabled={stageActions.length === 0}
+						onClick={handleClickResetStageActions}
+					>
+						reset
+					</button>
 					<button
 						type="button"
 						className="btn btn-outline-primary"

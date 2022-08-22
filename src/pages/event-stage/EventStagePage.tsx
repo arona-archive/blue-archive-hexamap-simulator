@@ -6,11 +6,11 @@ import { getMetadata } from '../../reducers';
 import { IHexaMapMetadata } from '../../types';
 
 export const EventStagePage: React.FC = () => {
+	const [hexamap, setHexamap] = useState<IHexaMapMetadata | null>(null);
+
 	const params = useParams<{ eventId: string; stageId: string }>();
 
 	const metadata = useAppSelector(getMetadata);
-
-	const [hexamap, setHexamap] = useState<IHexaMapMetadata | null>(null);
 
 	const eventId = useMemo(() => {
 		if (!params.eventId) {
@@ -32,6 +32,7 @@ export const EventStagePage: React.FC = () => {
 		if (!stageId) {
 			return;
 		}
+
 		(async () => {
 			const hexamap = await import(`../../_data/hexamaps/${stageId}.json`);
 			setHexamap(hexamap);

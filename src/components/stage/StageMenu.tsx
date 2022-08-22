@@ -20,25 +20,21 @@ import { StateTypeButton } from './StateTypeButton';
 
 interface Props {
 	stage: IStageMetadata;
+	currentPhase: number;
 	attackType: AttackType;
+	battleCount: number;
 	onChangeAttackType: (attackType: AttackType) => void;
 	onClickTriggerWrap: () => void;
 }
 
 export const StageMenu: React.FC<Props> = (props) => {
-	const { stage, attackType, onChangeAttackType, onClickTriggerWrap } = props;
+	const { stage, currentPhase, attackType, battleCount, onChangeAttackType, onClickTriggerWrap } = props;
 
-	const currentPhase = useAppSelector(getCurrentPhase);
 	const playerUnits = useAppSelector(getPlayerUnits);
 	const enemyUnits = useAppSelector(getEnemyUnits);
 	const tileEvents = useAppSelector(getTileEvents);
-	const stageActions = useAppSelector(getStageActions);
 	const cleared = useAppSelector(getCleared);
 	const activePlayerUnit = useAppSelector(getActivePlayerUnit);
-
-	const battleCount = useMemo(() => {
-		return stageActions.filter((x) => x.type === StageActionType.BATTLE).length;
-	}, [stageActions]);
 
 	const isPlayerUnitAttackTypeMutable = useMemo(() => {
 		return !!activePlayerUnit && currentPhase === 0;

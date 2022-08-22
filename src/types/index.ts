@@ -150,3 +150,11 @@ export interface IBreadcrumb {
 	path: string;
 	localizationKey: LocalizationKey;
 }
+
+export type IStageStars = [boolean, boolean, boolean];
+
+export interface IStageSolution {
+	stageId: number;
+	stageActions: IStageAction[];
+	stars: IStageStars;
+}

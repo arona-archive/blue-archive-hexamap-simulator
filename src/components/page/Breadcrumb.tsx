@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { APP_TITLE, LocalizationKey } from '../../constants';
+import { APP_NAME, LocalizationKey } from '../../constants';
 import { useAppSelector, useTranslation } from '../../hooks';
 import { getLanguageCode } from '../../reducers';
 import { IBreadcrumb } from '../../types';
@@ -43,7 +43,7 @@ export const Breadcrumb: React.FC<IProps> = (props) => {
 		}
 	}, [languageCode, breadcrumb, text]);
 
-	const siteTitle = useMemo(() => `${APP_TITLE} | ${_text}`, [_text]);
+	const siteTitle = useMemo(() => `${APP_NAME} | ${_text}`, [_text]);
 
 	return (
 		<>
