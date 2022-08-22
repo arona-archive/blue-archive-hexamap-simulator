@@ -1,7 +1,7 @@
 import { getEnumValue } from '@sapphire-sh/utils';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import { AttackType, LocalizationKey, StageActionType, TILE_SIZE } from '../../constants';
+import { AttackType, LocalizationKey, StageActionType } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
 	addPlayerUnit,
@@ -30,7 +30,7 @@ import { List } from '../list';
 import { MissionObjectiveList } from './MissionObjectiveList';
 
 const HexamapWrapper = styled.div`
-	padding: ${TILE_SIZE}px;
+	padding: 48px 24px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

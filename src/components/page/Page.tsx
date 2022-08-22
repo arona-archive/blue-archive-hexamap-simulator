@@ -62,7 +62,7 @@ export const Page: React.FC<Props> = (props) => {
 		}
 
 		return breadcrumbs.reverse();
-	}, [languageCode]);
+	}, [location, languageCode]);
 
 	return (
 		<Root className="container-lg">

@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Root = styled.div`
+	user-select: none;
+`;
+
 const StarWrapper = styled.span`
 	margin-right: 8px;
 `;
@@ -14,9 +18,9 @@ export const MissionObjectiveListEntry: React.FC<Props> = (props) => {
 	const { hidden, label } = props;
 
 	return (
-		<div className="list-group-item">
+		<Root className="list-group-item">
 			<StarWrapper>{hidden ? '☆' : '⭐️'}</StarWrapper>
 			<span>{label}</span>
-		</div>
+		</Root>
 	);
 };

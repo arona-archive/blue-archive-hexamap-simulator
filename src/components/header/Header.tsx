@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { LanguageCode, LocalizationKey } from '../../constants';
 import { useAppDispatch, useAppSelector, useTranslation } from '../../hooks';
@@ -48,9 +48,9 @@ export const Header: React.FC = () => {
 	return (
 		<header className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 			<Nav className="container-lg">
-				<a className="navbar-brand" href="/">
+				<Link className="navbar-brand" to="/">
 					blue-archive-hexamap-simulator
-				</a>
+				</Link>
 				<button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
 					<span className="navbar-toggler-icon"></span>
 				</button>
@@ -80,12 +80,12 @@ export const Header: React.FC = () => {
 								<ul className="dropdown-menu">
 									{campaignItems.map((campaignItem) => (
 										<li key={campaignItem.key}>
-											<a
+											<Link
 												className={`dropdown-item ${location.pathname.startsWith(campaignItem.path) ? 'current' : ''}`}
-												href={campaignItem.path}
+												to={campaignItem.path}
 											>
 												{campaignItem.label}
-											</a>
+											</Link>
 										</li>
 									))}
 								</ul>
@@ -102,12 +102,12 @@ export const Header: React.FC = () => {
 								<ul className="dropdown-menu">
 									{eventItems.map((eventItem) => (
 										<li key={eventItem.key}>
-											<a
+											<Link
 												className={`dropdown-item ${location.pathname.startsWith(eventItem.path) ? 'current' : ''}`}
-												href={eventItem.path}
+												to={eventItem.path}
 											>
 												{eventItem.label}
-											</a>
+											</Link>
 										</li>
 									))}
 								</ul>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useTranslation } from '../../hooks';
 import { INavigationPath } from '../../types';
@@ -27,18 +28,18 @@ export const Navigation: React.FC<Props> = (props) => {
 			<ul className="pagination">
 				<ListItem className="page-item w-50">
 					{prev ? (
-						<a className="page-link" href={prev.path}>
+						<Link className="page-link" to={prev.path}>
 							{prevName}
-						</a>
+						</Link>
 					) : (
 						<div className="page-link disabled">-</div>
 					)}
 				</ListItem>
 				<ListItem className="page-item w-50">
 					{next ? (
-						<a className="page-link" href={next.path}>
+						<Link className="page-link" to={next.path}>
 							{nextName}
-						</a>
+						</Link>
 					) : (
 						<div className="page-link disabled">-</div>
 					)}

@@ -20,9 +20,9 @@ export const LanguageItem: React.FC<IProps> = (props) => {
 
 	return (
 		<li key={languageCode}>
-			<a className={`dropdown-item ${languageCode === appLanguageCode && 'current'}`} onClick={handleClick}>
+			<p className={`dropdown-item ${languageCode === appLanguageCode && 'current'}`} onClick={handleClick}>
 				{label}
-			</a>
+			</p>
 		</li>
 	);
 };
