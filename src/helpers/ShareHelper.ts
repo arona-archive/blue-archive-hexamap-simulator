@@ -7,7 +7,6 @@ export class ShareHelper {
 			version: STAGE_ACTIONS_VERSION,
 			data: stageActions,
 		});
-		console.log(p);
 		const q = encodeURIComponent(window.btoa(p));
 		return q;
 	}

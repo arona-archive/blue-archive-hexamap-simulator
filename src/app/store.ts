@@ -1,14 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import metadata from '../_data/metadata.json';
-import { LocalStorageKey } from '../constants';
+import { LocalStorageKey, StateType } from '../constants';
 import { mainReducer, metadataReducer, stageReducer } from '../reducers';
 import { IMetadata } from '../types';
 import { getDefaultDebugFlag, getDefaultLanguageCode } from '../utils';
+import metadata from '../_data/metadata.json';
 
 export const store = configureStore({
 	preloadedState: {
 		main: {
 			languageCode: getDefaultLanguageCode(),
+			stateType: StateType.EDIT,
 			debugFlag: getDefaultDebugFlag(),
 		},
 		metadata: {

@@ -46,3 +46,9 @@ p + p {
 .btn-close {
 	filter: invert(1) grayscale(100%) brightness(200%);
 }
+
+.btn:focus,
+.page-link:focus {
+	outline: none;
+	box-shadow: none;
+}

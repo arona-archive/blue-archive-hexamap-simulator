@@ -8,7 +8,7 @@ export const ShareButton: React.FC = () => {
 	};
 
 	return (
-		<button type="button" className="btn btn-primary w-100" onClick={handleClick}>
+		<button type="button" className="btn btn-outline-primary w-100" onClick={handleClick}>
 			share
 		</button>
 	);

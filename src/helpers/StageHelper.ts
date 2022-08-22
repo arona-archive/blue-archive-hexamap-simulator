@@ -303,13 +303,11 @@ export class StageHelper {
 						return;
 					}
 					case TileEventType.SWITCH_TILE: {
-						console.log('tileEvent', JSON.stringify(tileEvent));
 						if (!tileEvent.active) {
 							return;
 						}
 
 						const targetTileEvent = this.state.tileEvents.find((x) => x.id === tileEvent.targetEventTileId);
-						console.log('targetTileEvent', JSON.stringify(targetTileEvent));
 						if (!targetTileEvent) {
 							return;
 						}

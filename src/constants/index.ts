@@ -42,6 +42,11 @@ export const DIRECTIONS: [IDirection, IDirection, IDirection, IDirection, IDirec
 	},
 ];
 
+export enum StateType {
+	EDIT = 'edit',
+	REPLAY = 'replay',
+}
+
 export enum StageActionType {
 	NEXT_PHASE = 'NEXT_PHASE',
 	ADD_PLAYER_UNIT = 'ADD_PLAYER_UNIT',

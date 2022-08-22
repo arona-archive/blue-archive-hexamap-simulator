@@ -286,7 +286,7 @@ const stageSlice = createSlice({
 });
 
 export const {
-	initialize,
+	initialize: initializeStage,
 	setHexamap,
 	setStageActions,
 	selectTile,

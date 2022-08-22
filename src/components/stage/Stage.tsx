@@ -1,37 +1,31 @@
-import { getEnumValue } from '@sapphire-sh/utils';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { AttackType, LocalizationKey, StageActionType, STAGE_ACTIONS_SHARE_PREFIX } from '../../constants';
+import { LocalizationKey, STAGE_ACTIONS_SHARE_PREFIX, StateType } from '../../constants';
 import { ShareHelper } from '../../helpers';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
-	addPlayerUnit,
 	getActivePlayerUnit,
 	getCleared,
 	getCurrentPhase,
 	getEnemyUnits,
-	getItemUnits,
 	getPlayerUnits,
 	getStageActions,
 	getTileEvents,
-	getTiles,
-	initialize,
-	movePlayerUnit,
+	initializeStage,
 	nextPhase,
 	prevAction,
 	prevPhase,
 	setHexamap,
 	setStageActions,
+	setStateType,
 	triggerWrap,
-	updatePlayerUnit,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
 import { getIsWrapTriggerable } from '../../utils';
-import { HexaMap } from '../hexa-map';
 import { List } from '../list';
-import { MissionObjectiveList } from './MissionObjectiveList';
-import { ShareButton } from './ShareButton';
+import { StageHexaMap } from './StageHexaMap';
+import { StageMenu } from './StageMenu';
 
 const Root = styled.div`
 	margin-top: 24px;
@@ -65,15 +59,11 @@ export const Stage: React.FC<Props> = (props) => {
 	const location = useLocation();
 	const navigate = useNavigate();
 
-	const [attackType, setAttackType] = useState(AttackType.EXPLOSIVE);
-
 	const activePlayerUnit = useAppSelector(getActivePlayerUnit);
 
 	const currentPhase = useAppSelector(getCurrentPhase);
-	const tiles = useAppSelector(getTiles);
 	const playerUnits = useAppSelector(getPlayerUnits);
 	const enemyUnits = useAppSelector(getEnemyUnits);
-	const itemUnits = useAppSelector(getItemUnits);
 	const tileEvents = useAppSelector(getTileEvents);
 	const stageActions = useAppSelector(getStageActions);
 	const cleared = useAppSelector(getCleared);
@@ -81,20 +71,10 @@ export const Stage: React.FC<Props> = (props) => {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		dispatch(initialize());
+		dispatch(setStateType(StateType.EDIT));
+		dispatch(initializeStage());
 		dispatch(setHexamap(hexamap));
 	}, [hexamap]);
-
-	useEffect(() => {
-		if (!activePlayerUnit) {
-			return;
-		}
-		if (activePlayerUnit.attackType === attackType) {
-			return;
-		}
-
-		setAttackType(activePlayerUnit.attackType);
-	}, [activePlayerUnit]);
 
 	useEffect(() => {
 		if (!location.hash.startsWith(STAGE_ACTIONS_SHARE_PREFIX)) {
@@ -113,11 +93,7 @@ export const Stage: React.FC<Props> = (props) => {
 		const helper = new ShareHelper();
 		const data = helper.encode(stageActions);
 		navigate(`${STAGE_ACTIONS_SHARE_PREFIX}${data}`);
-	}, [stageActions])
-
-	const isPlayerUnitAttackTypeMutable = useMemo(() => {
-		return !!activePlayerUnit && currentPhase === 0;
-	}, [activePlayerUnit, currentPhase]);
+	}, [stageActions]);
 
 	const isWrapTriggable = useMemo(() => {
 		if (!activePlayerUnit) {
@@ -137,69 +113,6 @@ export const Stage: React.FC<Props> = (props) => {
 	const isPrevActionButtonDisabled = useMemo(() => {
 		return stageActions.length === 0;
 	}, [stageActions.length]);
-
-	const battleCount = useMemo(
-		() => stageActions.filter((x) => x.type === StageActionType.BATTLE).length,
-		[stageActions]
-	);
-
-	const handleChangeAttackType = useCallback(
-		(event: React.ChangeEvent<HTMLSelectElement>) => {
-			const attackType = getEnumValue(AttackType)(event.target.value);
-			if (!attackType) {
-				return;
-			}
-
-			setAttackType(attackType);
-
-			if (!activePlayerUnit) {
-				return;
-			}
-			if (activePlayerUnit.attackType === attackType) {
-				return;
-			}
-
-			dispatch(
-				updatePlayerUnit({
-					id: activePlayerUnit.id,
-					attackType,
-				})
-			);
-		},
-		[activePlayerUnit]
-	);
-
-	const handleClickTile = useCallback(
-		(tileId: number) => {
-			const tile = tiles.find((x) => x.id === tileId);
-			if (!tile) {
-				return;
-			}
-
-			if (currentPhase === 0) {
-				dispatch(
-					addPlayerUnit({
-						attackType,
-						position: tile.position,
-					})
-				);
-
-				return;
-			}
-
-			if (!activePlayerUnit) {
-				return;
-			}
-
-			dispatch(
-				movePlayerUnit({
-					id: activePlayerUnit.id,
-					position: tile.position,
-				})
-			);
-		},
-		[activePlayerUnit, currentPhase, tiles]
-	);
 
 	const handleClickPrevPhase = useCallback(() => {
 		dispatch(prevPhase());
@@ -224,48 +137,12 @@ export const Stage: React.FC<Props> = (props) => {
 		<Root>
 			<div className="row">
 				<HexamapWrapper className="col-9">
-					<HexaMap
-						tiles={tiles}
-						playerUnits={playerUnits}
-						enemyUnits={enemyUnits}
-						itemUnits={itemUnits}
-						tileEvents={tileEvents}
-						onClickTile={handleClickTile}
-					/>
+					<StageHexaMap hexamap={hexamap} />
 				</HexamapWrapper>
 				<MenuWrapper className="col-3">
-					<MissionObjectiveList
-						currentPhase={currentPhase}
-						battleCount={battleCount}
-						cleared={cleared}
-						starConditions={stage.starConditions}
-					/>
-					<ShareButton />
+					<StageMenu stage={stage} />
 				</MenuWrapper>
 			</div>
-			{isPlayerUnitAttackTypeMutable && (
-				<div className="row">
-					<div className="col">
-						<form className="form-inline">
-							<div className="form-group">
-								<label htmlFor="attack_type">attack type</label>
-								<select
-									className="form-control"
-									name="attack_type"
-									value={attackType}
-									onChange={handleChangeAttackType}
-								>
-									{Object.values(AttackType).map((x) => (
-										<option key={x} value={x}>
-											{x}
-										</option>
-									))}
-								</select>
-							</div>
-						</form>
-					</div>
-				</div>
-			)}
 			<div className="row">
 				<div className="col-12">{`current phase=${currentPhase}`}</div>
 				<div className="col-12 btn-group">
