@@ -83,7 +83,7 @@ export const Stage: React.FC<Props> = (props) => {
 	useEffect(() => {
 		const helper = new ShareHelper();
 		const data = helper.encode(stageActions);
-		navigate(`${STAGE_ACTIONS_SHARE_PREFIX}${data}`);
+		navigate(`${STAGE_ACTIONS_SHARE_PREFIX}${data}`, { replace: true });
 	}, [stageActions]);
 
 	useEffect(() => {
