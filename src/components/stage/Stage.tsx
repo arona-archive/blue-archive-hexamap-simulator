@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { AttackType, LocalizationKey, STAGE_ACTIONS_SHARE_PREFIX, StateType } from '../../constants';
@@ -6,14 +6,8 @@ import { ShareHelper } from '../../helpers';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
 	getActivePlayerUnit,
-	getCleared,
-	getCurrentPhase,
-	getPlayerUnits,
 	getStageActions,
 	initializeStage,
-	nextPhase,
-	prevAction,
-	prevPhase,
 	setHexamap,
 	setStageActions,
 	setStateType,
@@ -22,6 +16,7 @@ import {
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
 import { List } from '../list';
+import { StageActionMenu } from './StageActionMenu';
 import { StageHexaMap } from './StageHexaMap';
 import { StageMenu } from './StageMenu';
 
@@ -59,11 +54,7 @@ export const Stage: React.FC<Props> = (props) => {
 	const navigate = useNavigate();
 
 	const activePlayerUnit = useAppSelector(getActivePlayerUnit);
-
-	const currentPhase = useAppSelector(getCurrentPhase);
-	const playerUnits = useAppSelector(getPlayerUnits);
 	const stageActions = useAppSelector(getStageActions);
-	const cleared = useAppSelector(getCleared);
 
 	const dispatch = useAppDispatch();
 
@@ -102,30 +93,6 @@ export const Stage: React.FC<Props> = (props) => {
 
 		setAttackType(activePlayerUnit.attackType);
 	}, [activePlayerUnit]);
-
-	const isPrevPhaseButtonDisabled = useMemo(() => {
-		return currentPhase === 0;
-	}, [currentPhase]);
-
-	const isNextPhaseButtonDisabled = useMemo(() => {
-		return playerUnits.length === 0 || cleared;
-	}, [playerUnits.length, cleared]);
-
-	const isPrevActionButtonDisabled = useMemo(() => {
-		return stageActions.length === 0;
-	}, [stageActions.length]);
-
-	const handleClickPrevPhase = useCallback(() => {
-		dispatch(prevPhase());
-	}, []);
-
-	const handleClickNextPhase = useCallback(() => {
-		dispatch(nextPhase());
-	}, []);
-
-	const handleClickPrevAction = useCallback(() => {
-		dispatch(prevAction());
-	}, []);
 
 	const handleChangeAttackType = useCallback(
 		(attackType: AttackType) => {
@@ -170,35 +137,7 @@ export const Stage: React.FC<Props> = (props) => {
 					/>
 				</MenuWrapper>
 			</div>
-			<div className="row">
-				<div className="col-12">{`current phase=${currentPhase}`}</div>
-				<div className="col-12 btn-group">
-					<button
-						type="button"
-						className="btn btn-primary"
-						disabled={isPrevPhaseButtonDisabled}
-						onClick={handleClickPrevPhase}
-					>
-						prev phase
-					</button>
-					<button
-						type="button"
-						className="btn btn-primary"
-						disabled={isNextPhaseButtonDisabled}
-						onClick={handleClickNextPhase}
-					>
-						next phase
-					</button>
-					<button
-						type="button"
-						className="btn btn-primary"
-						disabled={isPrevActionButtonDisabled}
-						onClick={handleClickPrevAction}
-					>
-						undo
-					</button>
-				</div>
-			</div>
+			<StageActionMenu />
 			<List titleKey={LocalizationKey.STAGE_ACTIONS}>
 				{stageActions.map((x, i) => (
 					<div key={i} className="list-group-item">
