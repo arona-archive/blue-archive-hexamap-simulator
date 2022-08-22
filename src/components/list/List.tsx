@@ -1,7 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 import { LocalizationKey } from '../../constants';
 import { useTranslation } from '../../hooks';
 import { ListHeader } from './ListHeader';
+
+const Root = styled.div`
+	&:not(:first-child) {
+		margin-top: 12px;
+	}
+`;
 
 interface IProps {
 	titleKey: LocalizationKey;
@@ -14,9 +21,9 @@ export const List: React.FC<IProps> = (props) => {
 	const title = useTranslation(titleKey);
 
 	return (
-		<div className="list-group">
+		<Root className="list-group">
 			<ListHeader title={title} />
 			{children}
-		</div>
+		</Root>
 	);
 };
