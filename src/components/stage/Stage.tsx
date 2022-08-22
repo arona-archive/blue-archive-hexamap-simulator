@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { LocalizationKey, STAGE_ACTIONS_SHARE_PREFIX, StateType } from '../../constants';
+import { AttackType, LocalizationKey, STAGE_ACTIONS_SHARE_PREFIX, StateType } from '../../constants';
 import { ShareHelper } from '../../helpers';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
@@ -20,6 +20,7 @@ import {
 	setStageActions,
 	setStateType,
 	triggerWrap,
+	updatePlayerUnit,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
 import { getIsWrapTriggerable } from '../../utils';
@@ -39,7 +40,6 @@ const HexamapWrapper = styled.div`
 	padding: 48px 24px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 `;
 
 const MenuWrapper = styled.div`
@@ -55,6 +55,8 @@ interface Props {
 
 export const Stage: React.FC<Props> = (props) => {
 	const { stage, hexamap } = props;
+
+	const [attackType, setAttackType] = useState(AttackType.EXPLOSIVE);
 
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -95,6 +97,17 @@ export const Stage: React.FC<Props> = (props) => {
 		navigate(`${STAGE_ACTIONS_SHARE_PREFIX}${data}`);
 	}, [stageActions]);
 
+	useEffect(() => {
+		if (!activePlayerUnit) {
+			return;
+		}
+		if (activePlayerUnit.attackType === attackType) {
+			return;
+		}
+
+		setAttackType(activePlayerUnit.attackType);
+	}, [activePlayerUnit]);
+
 	const isWrapTriggable = useMemo(() => {
 		if (!activePlayerUnit) {
 			return false;
@@ -126,6 +139,27 @@ export const Stage: React.FC<Props> = (props) => {
 		dispatch(prevAction());
 	}, []);
 
+	const handleChangeAttackType = useCallback(
+		(attackType: AttackType) => {
+			setAttackType(attackType);
+
+			if (!activePlayerUnit) {
+				return;
+			}
+			if (activePlayerUnit.attackType === attackType) {
+				return;
+			}
+
+			dispatch(
+				updatePlayerUnit({
+					id: activePlayerUnit.id,
+					attackType,
+				})
+			);
+		},
+		[activePlayerUnit]
+	);
+
 	const handleClickTriggerWrap = useCallback(() => {
 		if (!activePlayerUnit) {
 			return;
@@ -137,10 +171,10 @@ export const Stage: React.FC<Props> = (props) => {
 		<Root>
 			<div className="row">
 				<HexamapWrapper className="col-9">
-					<StageHexaMap hexamap={hexamap} />
+					<StageHexaMap attackType={attackType} hexamap={hexamap} />
 				</HexamapWrapper>
 				<MenuWrapper className="col-3">
-					<StageMenu stage={stage} />
+					<StageMenu stage={stage} attackType={attackType} onChangeAttackType={handleChangeAttackType} />
 				</MenuWrapper>
 			</div>
 			<div className="row">

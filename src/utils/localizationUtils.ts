@@ -1,5 +1,12 @@
 import { getEnumValue } from '@sapphire-sh/utils';
-import { emptyText, EventNameLocalizationTable, LanguageCode, LocalizationKey, LocalStorageKey } from '../constants';
+import {
+	AttackType,
+	emptyText,
+	EventNameLocalizationTable,
+	LanguageCode,
+	LocalizationKey,
+	LocalStorageKey,
+} from '../constants';
 import { IText } from '../types';
 
 const pr = new Intl.PluralRules('en-US', { type: 'ordinal' });
@@ -103,4 +110,18 @@ export const getDefaultLanguageCode = (): LanguageCode => {
 export const getDefaultDebugFlag = (): boolean => {
 	const params = new URLSearchParams(window.location.search);
 	return params.has('debug');
+};
+
+export const getAttackTypeLocalizationKey = (attackType: AttackType): LocalizationKey => {
+	switch (attackType) {
+		case AttackType.EXPLOSIVE: {
+			return LocalizationKey.ATTACK_TYPE_EXPLOSIVE;
+		}
+		case AttackType.PIERCING: {
+			return LocalizationKey.ATTACK_TYPE_PIERCING;
+		}
+		case AttackType.MYSTIC: {
+			return LocalizationKey.ATTACK_TYPE_MYSTIC;
+		}
+	}
 };

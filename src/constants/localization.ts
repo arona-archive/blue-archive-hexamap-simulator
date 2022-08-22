@@ -18,6 +18,10 @@ export enum LocalizationKey {
 	MISSION_COMPLETE,
 	MISSION_S_RANK_COUNT,
 	MISSION_TURN_COUNT,
+	ATTACK_TYPE,
+	ATTACK_TYPE_EXPLOSIVE,
+	ATTACK_TYPE_PIERCING,
+	ATTACK_TYPE_MYSTIC,
 }
 
 export const emptyText: IText = {
@@ -95,6 +99,26 @@ export const LocalizationTable: Record<LocalizationKey, IText> = {
 		en: 'Clear stage within {0}/{1} turn(s).',
 		ko: '{0}/{1}턴 내 스테이지 클리어',
 		ja: '{0}/{1}ターン以内にステージクリア',
+	},
+	[LocalizationKey.ATTACK_TYPE]: {
+		en: 'Attack Type',
+		ko: '공격 타입',
+		ja: '攻撃タイプ',
+	},
+	[LocalizationKey.ATTACK_TYPE_EXPLOSIVE]: {
+		en: 'Explosive',
+		ko: '폭발',
+		ja: '爆発',
+	},
+	[LocalizationKey.ATTACK_TYPE_PIERCING]: {
+		en: 'Piercing',
+		ko: '관통',
+		ja: '貫通',
+	},
+	[LocalizationKey.ATTACK_TYPE_MYSTIC]: {
+		en: 'Mystic',
+		ko: '신비',
+		ja: '神秘',
 	},
 };
 
