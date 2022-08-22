@@ -12,7 +12,7 @@ export const LanguageItem: React.FC<IProps> = (props) => {
 	const { languageCode, onClick } = props;
 
 	const appLanguageCode = useAppSelector(getLanguageCode);
-	const label = useTranslation(LocalizationKey.LANGUAGES, languageCode);
+	const label = useTranslation(LocalizationKey.LANGUAGES, { forceLanguageCode: languageCode });
 
 	const handleClick = () => {
 		onClick();

@@ -6,13 +6,16 @@ import { useAppSelector } from './useAppSelector';
 
 export const useTranslation = (
 	key?: (LocalizationKey | IText) | (() => LocalizationKey | IText),
-	forceLanguageCode?: LanguageCode
+	options?: {
+		parameters?: (number | string)[];
+		forceLanguageCode?: LanguageCode;
+	}
 ) => {
 	const languageCode = useAppSelector(getLanguageCode);
 
 	const memoizedLanguageCode = useMemo(() => {
-		return forceLanguageCode ?? languageCode;
-	}, [languageCode, forceLanguageCode]);
+		return options?.forceLanguageCode ?? languageCode;
+	}, [languageCode, options?.forceLanguageCode]);
 
 	const memoizedKey = useMemo(() => {
 		if (typeof key === 'function') {
@@ -28,5 +31,14 @@ export const useTranslation = (
 		return memoizedKey ?? emptyText;
 	}, [memoizedKey]);
 
-	return useMemo(() => text[memoizedLanguageCode], [text, memoizedLanguageCode]);
+	const populatedText = useMemo(() => {
+		let tempText = text[memoizedLanguageCode];
+		const parameters = options?.parameters ?? [];
+		for(let i = 0; i < parameters.length; ++i) {
+			tempText = tempText.replace(`{${i}}`, `${parameters[i] ?? ''}`);
+		}
+		return tempText;
+	}, [text, options?.parameters, memoizedLanguageCode]);
+
+	return populatedText;
 };

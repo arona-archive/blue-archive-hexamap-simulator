@@ -16,8 +16,12 @@ export const MissionObjectiveList: React.FC<Props> = (props) => {
 	const { currentPhase, battleCount, cleared, starConditions } = props;
 
 	const labelA = useTranslation(LocalizationKey.MISSION_COMPLETE);
-	const labelB = useTranslation(LocalizationKey.MISSION_S_RANK_COUNT);
-	const labelC = useTranslation(LocalizationKey.MISSION_TURN_COUNT);
+	const labelB = useTranslation(LocalizationKey.MISSION_S_RANK_COUNT, {
+		parameters: [battleCount, starConditions.rank],
+	});
+	const labelC = useTranslation(LocalizationKey.MISSION_TURN_COUNT, {
+		parameters: [currentPhase, starConditions.phase],
+	});
 
 	return (
 		<List titleKey={LocalizationKey.MISSION_OBJECTIVES}>
