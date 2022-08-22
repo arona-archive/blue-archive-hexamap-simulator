@@ -1,7 +1,9 @@
 import { getEnumValue } from '@sapphire-sh/utils';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { AttackType, LocalizationKey, StageActionType } from '../../constants';
+import { AttackType, LocalizationKey, StageActionType, STAGE_ACTIONS_SHARE_PREFIX } from '../../constants';
+import { ShareHelper } from '../../helpers';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
 	addPlayerUnit,
@@ -20,6 +22,7 @@ import {
 	prevAction,
 	prevPhase,
 	setHexamap,
+	setStageActions,
 	triggerWrap,
 	updatePlayerUnit,
 } from '../../reducers';
@@ -28,12 +31,27 @@ import { getIsWrapTriggerable } from '../../utils';
 import { HexaMap } from '../hexa-map';
 import { List } from '../list';
 import { MissionObjectiveList } from './MissionObjectiveList';
+import { ShareButton } from './ShareButton';
+
+const Root = styled.div`
+	margin-top: 24px;
+
+	& > * {
+		margin-top: 12px;
+	}
+`;
 
 const HexamapWrapper = styled.div`
 	padding: 48px 24px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+`;
+
+const MenuWrapper = styled.div`
+	& > :not(:first-child) {
+		margin-top: 12px;
+	}
 `;
 
 interface Props {
@@ -43,6 +61,9 @@ interface Props {
 
 export const Stage: React.FC<Props> = (props) => {
 	const { stage, hexamap } = props;
+
+	const location = useLocation();
+	const navigate = useNavigate();
 
 	const [attackType, setAttackType] = useState(AttackType.EXPLOSIVE);
 
@@ -74,6 +95,25 @@ export const Stage: React.FC<Props> = (props) => {
 
 		setAttackType(activePlayerUnit.attackType);
 	}, [activePlayerUnit]);
+
+	useEffect(() => {
+		if (!location.hash.startsWith(STAGE_ACTIONS_SHARE_PREFIX)) {
+			return;
+		}
+
+		const data = location.hash.slice(STAGE_ACTIONS_SHARE_PREFIX.length);
+
+		const helper = new ShareHelper();
+		const stageActions = helper.decode(data);
+
+		dispatch(setStageActions(stageActions));
+	}, []);
+
+	useEffect(() => {
+		const helper = new ShareHelper();
+		const data = helper.encode(stageActions);
+		navigate(`${STAGE_ACTIONS_SHARE_PREFIX}${data}`);
+	}, [stageActions])
 
 	const isPlayerUnitAttackTypeMutable = useMemo(() => {
 		return !!activePlayerUnit && currentPhase === 0;
@@ -181,7 +221,7 @@ export const Stage: React.FC<Props> = (props) => {
 	}, [activePlayerUnit]);
 
 	return (
-		<>
+		<Root>
 			<div className="row">
 				<HexamapWrapper className="col-9">
 					<HexaMap
@@ -193,14 +233,15 @@ export const Stage: React.FC<Props> = (props) => {
 						onClickTile={handleClickTile}
 					/>
 				</HexamapWrapper>
-				<div className="col-3">
+				<MenuWrapper className="col-3">
 					<MissionObjectiveList
 						currentPhase={currentPhase}
 						battleCount={battleCount}
 						cleared={cleared}
 						starConditions={stage.starConditions}
 					/>
-				</div>
+					<ShareButton />
+				</MenuWrapper>
 			</div>
 			{isPlayerUnitAttackTypeMutable && (
 				<div className="row">
@@ -274,6 +315,6 @@ export const Stage: React.FC<Props> = (props) => {
 					</div>
 				))}
 			</List>
-		</>
+		</Root>
 	);
 };

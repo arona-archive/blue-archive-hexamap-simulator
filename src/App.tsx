@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { store } from './app/store';
 import { routes } from './routes';
 import { Header } from './components';
+import { ToastContainer } from 'react-toastify';
 
 export const App: React.FC = () => {
 	return (
@@ -17,6 +18,7 @@ export const App: React.FC = () => {
 					<Route path="*" element={<Navigate to={routes[0]?.path ?? '/'} replace={true} />} />
 				</Routes>
 			</BrowserRouter>
+			<ToastContainer position="bottom-left" />
 		</Provider>
 	);
 };

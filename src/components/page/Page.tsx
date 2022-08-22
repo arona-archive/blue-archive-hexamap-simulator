@@ -19,10 +19,6 @@ const Breadcrumbs = styled.nav`
 const Container = styled.div`
 	margin-top: 24px;
 	margin-bottom: 24px;
-
-	& > * {
-		margin-top: 12px;
-	}
 `;
 
 interface Props {

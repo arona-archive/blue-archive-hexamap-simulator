@@ -63,6 +63,12 @@ const stageSlice = createSlice({
 			const helper = new StageHelper(state);
 			helper.process();
 		},
+		setStageActions: (state, action: PayloadAction<IStageAction[]>) => {
+			state.stageActions = action.payload;
+
+			const helper = new StageHelper(state);
+			helper.process();
+		},
 		selectTile: (state, action: PayloadAction<number>) => {
 			state.activeTileId = action.payload;
 		},
@@ -282,6 +288,7 @@ const stageSlice = createSlice({
 export const {
 	initialize,
 	setHexamap,
+	setStageActions,
 	selectTile,
 	deselectTile,
 	addPlayerUnit,
