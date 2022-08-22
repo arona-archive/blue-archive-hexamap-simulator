@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import { AttackType, LocalizationKey, TILE_SIZE } from '../../constants';
+import { AttackType, LocalizationKey, StageActionType, TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
 	addPlayerUnit,
@@ -16,16 +16,17 @@ import {
 	initialize,
 	movePlayerUnit,
 	nextPhase,
+	prevAction,
 	prevPhase,
 	setHexamap,
 	triggerWrap,
 	updatePlayerUnit,
-	prevAction,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
 import { getEnumValue, GetIsWrapTriggerable } from '../../utils';
 import { HexaMap } from '../hexa-map';
 import { List } from '../list';
+import { MissionObjectiveList } from './MissionObjectiveList';
 
 const HexamapWrapper = styled.div`
 	padding: ${TILE_SIZE}px;
@@ -95,6 +96,11 @@ export const Stage: React.FC<Props> = (props) => {
 	const isPrevActionButtonDisabled = useMemo(() => {
 		return stageActions.length === 0;
 	}, [stageActions.length]);
+
+	const battleCount = useMemo(
+		() => stageActions.filter((x) => x.type === StageActionType.BATTLE).length,
+		[stageActions]
+	);
 
 	const handleChangeAttackType = useCallback(
 		(event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -176,7 +182,7 @@ export const Stage: React.FC<Props> = (props) => {
 	return (
 		<>
 			<div className="row">
-				<HexamapWrapper className="col">
+				<HexamapWrapper className="col-9">
 					<HexaMap
 						tiles={tiles}
 						playerUnits={playerUnits}
@@ -186,6 +192,14 @@ export const Stage: React.FC<Props> = (props) => {
 						onClickTile={handleClickTile}
 					/>
 				</HexamapWrapper>
+				<div className="col-3">
+					<MissionObjectiveList
+						currentPhase={currentPhase}
+						battleCount={battleCount}
+						cleared={cleared}
+						starConditions={stage.starConditions}
+					/>
+				</div>
 			</div>
 			{isPlayerUnitAttackTypeMutable && (
 				<div className="row">

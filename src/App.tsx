@@ -14,7 +14,7 @@ export const App: React.FC = () => {
 					{routes.map((route) => (
 						<Route key={route.path} {...route} />
 					))}
-					<Route path="*" element={<Navigate to={routes[0]?.path || '/'} replace={true} />} />
+					<Route path="*" element={<Navigate to={routes[0]?.path ?? '/'} replace={true} />} />
 				</Routes>
 			</BrowserRouter>
 		</Provider>

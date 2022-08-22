@@ -14,6 +14,10 @@ export enum LocalizationKey {
 	EVENT_NAME,
 	EVENT_STAGE_NAME,
 	STAGE_ACTIONS,
+	MISSION_OBJECTIVES,
+	MISSION_COMPLETE,
+	MISSION_S_RANK_COUNT,
+	MISSION_TURN_COUNT,
 }
 
 export const emptyText: IText = {
@@ -71,6 +75,26 @@ export const LocalizationTable: Record<LocalizationKey, IText> = {
 		en: 'stage actions',
 		ko: 'stage actions',
 		ja: 'stage actions',
+	},
+	[LocalizationKey.MISSION_OBJECTIVES]: {
+		en: 'Mission Objectives',
+		ko: '임무 목표',
+		ja: '任務目標',
+	},
+	[LocalizationKey.MISSION_COMPLETE]: {
+		en: 'Mission Complete',
+		ko: '임무 완료',
+		ja: '任務完了',
+	},
+	[LocalizationKey.MISSION_S_RANK_COUNT]: {
+		en: 'Acquire S rank {0}/{1} time(s).',
+		ko: 'S랭크 {0}/{1}회 획득',
+		ja: 'Sランクを{0}/{1}回獲得',
+	},
+	[LocalizationKey.MISSION_TURN_COUNT]: {
+		en: 'Clear stage within {0}/{1} turn(s).',
+		ko: '{0}/{1}턴 내 스테이지 클리어',
+		ja: '{0}/{1}ターン以内にステージクリア',
 	},
 };
 

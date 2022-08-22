@@ -1,4 +1,4 @@
-import { DIRECTIONS, TileEventType } from '../constants';
+import { DIRECTIONS } from '../constants';
 import { IDirection, IEnemyUnit, IPlayerUnit, IPosition, ITile, ITileEvent } from '../types';
 
 export const isPositionEquals = (a?: IPosition, b?: IPosition): boolean => {
