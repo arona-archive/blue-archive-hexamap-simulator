@@ -8,10 +8,8 @@ import {
 	getActivePlayerUnit,
 	getCleared,
 	getCurrentPhase,
-	getEnemyUnits,
 	getPlayerUnits,
 	getStageActions,
-	getTileEvents,
 	initializeStage,
 	nextPhase,
 	prevAction,
@@ -23,7 +21,6 @@ import {
 	updatePlayerUnit,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
-import { getIsWrapTriggerable } from '../../utils';
 import { List } from '../list';
 import { StageHexaMap } from './StageHexaMap';
 import { StageMenu } from './StageMenu';
@@ -65,8 +62,6 @@ export const Stage: React.FC<Props> = (props) => {
 
 	const currentPhase = useAppSelector(getCurrentPhase);
 	const playerUnits = useAppSelector(getPlayerUnits);
-	const enemyUnits = useAppSelector(getEnemyUnits);
-	const tileEvents = useAppSelector(getTileEvents);
 	const stageActions = useAppSelector(getStageActions);
 	const cleared = useAppSelector(getCleared);
 
@@ -107,13 +102,6 @@ export const Stage: React.FC<Props> = (props) => {
 
 		setAttackType(activePlayerUnit.attackType);
 	}, [activePlayerUnit]);
-
-	const isWrapTriggable = useMemo(() => {
-		if (!activePlayerUnit) {
-			return false;
-		}
-		return getIsWrapTriggerable(activePlayerUnit, playerUnits, enemyUnits, tileEvents);
-	}, [activePlayerUnit, playerUnits, enemyUnits, tileEvents]);
 
 	const isPrevPhaseButtonDisabled = useMemo(() => {
 		return currentPhase === 0;
@@ -174,7 +162,12 @@ export const Stage: React.FC<Props> = (props) => {
 					<StageHexaMap attackType={attackType} hexamap={hexamap} />
 				</HexamapWrapper>
 				<MenuWrapper className="col-3">
-					<StageMenu stage={stage} attackType={attackType} onChangeAttackType={handleChangeAttackType} />
+					<StageMenu
+						stage={stage}
+						attackType={attackType}
+						onChangeAttackType={handleChangeAttackType}
+						onClickTriggerWrap={handleClickTriggerWrap}
+					/>
 				</MenuWrapper>
 			</div>
 			<div className="row">
@@ -206,19 +199,6 @@ export const Stage: React.FC<Props> = (props) => {
 					</button>
 				</div>
 			</div>
-			{isWrapTriggable && (
-				<div className="row">
-					<div className="col-12">
-						<div className="form-inline">
-							<div className="form-group">
-								<button className="form-control" onClick={handleClickTriggerWrap}>
-									trigger warp
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			)}
 			<List titleKey={LocalizationKey.STAGE_ACTIONS}>
 				{stageActions.map((x, i) => (
 					<div key={i} className="list-group-item">
