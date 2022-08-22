@@ -1,6 +1,6 @@
+import { getEnumValue } from '@sapphire-sh/utils';
 import { emptyText, EventNameLocalizationTable, LanguageCode, LocalizationKey, LocalStorageKey } from '../constants';
 import { IText } from '../types';
-import { getEnumValue } from './globalUtils';
 
 const pr = new Intl.PluralRules('en-US', { type: 'ordinal' });
 const suffixes = new Map<Intl.LDMLPluralRule, string>([

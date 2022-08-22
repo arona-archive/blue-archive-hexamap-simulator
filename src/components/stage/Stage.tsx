@@ -1,3 +1,4 @@
+import { getEnumValue } from '@sapphire-sh/utils';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { AttackType, LocalizationKey, StageActionType, TILE_SIZE } from '../../constants';
@@ -23,7 +24,7 @@ import {
 	updatePlayerUnit,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
-import { getEnumValue, GetIsWrapTriggerable } from '../../utils';
+import { getIsWrapTriggerable } from '../../utils';
 import { HexaMap } from '../hexa-map';
 import { List } from '../list';
 import { MissionObjectiveList } from './MissionObjectiveList';
@@ -82,7 +83,7 @@ export const Stage: React.FC<Props> = (props) => {
 		if (!activePlayerUnit) {
 			return false;
 		}
-		return GetIsWrapTriggerable(activePlayerUnit, playerUnits, enemyUnits, tileEvents);
+		return getIsWrapTriggerable(activePlayerUnit, playerUnits, enemyUnits, tileEvents);
 	}, [activePlayerUnit, playerUnits, enemyUnits, tileEvents]);
 
 	const isPrevPhaseButtonDisabled = useMemo(() => {

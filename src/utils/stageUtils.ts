@@ -129,7 +129,7 @@ export const findActiveTileEvent = (
 	return tileEvents.find(predicate);
 };
 
-export const GetIsWrapTriggerable = (
+export const getIsWrapTriggerable = (
 	playerUnit: IPlayerUnit,
 	playerUnits: IPlayerUnit[],
 	enemyUnits: IEnemyUnit[],
