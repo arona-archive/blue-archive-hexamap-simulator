@@ -36,6 +36,7 @@ export interface StageState {
 	stageActions: IStageAction[];
 	delayedStageActions: IDelayedStageAction[];
 	cleared: boolean;
+	replayStageActionIndex: number;
 }
 
 const initialState: StageState = {
@@ -50,6 +51,7 @@ const initialState: StageState = {
 	stageActions: [],
 	delayedStageActions: [],
 	cleared: false,
+	replayStageActionIndex: 0,
 };
 
 const stageSlice = createSlice({
@@ -282,6 +284,14 @@ const stageSlice = createSlice({
 			const helper = new StageHelper(state);
 			helper.process();
 		},
+		prevReplayStageActionIndex: (state) => {
+			const index = Math.max(state.replayStageActionIndex - 1, 0);
+			state.replayStageActionIndex = index;
+		},
+		nextReplayStageActionIndex: (state) => {
+			const index = Math.min(state.replayStageActionIndex + 1, state.stageActions.length - 1);
+			state.replayStageActionIndex = index;
+		},
 	},
 });
 
@@ -298,6 +308,8 @@ export const {
 	movePlayerUnit,
 	triggerWrap,
 	prevAction,
+	prevReplayStageActionIndex,
+	nextReplayStageActionIndex,
 } = stageSlice.actions;
 
 export const getActiveTile = (state: RootState) => state.stage.tiles.find((x) => x.id === state.stage.activeTileId);
@@ -323,5 +335,6 @@ export const getItemUnits = (state: RootState) => state.stage.itemUnits;
 export const getTileEvents = (state: RootState) => state.stage.tileEvents;
 export const getStageActions = (state: RootState) => state.stage.stageActions;
 export const getCleared = (state: RootState) => state.stage.cleared;
+export const getReplayStageActionIndex = (state: RootState) => state.stage.replayStageActionIndex;
 
 export const stageReducer = stageSlice.reducer;

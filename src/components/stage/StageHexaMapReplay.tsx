@@ -1,12 +1,9 @@
-import React, { useMemo, useState } from 'react';
-import styled from 'styled-components';
-import { StageHelper } from '../../helpers';
+import React, { useMemo } from 'react';
+import { StageHelper, StageHelperState } from '../../helpers';
 import { useAppSelector } from '../../hooks';
-import { getStageActions, StageState } from '../../reducers';
+import { getReplayStageActionIndex, getStageActions } from '../../reducers';
 import { IHexaMapMetadata } from '../../types';
 import { HexaMap } from '../hexa-map';
-
-const Root = styled.div``;
 
 interface Props {
 	hexamap: IHexaMapMetadata;
@@ -15,21 +12,23 @@ interface Props {
 export const StageHexaMapReplay: React.FC<Props> = (props) => {
 	const { hexamap } = props;
 
-	const [stageActionIndex, setStageActionIndex] = useState(1);
-
 	const stageActions = useAppSelector(getStageActions);
+	const replayStageActionIndex = useAppSelector(getReplayStageActionIndex);
+
+	const replayStageActions = useMemo(() => {
+		return stageActions.slice(0, replayStageActionIndex + 1);
+	}, [stageActions, replayStageActionIndex]);
 
 	const state = useMemo(() => {
-		const state: StageState = {
+		const state: StageHelperState = {
 			hexamap,
-			activeTileId: -1,
 			currentPhase: 0,
 			tiles: [],
 			playerUnits: [],
 			enemyUnits: [],
 			itemUnits: [],
 			tileEvents: [],
-			stageActions: stageActions.slice(0, stageActionIndex),
+			stageActions: replayStageActions,
 			delayedStageActions: [],
 			cleared: false,
 		};
@@ -38,38 +37,18 @@ export const StageHexaMapReplay: React.FC<Props> = (props) => {
 		helper.process();
 
 		return state;
-	}, [stageActions, stageActionIndex]);
+	}, [replayStageActions, replayStageActionIndex]);
 
 	const handleClickTile = () => {};
 
-	const handleClickPrev = () => {
-		const index = Math.max(stageActionIndex - 1, 1);
-		setStageActionIndex(index);
-	};
-
-	const handleClickNext = () => {
-		const index = Math.min(stageActionIndex + 1, stageActions.length - 1);
-		setStageActionIndex(index);
-	};
-
 	return (
-		<Root>
-			<HexaMap
-				tiles={state.tiles}
-				playerUnits={state.playerUnits}
-				enemyUnits={state.enemyUnits}
-				itemUnits={state.itemUnits}
-				tileEvents={state.tileEvents}
-				onClickTile={handleClickTile}
-			/>
-			<div>
-				<button type="button" className="btn btn-outline-primary w-100" onClick={handleClickPrev}>
-					prev
-				</button>
-				<button type="button" className="btn btn-outline-primary w-100" onClick={handleClickNext}>
-					next
-				</button>
-			</div>
-		</Root>
+		<HexaMap
+			tiles={state.tiles}
+			playerUnits={state.playerUnits}
+			enemyUnits={state.enemyUnits}
+			itemUnits={state.itemUnits}
+			tileEvents={state.tileEvents}
+			onClickTile={handleClickTile}
+		/>
 	);
 };

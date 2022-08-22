@@ -13,10 +13,12 @@ import {
 	isUnitPositionEquals,
 } from '../utils';
 
+export type StageHelperState = Omit<StageState, 'activeTileId' | 'replayStageActionIndex'>;
+
 export class StageHelper {
 	private movementOrder = 1;
 
-	public constructor(private readonly state: StageState) {}
+	public constructor(private readonly state: StageHelperState) {}
 
 	private initialize() {
 		if (!this.state.hexamap) {

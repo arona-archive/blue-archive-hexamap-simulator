@@ -48,7 +48,7 @@ export const StageActionMenu: React.FC = () => {
 				<div className="col-12 btn-group">
 					<button
 						type="button"
-						className="btn btn-primary"
+						className="btn btn-outline-primary"
 						disabled={isPrevPhaseButtonDisabled}
 						onClick={handleClickPrevPhase}
 					>
@@ -56,7 +56,7 @@ export const StageActionMenu: React.FC = () => {
 					</button>
 					<button
 						type="button"
-						className="btn btn-primary"
+						className="btn btn-outline-primary"
 						disabled={isNextPhaseButtonDisabled}
 						onClick={handleClickNextPhase}
 					>
@@ -68,7 +68,7 @@ export const StageActionMenu: React.FC = () => {
 				<div className="col-12 btn-group">
 					<button
 						type="button"
-						className="btn btn-primary"
+						className="btn btn-outline-primary"
 						disabled={isPrevActionButtonDisabled}
 						onClick={handleClickPrevAction}
 					>

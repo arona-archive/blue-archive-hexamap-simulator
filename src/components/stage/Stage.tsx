@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { AttackType, LocalizationKey, STAGE_ACTIONS_SHARE_PREFIX, StateType } from '../../constants';
+import { AttackType, STAGE_ACTIONS_SHARE_PREFIX, StateType } from '../../constants';
 import { ShareHelper } from '../../helpers';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import {
 	getActivePlayerUnit,
 	getStageActions,
+	getStateType,
 	initializeStage,
 	setHexamap,
 	setStageActions,
@@ -15,7 +16,8 @@ import {
 	updatePlayerUnit,
 } from '../../reducers';
 import { IHexaMapMetadata, IStageMetadata } from '../../types';
-import { List } from '../list';
+import { ReplayMenu } from './ReplayMenu';
+import { StageActionList } from './StageActionList';
 import { StageActionMenu } from './StageActionMenu';
 import { StageHexaMap } from './StageHexaMap';
 import { StageMenu } from './StageMenu';
@@ -50,13 +52,14 @@ export const Stage: React.FC<Props> = (props) => {
 
 	const [attackType, setAttackType] = useState(AttackType.EXPLOSIVE);
 
-	const location = useLocation();
-	const navigate = useNavigate();
-
+	const stateType = useAppSelector(getStateType);
 	const activePlayerUnit = useAppSelector(getActivePlayerUnit);
 	const stageActions = useAppSelector(getStageActions);
 
 	const dispatch = useAppDispatch();
+
+	const location = useLocation();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		dispatch(setStateType(StateType.EDIT));
@@ -137,14 +140,9 @@ export const Stage: React.FC<Props> = (props) => {
 					/>
 				</MenuWrapper>
 			</div>
-			<StageActionMenu />
-			<List titleKey={LocalizationKey.STAGE_ACTIONS}>
-				{stageActions.map((x, i) => (
-					<div key={i} className="list-group-item">
-						<pre>{JSON.stringify(x, null, 2)}</pre>
-					</div>
-				))}
-			</List>
+			{stateType === StateType.EDIT && <StageActionMenu />}
+			{stateType === StateType.REPLAY && <ReplayMenu />}
+			<StageActionList />
 		</Root>
 	);
 };
