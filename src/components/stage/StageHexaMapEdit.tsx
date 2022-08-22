@@ -8,6 +8,7 @@ import {
 	getEnemyUnits,
 	getItemUnits,
 	getPlayerUnits,
+	getStateType,
 	getTileEvents,
 	getTiles,
 	movePlayerUnit,
@@ -21,6 +22,7 @@ interface Props {
 export const StageHexaMapEdit: React.FC<Props> = (props) => {
 	const { attackType } = props;
 
+	const stateType = useAppSelector(getStateType);
 	const currentPhase = useAppSelector(getCurrentPhase);
 	const tiles = useAppSelector(getTiles);
 	const playerUnits = useAppSelector(getPlayerUnits);
@@ -65,6 +67,7 @@ export const StageHexaMapEdit: React.FC<Props> = (props) => {
 
 	return (
 		<HexaMap
+			stateType={stateType}
 			tiles={tiles}
 			playerUnits={playerUnits}
 			enemyUnits={enemyUnits}

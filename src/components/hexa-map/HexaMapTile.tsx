@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { TILE_SIZE } from '../../constants';
+import { StageActionType, StateType, TILE_SIZE } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getDebugFlag } from '../../reducers';
-import { IEnemyUnit, IItemUnit, IPlayerUnit, ITile, ITileEvent } from '../../types';
+import { IDirection, IEnemyUnit, IItemUnit, IPlayerUnit, IStageAction, ITile, ITileEvent } from '../../types';
+import { getNextPosition, isPositionEquals } from '../../utils';
 import { Hexagon } from './Hexagon';
 import { EnemyUnit, ItemUnit, PlayerUnit, TileEvent } from './units';
 
@@ -65,28 +66,43 @@ const Content = styled.div`
 `;
 
 interface Props {
+	stateType: StateType;
 	active?: boolean;
 	tile: ITile;
 	playerUnit?: IPlayerUnit;
 	enemyUnit?: IEnemyUnit;
 	itemUnit?: IItemUnit;
 	tileEvent?: ITileEvent;
+	nextReplayStageAction?: IStageAction;
 	onClick?: () => void;
 }
 
 export const HexaMapTile: React.FC<Props> = (props) => {
-	const { active, tile, playerUnit, enemyUnit, itemUnit, tileEvent, onClick } = props;
+	const { stateType, active, tile, playerUnit, enemyUnit, itemUnit, tileEvent, nextReplayStageAction, onClick } = props;
 
 	const debugFlag = useAppSelector(getDebugFlag);
 
-	const playerUnitNextDirections = useMemo(() => {
+	const playerUnitNextDirections = useMemo<IDirection[]>(() => {
 		if (!playerUnit) {
 			return [];
 		}
-		if (!playerUnit.movable) {
-			return [];
+		switch (stateType) {
+			case StateType.EDIT: {
+				if (!playerUnit.movable) {
+					return [];
+				}
+				return playerUnit.nextDirections;
+			}
+			case StateType.REPLAY: {
+				if (nextReplayStageAction?.type !== StageActionType.MOVE_PLAYER_UNIT) {
+					return [];
+				}
+				return playerUnit.nextDirections.filter((direction) => {
+					const nextPosition = getNextPosition(playerUnit.position, direction);
+					return isPositionEquals(nextPosition, nextReplayStageAction.nextPosition);
+				});
+			}
 		}
-		return playerUnit.nextDirections;
 	}, [playerUnit]);
 
 	const enemyUnitNextDirection = useMemo(() => {

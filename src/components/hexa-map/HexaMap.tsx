@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { TILE_SIZE } from '../../constants';
+import { StateType, TILE_SIZE } from '../../constants';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { deselectTile, getActiveTile, selectTile } from '../../reducers';
-import { IEnemyUnit, IItemUnit, IPlayerUnit, ITile, ITileEvent } from '../../types';
+import { IEnemyUnit, IItemUnit, IPlayerUnit, IStageAction, ITile, ITileEvent } from '../../types';
 import {
 	findActiveEnemyUnit,
 	findActiveItemUnit,
@@ -23,16 +23,19 @@ const Root = styled.div<{
 `;
 
 interface Props {
+	stateType: StateType;
 	tiles: ITile[];
 	playerUnits: IPlayerUnit[];
 	enemyUnits: IEnemyUnit[];
 	itemUnits: IItemUnit[];
 	tileEvents: ITileEvent[];
+	nextReplayStageAction?: IStageAction;
 	onClickTile: (tileId: number) => void;
 }
 
 export const HexaMap: React.FC<Props> = (props) => {
-	const { tiles, playerUnits, enemyUnits, itemUnits, tileEvents, onClickTile } = props;
+	const { stateType, tiles, playerUnits, enemyUnits, itemUnits, tileEvents, nextReplayStageAction, onClickTile } =
+		props;
 
 	const activeTile = useAppSelector(getActiveTile);
 
@@ -77,12 +80,14 @@ export const HexaMap: React.FC<Props> = (props) => {
 				return (
 					<HexaMapTile
 						key={tile.id}
+						stateType={stateType}
 						active={active}
 						tile={tile}
 						playerUnit={playerUnit}
 						enemyUnit={enemyUnit}
 						itemUnit={itemUnit}
 						tileEvent={tileEvent}
+						nextReplayStageAction={nextReplayStageAction}
 						onClick={handleClickTile(tile.id)}
 					/>
 				);
