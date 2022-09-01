@@ -1,0 +1,93 @@
+{
+  "id": 2030101,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        -2,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -2,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -3,
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        -4,
+        6
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 2,
+      "defenceType": "light_armor",
+      "movementType": "b",
+      "position": [
+        -2,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": "boss",
+      "defenceType": "light_armor",
+      "movementType": "b",
+      "position": [
+        -2,
+        1
+      ]
+    }
+  ],
+  "items": [],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -4,
+        6
+      ],
+      "hidden": false
+    },
+    {
+      "id": 2,
+      "type": "warp_tile",
+      "position": [
+        -3,
+        5
+      ],
+      "hidden": false,
+      "targetTileEventId": 3
+    },
+    {
+      "id": 3,
+      "type": "warp_tile",
+      "position": [
+        -1,
+        2
+      ],
+      "hidden": false
+    }
+  ]
+}

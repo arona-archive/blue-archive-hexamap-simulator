@@ -1,7 +1,7 @@
 {
   "campaigns": [
     {
-      "id": 101,
+      "id": 1010,
       "name": {
         "en": "",
         "ko": "제 1임무",
@@ -9,7 +9,7 @@
       },
       "stages": [
         {
-          "id": 101101,
+          "id": 1010101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 2,
@@ -17,7 +17,7 @@
           }
         },
         {
-          "id": 101102,
+          "id": 1010102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 2,
@@ -25,7 +25,7 @@
           }
         },
         {
-          "id": 101103,
+          "id": 1010103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 2,
@@ -33,7 +33,7 @@
           }
         },
         {
-          "id": 101104,
+          "id": 1010104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -41,7 +41,7 @@
           }
         },
         {
-          "id": 101105,
+          "id": 1010105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -49,7 +49,7 @@
           }
         },
         {
-          "id": 101201,
+          "id": 1010201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 2,
@@ -57,7 +57,7 @@
           }
         },
         {
-          "id": 101202,
+          "id": 1010202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 2,
@@ -65,7 +65,7 @@
           }
         },
         {
-          "id": 101203,
+          "id": 1010203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "id": 102,
+      "id": 1020,
       "name": {
         "en": "",
         "ko": "제 2임무",
@@ -83,7 +83,7 @@
       },
       "stages": [
         {
-          "id": 102101,
+          "id": 1020101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -91,7 +91,7 @@
           }
         },
         {
-          "id": 102102,
+          "id": 1020102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -99,7 +99,7 @@
           }
         },
         {
-          "id": 102103,
+          "id": 1020103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -107,7 +107,7 @@
           }
         },
         {
-          "id": 102104,
+          "id": 1020104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -115,7 +115,7 @@
           }
         },
         {
-          "id": 102105,
+          "id": 1020105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -123,7 +123,7 @@
           }
         },
         {
-          "id": 102201,
+          "id": 1020201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -131,7 +131,7 @@
           }
         },
         {
-          "id": 102202,
+          "id": 1020202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": 102203,
+          "id": 1020203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -149,7 +149,7 @@
       ]
     },
     {
-      "id": 103,
+      "id": 1030,
       "name": {
         "en": "",
         "ko": "제 3임무",
@@ -157,7 +157,7 @@
       },
       "stages": [
         {
-          "id": 103101,
+          "id": 1030101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -165,7 +165,7 @@
           }
         },
         {
-          "id": 103102,
+          "id": 1030102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -173,7 +173,7 @@
           }
         },
         {
-          "id": 103103,
+          "id": 1030103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -181,7 +181,7 @@
           }
         },
         {
-          "id": 103104,
+          "id": 1030104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -189,7 +189,7 @@
           }
         },
         {
-          "id": 103105,
+          "id": 1030105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -197,7 +197,7 @@
           }
         },
         {
-          "id": 103201,
+          "id": 1030201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": 103202,
+          "id": 1030202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -213,7 +213,7 @@
           }
         },
         {
-          "id": 103203,
+          "id": 1030203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -223,7 +223,7 @@
       ]
     },
     {
-      "id": 104,
+      "id": 1040,
       "name": {
         "en": "",
         "ko": "제 4임무",
@@ -231,7 +231,7 @@
       },
       "stages": [
         {
-          "id": 104101,
+          "id": 1040101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -239,7 +239,7 @@
           }
         },
         {
-          "id": 104102,
+          "id": 1040102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -247,7 +247,7 @@
           }
         },
         {
-          "id": 104103,
+          "id": 1040103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -255,7 +255,7 @@
           }
         },
         {
-          "id": 104104,
+          "id": 1040104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -263,7 +263,7 @@
           }
         },
         {
-          "id": 104105,
+          "id": 1040105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -271,7 +271,7 @@
           }
         },
         {
-          "id": 104201,
+          "id": 1040201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -279,7 +279,7 @@
           }
         },
         {
-          "id": 104202,
+          "id": 1040202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -287,7 +287,7 @@
           }
         },
         {
-          "id": 104203,
+          "id": 1040203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -297,7 +297,7 @@
       ]
     },
     {
-      "id": 105,
+      "id": 1050,
       "name": {
         "en": "",
         "ko": "제 5임무",
@@ -305,7 +305,7 @@
       },
       "stages": [
         {
-          "id": 105101,
+          "id": 1050101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -313,7 +313,7 @@
           }
         },
         {
-          "id": 105102,
+          "id": 1050102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -321,7 +321,7 @@
           }
         },
         {
-          "id": 105103,
+          "id": 1050103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -329,7 +329,7 @@
           }
         },
         {
-          "id": 105104,
+          "id": 1050104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -337,7 +337,7 @@
           }
         },
         {
-          "id": 105105,
+          "id": 1050105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -345,7 +345,7 @@
           }
         },
         {
-          "id": 105201,
+          "id": 1050201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -353,7 +353,7 @@
           }
         },
         {
-          "id": 105202,
+          "id": 1050202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -361,7 +361,7 @@
           }
         },
         {
-          "id": 105203,
+          "id": 1050203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 3,
@@ -371,7 +371,7 @@
       ]
     },
     {
-      "id": 106,
+      "id": 1060,
       "name": {
         "en": "",
         "ko": "제 6임무",
@@ -379,7 +379,7 @@
       },
       "stages": [
         {
-          "id": 106101,
+          "id": 1060101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -387,7 +387,7 @@
           }
         },
         {
-          "id": 106102,
+          "id": 1060102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -395,7 +395,7 @@
           }
         },
         {
-          "id": 106103,
+          "id": 1060103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -403,7 +403,7 @@
           }
         },
         {
-          "id": 106104,
+          "id": 1060104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -411,7 +411,7 @@
           }
         },
         {
-          "id": 106105,
+          "id": 1060105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -419,7 +419,7 @@
           }
         },
         {
-          "id": 106201,
+          "id": 1060201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -427,7 +427,7 @@
           }
         },
         {
-          "id": 106202,
+          "id": 1060202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -435,7 +435,7 @@
           }
         },
         {
-          "id": 106203,
+          "id": 1060203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -445,7 +445,7 @@
       ]
     },
     {
-      "id": 107,
+      "id": 1070,
       "name": {
         "en": "",
         "ko": "제 7임무",
@@ -453,7 +453,7 @@
       },
       "stages": [
         {
-          "id": 107101,
+          "id": 1070101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -461,7 +461,7 @@
           }
         },
         {
-          "id": 107102,
+          "id": 1070102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 3,
@@ -469,7 +469,7 @@
           }
         },
         {
-          "id": 107103,
+          "id": 1070103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -477,7 +477,7 @@
           }
         },
         {
-          "id": 107104,
+          "id": 1070104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -485,7 +485,7 @@
           }
         },
         {
-          "id": 107105,
+          "id": 1070105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -493,7 +493,7 @@
           }
         },
         {
-          "id": 107201,
+          "id": 1070201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -501,7 +501,7 @@
           }
         },
         {
-          "id": 107202,
+          "id": 1070202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -509,7 +509,7 @@
           }
         },
         {
-          "id": 107203,
+          "id": 1070203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -519,7 +519,7 @@
       ]
     },
     {
-      "id": 108,
+      "id": 1080,
       "name": {
         "en": "",
         "ko": "제 8임무",
@@ -527,7 +527,7 @@
       },
       "stages": [
         {
-          "id": 108101,
+          "id": 1080101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -535,7 +535,7 @@
           }
         },
         {
-          "id": 108102,
+          "id": 1080102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -543,7 +543,7 @@
           }
         },
         {
-          "id": 108103,
+          "id": 1080103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -551,7 +551,7 @@
           }
         },
         {
-          "id": 108104,
+          "id": 1080104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -559,7 +559,7 @@
           }
         },
         {
-          "id": 108105,
+          "id": 1080105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -567,7 +567,7 @@
           }
         },
         {
-          "id": 108201,
+          "id": 1080201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -575,7 +575,7 @@
           }
         },
         {
-          "id": 108202,
+          "id": 1080202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -583,7 +583,7 @@
           }
         },
         {
-          "id": 108203,
+          "id": 1080203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -593,7 +593,7 @@
       ]
     },
     {
-      "id": 109,
+      "id": 1090,
       "name": {
         "en": "",
         "ko": "제 9임무",
@@ -601,7 +601,7 @@
       },
       "stages": [
         {
-          "id": 109101,
+          "id": 1090101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -609,7 +609,7 @@
           }
         },
         {
-          "id": 109102,
+          "id": 1090102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -617,7 +617,7 @@
           }
         },
         {
-          "id": 109103,
+          "id": 1090103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -625,7 +625,7 @@
           }
         },
         {
-          "id": 109104,
+          "id": 1090104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -633,7 +633,7 @@
           }
         },
         {
-          "id": 109105,
+          "id": 1090105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -641,7 +641,7 @@
           }
         },
         {
-          "id": 109201,
+          "id": 1090201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -649,7 +649,7 @@
           }
         },
         {
-          "id": 109202,
+          "id": 1090202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -657,7 +657,7 @@
           }
         },
         {
-          "id": 109203,
+          "id": 1090203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -667,7 +667,7 @@
       ]
     },
     {
-      "id": 110,
+      "id": 1100,
       "name": {
         "en": "",
         "ko": "제 10임무",
@@ -675,7 +675,7 @@
       },
       "stages": [
         {
-          "id": 110101,
+          "id": 1100101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -683,7 +683,7 @@
           }
         },
         {
-          "id": 110102,
+          "id": 1100102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -691,7 +691,7 @@
           }
         },
         {
-          "id": 110103,
+          "id": 1100103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -699,7 +699,7 @@
           }
         },
         {
-          "id": 110104,
+          "id": 1100104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -707,7 +707,7 @@
           }
         },
         {
-          "id": 110105,
+          "id": 1100105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -715,7 +715,7 @@
           }
         },
         {
-          "id": 110201,
+          "id": 1100201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -723,7 +723,7 @@
           }
         },
         {
-          "id": 110202,
+          "id": 1100202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -731,7 +731,7 @@
           }
         },
         {
-          "id": 110203,
+          "id": 1100203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -741,7 +741,7 @@
       ]
     },
     {
-      "id": 111,
+      "id": 1110,
       "name": {
         "en": "",
         "ko": "제 11임무",
@@ -749,7 +749,7 @@
       },
       "stages": [
         {
-          "id": 111101,
+          "id": 1110101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -757,7 +757,7 @@
           }
         },
         {
-          "id": 111102,
+          "id": 1110102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -765,7 +765,7 @@
           }
         },
         {
-          "id": 111103,
+          "id": 1110103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -773,7 +773,7 @@
           }
         },
         {
-          "id": 111104,
+          "id": 1110104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -781,7 +781,7 @@
           }
         },
         {
-          "id": 111105,
+          "id": 1110105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -789,7 +789,7 @@
           }
         },
         {
-          "id": 111201,
+          "id": 1110201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -797,7 +797,7 @@
           }
         },
         {
-          "id": 111202,
+          "id": 1110202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -805,7 +805,7 @@
           }
         },
         {
-          "id": 111203,
+          "id": 1110203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -815,7 +815,7 @@
       ]
     },
     {
-      "id": 112,
+      "id": 1120,
       "name": {
         "en": "",
         "ko": "제 12임무",
@@ -823,7 +823,7 @@
       },
       "stages": [
         {
-          "id": 112101,
+          "id": 1120101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -831,7 +831,7 @@
           }
         },
         {
-          "id": 112102,
+          "id": 1120102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -839,7 +839,7 @@
           }
         },
         {
-          "id": 112103,
+          "id": 1120103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -847,7 +847,7 @@
           }
         },
         {
-          "id": 112104,
+          "id": 1120104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -855,7 +855,7 @@
           }
         },
         {
-          "id": 112105,
+          "id": 1120105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -863,7 +863,7 @@
           }
         },
         {
-          "id": 112201,
+          "id": 1120201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -871,7 +871,7 @@
           }
         },
         {
-          "id": 112202,
+          "id": 1120202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -879,7 +879,7 @@
           }
         },
         {
-          "id": 112203,
+          "id": 1120203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 6,
@@ -889,7 +889,7 @@
       ]
     },
     {
-      "id": 113,
+      "id": 1130,
       "name": {
         "en": "",
         "ko": "제 13임무",
@@ -897,7 +897,7 @@
       },
       "stages": [
         {
-          "id": 113101,
+          "id": 1130101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -905,7 +905,7 @@
           }
         },
         {
-          "id": 113102,
+          "id": 1130102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -913,7 +913,7 @@
           }
         },
         {
-          "id": 113103,
+          "id": 1130103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -921,7 +921,7 @@
           }
         },
         {
-          "id": 113104,
+          "id": 1130104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -929,7 +929,7 @@
           }
         },
         {
-          "id": 113105,
+          "id": 1130105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -937,7 +937,7 @@
           }
         },
         {
-          "id": 113201,
+          "id": 1130201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -945,7 +945,7 @@
           }
         },
         {
-          "id": 113202,
+          "id": 1130202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -953,7 +953,7 @@
           }
         },
         {
-          "id": 113203,
+          "id": 1130203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -963,7 +963,7 @@
       ]
     },
     {
-      "id": 114,
+      "id": 1140,
       "name": {
         "en": "",
         "ko": "제 14임무",
@@ -971,7 +971,7 @@
       },
       "stages": [
         {
-          "id": 114101,
+          "id": 1140101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -979,7 +979,7 @@
           }
         },
         {
-          "id": 114102,
+          "id": 1140102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -987,7 +987,7 @@
           }
         },
         {
-          "id": 114103,
+          "id": 1140103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -995,7 +995,7 @@
           }
         },
         {
-          "id": 114104,
+          "id": 1140104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -1003,7 +1003,7 @@
           }
         },
         {
-          "id": 114105,
+          "id": 1140105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1011,7 +1011,7 @@
           }
         },
         {
-          "id": 114201,
+          "id": 1140201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -1019,7 +1019,7 @@
           }
         },
         {
-          "id": 114202,
+          "id": 1140202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -1027,7 +1027,7 @@
           }
         },
         {
-          "id": 114203,
+          "id": 1140203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 6,
@@ -1037,7 +1037,7 @@
       ]
     },
     {
-      "id": 115,
+      "id": 1150,
       "name": {
         "en": "",
         "ko": "제 15임무",
@@ -1045,7 +1045,7 @@
       },
       "stages": [
         {
-          "id": 115101,
+          "id": 1150101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1053,7 +1053,7 @@
           }
         },
         {
-          "id": 115102,
+          "id": 1150102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1061,7 +1061,7 @@
           }
         },
         {
-          "id": 115103,
+          "id": 1150103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -1069,7 +1069,7 @@
           }
         },
         {
-          "id": 115104,
+          "id": 1150104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1077,7 +1077,7 @@
           }
         },
         {
-          "id": 115105,
+          "id": 1150105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1085,7 +1085,7 @@
           }
         },
         {
-          "id": 115201,
+          "id": 1150201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -1093,7 +1093,7 @@
           }
         },
         {
-          "id": 115202,
+          "id": 1150202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -1101,7 +1101,7 @@
           }
         },
         {
-          "id": 115203,
+          "id": 1150203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 7,
@@ -1111,7 +1111,7 @@
       ]
     },
     {
-      "id": 116,
+      "id": 1160,
       "name": {
         "en": "",
         "ko": "제 16임무",
@@ -1119,7 +1119,7 @@
       },
       "stages": [
         {
-          "id": 116101,
+          "id": 1160101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1127,7 +1127,7 @@
           }
         },
         {
-          "id": 116102,
+          "id": 1160102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1135,7 +1135,7 @@
           }
         },
         {
-          "id": 116103,
+          "id": 1160103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 5,
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "id": 116104,
+          "id": 1160104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1151,7 +1151,7 @@
           }
         },
         {
-          "id": 116105,
+          "id": 1160105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1159,7 +1159,7 @@
           }
         },
         {
-          "id": 116201,
+          "id": 1160201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -1167,7 +1167,7 @@
           }
         },
         {
-          "id": 116202,
+          "id": 1160202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -1175,7 +1175,7 @@
           }
         },
         {
-          "id": 116203,
+          "id": 1160203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 7,
@@ -1185,7 +1185,7 @@
       ]
     },
     {
-      "id": 117,
+      "id": 1170,
       "name": {
         "en": "",
         "ko": "제 17임무",
@@ -1193,7 +1193,7 @@
       },
       "stages": [
         {
-          "id": 117101,
+          "id": 1170101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1201,7 +1201,7 @@
           }
         },
         {
-          "id": 117102,
+          "id": 1170102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1209,7 +1209,7 @@
           }
         },
         {
-          "id": 117103,
+          "id": 1170103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1217,7 +1217,7 @@
           }
         },
         {
-          "id": 117104,
+          "id": 1170104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1225,7 +1225,7 @@
           }
         },
         {
-          "id": 117105,
+          "id": 1170105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1233,7 +1233,7 @@
           }
         },
         {
-          "id": 117201,
+          "id": 1170201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -1241,7 +1241,7 @@
           }
         },
         {
-          "id": 117202,
+          "id": 1170202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -1249,7 +1249,7 @@
           }
         },
         {
-          "id": 117203,
+          "id": 1170203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 7,
@@ -1259,7 +1259,7 @@
       ]
     },
     {
-      "id": 118,
+      "id": 1180,
       "name": {
         "en": "",
         "ko": "제 18임무",
@@ -1267,7 +1267,7 @@
       },
       "stages": [
         {
-          "id": 118101,
+          "id": 1180101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1275,7 +1275,7 @@
           }
         },
         {
-          "id": 118102,
+          "id": 1180102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1283,7 +1283,7 @@
           }
         },
         {
-          "id": 118103,
+          "id": 1180103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1291,7 +1291,7 @@
           }
         },
         {
-          "id": 118104,
+          "id": 1180104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1299,7 +1299,7 @@
           }
         },
         {
-          "id": 118105,
+          "id": 1180105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1307,7 +1307,7 @@
           }
         },
         {
-          "id": 118201,
+          "id": 1180201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -1315,7 +1315,7 @@
           }
         },
         {
-          "id": 118202,
+          "id": 1180202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 5,
@@ -1323,7 +1323,7 @@
           }
         },
         {
-          "id": 118203,
+          "id": 1180203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 7,
@@ -1333,7 +1333,7 @@
       ]
     },
     {
-      "id": 119,
+      "id": 1190,
       "name": {
         "en": "",
         "ko": "제 19임무",
@@ -1341,7 +1341,7 @@
       },
       "stages": [
         {
-          "id": 119101,
+          "id": 1190101,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1349,7 +1349,7 @@
           }
         },
         {
-          "id": 119102,
+          "id": 1190102,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 4,
@@ -1357,7 +1357,7 @@
           }
         },
         {
-          "id": 119103,
+          "id": 1190103,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1365,7 +1365,7 @@
           }
         },
         {
-          "id": 119104,
+          "id": 1190104,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1373,7 +1373,7 @@
           }
         },
         {
-          "id": 119105,
+          "id": 1190105,
           "difficultyType": "normal",
           "starConditions": {
             "rank": 6,
@@ -1381,7 +1381,7 @@
           }
         },
         {
-          "id": 119201,
+          "id": 1190201,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 4,
@@ -1389,7 +1389,7 @@
           }
         },
         {
-          "id": 119202,
+          "id": 1190202,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 6,
@@ -1397,7 +1397,7 @@
           }
         },
         {
-          "id": 119203,
+          "id": 1190203,
           "difficultyType": "hard",
           "starConditions": {
             "rank": 7,
@@ -1409,15 +1409,520 @@
   ],
   "events": [
     {
-      "id": 214,
+      "id": 2010,
       "name": {
         "en": "",
-        "ko": "아비도스 리조트 복구 대책위원회",
-        "ja": "アビドスリゾート復旧対策委員会"
+        "ko": "벚꽃만발 축제대소동!",
+        "ja": "桜花爛漫お祭り騒ぎ！"
+      },
+      "stages": []
+    },
+    {
+      "id": 2011,
+      "name": {
+        "en": "",
+        "ko": "벚꽃만발 축제대소동!",
+        "ja": "桜花爛漫お祭り騒ぎ！"
       },
       "stages": [
         {
-          "id": 214302,
+          "id": 2010302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": 2020,
+      "name": {
+        "en": "",
+        "ko": "혁명의 이반 쿠팔라",
+        "ja": "革命のイワン・クパーラ"
+      },
+      "stages": [
+        {
+          "id": 2020101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 2,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2020102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2020103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2020104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2020105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2020201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 7
+          }
+        },
+        {
+          "id": 2020202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2020203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2020204,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2020205,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2020206,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2020207,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 3
+          }
+        },
+        {
+          "id": 2020301,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 7,
+            "phase": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": 2021,
+      "name": {
+        "en": "",
+        "ko": "혁명의 이반 쿠팔라",
+        "ja": "革命のイワン・クパーラ"
+      },
+      "stages": [
+        {
+          "id": 2020101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 2,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2020102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2020103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2020104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2020105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2020301,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 7,
+            "phase": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": 2030,
+      "name": {
+        "en": "",
+        "ko": "여름 하늘의 위시 리스트",
+        "ja": "夏空のウィッシュリスト"
+      },
+      "stages": [
+        {
+          "id": 2030101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 2,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2030102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2030103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2030104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2030105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2030204,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2030208,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2030212,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2030303,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2031,
+      "name": {
+        "en": "",
+        "ko": "여름 하늘의 위시 리스트",
+        "ja": "夏空のウィッシュリスト"
+      },
+      "stages": [
+        {
+          "id": 2030101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 2,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2030102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2030103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2030104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2030105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2030303,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2040,
+      "name": {
+        "en": "",
+        "ko": "히나 선도부장님의 여름방학!",
+        "ja": "ヒナ委員長のなつやすみっ！"
+      },
+      "stages": []
+    },
+    {
+      "id": 2041,
+      "name": {
+        "en": "",
+        "ko": "특수 작전 데카그라마톤 편",
+        "ja": "特殊作戦・デカグラマトン編"
+      },
+      "stages": []
+    },
+    {
+      "id": 2050,
+      "name": {
+        "en": "",
+        "ko": "네버랜드에서의 술래잡기",
+        "ja": "ネバーランドでつかまえて"
+      },
+      "stages": []
+    },
+    {
+      "id": 2051,
+      "name": {
+        "en": "",
+        "ko": "히나 선도부장님의 여름방학!",
+        "ja": "ヒナ委員長のなつやすみっ！"
+      },
+      "stages": []
+    },
+    {
+      "id": 2060,
+      "name": {
+        "en": "",
+        "ko": "선상의 바니 체이서",
+        "ja": "船上のバニーチェイサー"
+      },
+      "stages": [
+        {
+          "id": 2060106,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2060201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2060202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2060203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2060204,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2060205,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2060206,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2060207,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2060208,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2060209,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2060302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2080,
+      "name": {
+        "en": "",
+        "ko": "227호 온천장 운영일지!",
+        "ja": "227号温泉郷の運営記録！"
+      },
+      "stages": [
+        {
+          "id": 2080106,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2080204,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 3,
+            "phase": 7
+          }
+        },
+        {
+          "id": 2080208,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2080212,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2080302,
           "difficultyType": "challenge",
           "starConditions": {
             "rank": 6,
@@ -1425,11 +1930,176 @@
           }
         },
         {
-          "id": 214304,
+          "id": 2080304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2090,
+      "name": {
+        "en": "",
+        "ko": "신춘광상곡 제68번",
+        "ja": "新春狂想曲第68番"
+      },
+      "stages": [
+        {
+          "id": 2090302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2090304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2100,
+      "name": {
+        "en": "",
+        "ko": "샬레의 해피♡발렌타인 순찰",
+        "ja": "シャーレのハッピー♡バレンタインパトロール"
+      },
+      "stages": [
+        {
+          "id": 2100302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2100304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 4,
+            "phase": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 2110,
+      "name": {
+        "en": "",
+        "ko": "코사카 와카모의 침묵과 축연",
+        "ja": "狐坂ワカモの沈黙と祝宴"
+      },
+      "stages": []
+    },
+    {
+      "id": 2120,
+      "name": {
+        "en": "",
+        "ko": "고서관의 마술사와 덜렁대는 수녀님 ",
+        "ja": "どたばたシスターと古書館の魔術師"
+      },
+      "stages": [
+        {
+          "id": 2120302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 5,
+            "phase": 3
+          }
+        },
+        {
+          "id": 2120304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 9,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2130,
+      "name": {
+        "en": "",
+        "ko": "불인의 마음",
+        "ja": "不忍ノ心"
+      },
+      "stages": [
+        {
+          "id": 2130302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2130304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 7,
+            "phase": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 2140,
+      "name": {
+        "en": "",
+        "ko": "아비도스 리조트 복구 대책위원회",
+        "ja": "アビドスリゾート復旧対策委員会"
+      },
+      "stages": [
+        {
+          "id": 2140302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2140304,
           "difficultyType": "challenge",
           "starConditions": {
             "rank": 8,
             "phase": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 2160,
+      "name": {
+        "en": "",
+        "ko": "방과 후 디저트 이야기 달콤한 비밀과 총격전",
+        "ja": "放課後スイーツ物語 甘い秘密と銃撃戦"
+      },
+      "stages": [
+        {
+          "id": 2160302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2160304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 9,
+            "phase": 5
           }
         }
       ]

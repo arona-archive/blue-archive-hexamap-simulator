@@ -1,0 +1,83 @@
+{
+  "id": 1010201,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        1,
+        -1
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        2,
+        -1
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        -1,
+        1
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 1,
+      "defenceType": "light_armor",
+      "movementType": "a",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": "boss",
+      "defenceType": "light_armor",
+      "movementType": "a",
+      "position": [
+        1,
+        0
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "type": "pyroxene_box",
+      "position": [
+        2,
+        -1
+      ]
+    }
+  ],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -1,
+        1
+      ],
+      "hidden": false
+    }
+  ]
+}

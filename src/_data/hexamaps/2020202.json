@@ -1,0 +1,164 @@
+{
+  "id": 2020202,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        -2,
+        -1
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        0,
+        -1
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -3,
+        0
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        -5,
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "position": [
+        -4,
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        -3,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -2,
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "position": [
+        -5,
+        2
+      ]
+    },
+    {
+      "id": 10,
+      "position": [
+        -3,
+        2
+      ]
+    },
+    {
+      "id": 11,
+      "position": [
+        -2,
+        2
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 3,
+      "defenceType": "heavy_armor",
+      "movementType": "c",
+      "position": [
+        0,
+        -1
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": 3,
+      "defenceType": "heavy_armor",
+      "movementType": "b",
+      "position": [
+        -5,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "enemyRank": "boss",
+      "defenceType": "heavy_armor",
+      "movementType": "b",
+      "position": [
+        -5,
+        2
+      ]
+    }
+  ],
+  "items": [],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -2,
+        2
+      ],
+      "hidden": false
+    },
+    {
+      "id": 2,
+      "type": "button_tile",
+      "position": [
+        -2,
+        1
+      ],
+      "hidden": false,
+      "targetTileEventId": 3
+    },
+    {
+      "id": 3,
+      "type": "button_target_tile",
+      "position": [
+        -4,
+        1
+      ],
+      "hidden": true
+    },
+    {
+      "id": 4,
+      "type": "button_tile",
+      "position": [
+        -3,
+        2
+      ],
+      "hidden": false,
+      "targetTileEventId": 5
+    },
+    {
+      "id": 5,
+      "type": "button_target_tile",
+      "position": [
+        -3,
+        1
+      ],
+      "hidden": true
+    }
+  ]
+}
