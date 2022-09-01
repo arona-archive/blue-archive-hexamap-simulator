@@ -1,0 +1,60 @@
+{
+  "id": 1010101,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -1,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -2,
+        2
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 1,
+      "defenceType": "light_armor",
+      "movementType": "a",
+      "position": [
+        -1,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": "boss",
+      "defenceType": "light_armor",
+      "movementType": "a",
+      "position": [
+        0,
+        0
+      ]
+    }
+  ],
+  "items": [],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -2,
+        2
+      ],
+      "hidden": false
+    }
+  ]
+}

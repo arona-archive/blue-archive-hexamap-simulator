@@ -1,0 +1,145 @@
+{
+  "id": 2030103,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        -3,
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -3,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -5,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -5,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        -4,
+        3
+      ]
+    },
+    {
+      "id": 6,
+      "position": [
+        -6,
+        4
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        -5,
+        4
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -4,
+        4
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 3,
+      "defenceType": "light_armor",
+      "movementType": "c",
+      "position": [
+        -6,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": 3,
+      "defenceType": "light_armor",
+      "movementType": "b",
+      "position": [
+        -3,
+        0
+      ]
+    },
+    {
+      "id": 3,
+      "enemyRank": "boss",
+      "defenceType": "light_armor",
+      "movementType": "c",
+      "position": [
+        -5,
+        2
+      ]
+    }
+  ],
+  "items": [],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -4,
+        4
+      ],
+      "hidden": false
+    },
+    {
+      "id": 2,
+      "type": "warp_tile",
+      "position": [
+        -4,
+        3
+      ],
+      "hidden": false,
+      "targetTileEventId": 3
+    },
+    {
+      "id": 3,
+      "type": "warp_tile",
+      "position": [
+        -3,
+        1
+      ],
+      "hidden": false,
+      "targetTileEventId": 2
+    },
+    {
+      "id": 4,
+      "type": "warp_tile",
+      "position": [
+        -3,
+        1
+      ],
+      "hidden": false,
+      "targetTileEventId": 5
+    },
+    {
+      "id": 5,
+      "type": "warp_tile",
+      "position": [
+        -4,
+        3
+      ],
+      "hidden": false,
+      "targetTileEventId": 4
+    }
+  ]
+}
