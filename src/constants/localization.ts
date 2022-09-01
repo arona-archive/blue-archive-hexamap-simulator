@@ -121,11 +121,3 @@ export const LocalizationTable: Record<LocalizationKey, IText> = {
 		ja: '神秘',
 	},
 };
-
-export const EventNameLocalizationTable: Record<number, IText> = {
-	214: {
-		en: 'アビドスリゾート復旧対策委員会',
-		ko: 'アビドスリゾート復旧対策委員会',
-		ja: 'アビドスリゾート復旧対策委員会',
-	},
-};

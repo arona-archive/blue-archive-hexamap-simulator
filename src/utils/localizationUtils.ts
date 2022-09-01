@@ -1,12 +1,5 @@
 import { getEnumValue } from '@sapphire-sh/utils';
-import {
-	AttackType,
-	emptyText,
-	EventNameLocalizationTable,
-	LanguageCode,
-	LocalizationKey,
-	LocalStorageKey,
-} from '../constants';
+import { AttackType, emptyText, LanguageCode, LocalizationKey, LocalStorageKey } from '../constants';
 import { IText } from '../types';
 
 const pr = new Intl.PluralRules('en-US', { type: 'ordinal' });
@@ -24,7 +17,7 @@ const getOrdinalNumeralText = (value: number): string => {
 };
 
 export const getCampaignName = (campaignId: number): IText => {
-	const p = campaignId % 100;
+	const p = (campaignId % 100) / 10;
 
 	return {
 		en: `${getOrdinalNumeralText(p)} Mission`,
@@ -33,12 +26,8 @@ export const getCampaignName = (campaignId: number): IText => {
 	};
 };
 
-export const getEventName = (eventId: LocalizationKey): IText => {
-	return EventNameLocalizationTable[eventId] ?? emptyText;
-};
-
 export const getStageName = (stageId: number): IText => {
-	const p = Math.floor(stageId / 1000) % 100;
+	const p = (Math.floor(stageId / 1000) % 100) / 10;
 	const q = Math.floor(stageId / 100) % 10;
 	const r = stageId % 100;
 

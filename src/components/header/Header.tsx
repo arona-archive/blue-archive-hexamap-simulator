@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { LanguageCode, LocalizationKey } from '../../constants';
 import { useAppDispatch, useAppSelector, useTranslation } from '../../hooks';
 import { getLanguageCode, getMetadata, setLanguageCode } from '../../reducers';
-import { getCampaignName, getEventName } from '../../utils';
+import { getCampaignName } from '../../utils';
 import { LanguageItem } from './LanguageItem';
 
 const Nav = styled.nav`
@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
 	const eventItems = useMemo(() => {
 		return metadata.events.map((event) => ({
 			key: event.id,
-			label: getEventName(event.id)[languageCode],
+			label: event.name[languageCode],
 			path: `/event/${event.id}`,
 		}));
 	}, [metadata.events, languageCode]);

@@ -4,7 +4,7 @@ import { List, Page } from '../../components';
 import { LocalizationKey } from '../../constants';
 import { useAppSelector } from '../../hooks';
 import { getLanguageCode, getMetadata } from '../../reducers';
-import { getCampaignName, getEventName } from '../../utils';
+import { getCampaignName } from '../../utils';
 
 export const MainPage: React.FC = () => {
 	const languageCode = useAppSelector(getLanguageCode);
@@ -21,7 +21,7 @@ export const MainPage: React.FC = () => {
 	const eventItems = useMemo(() => {
 		return metadata.events.map((event) => ({
 			key: event.id,
-			label: getEventName(event.id)[languageCode],
+			label: event.name[languageCode],
 			path: `/event/${event.id}`,
 		}));
 	}, [metadata.events, languageCode]);

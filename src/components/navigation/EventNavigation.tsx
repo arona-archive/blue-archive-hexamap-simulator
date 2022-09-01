@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import { useAppSelector } from '../../hooks';
 import { getMetadata } from '../../reducers';
 import { INavigationPath } from '../../types';
-import { getEventName } from '../../utils';
 import { Navigation } from './Navigation';
 
 interface Props {
@@ -23,7 +22,7 @@ export const EventNavigation: React.FC<Props> = (props) => {
 
 		return {
 			path: `/event/${event.id}`,
-			name: getEventName(event.id),
+			name: event.name,
 		};
 	}, [eventId]);
 
@@ -36,7 +35,7 @@ export const EventNavigation: React.FC<Props> = (props) => {
 
 		return {
 			path: `/event/${event.id}`,
-			name: getEventName(event.id),
+			name: event.name,
 		};
 	}, [eventId]);
 
