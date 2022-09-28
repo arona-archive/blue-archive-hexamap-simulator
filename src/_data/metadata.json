@@ -1405,6 +1405,80 @@
           }
         }
       ]
+    },
+    {
+      "id": 1200,
+      "name": {
+        "en": "",
+        "ko": "제 20임무",
+        "ja": "第 20任務"
+      },
+      "stages": [
+        {
+          "id": 1200101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1200102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1200103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1200104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1200105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1200201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1200202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1200203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
     }
   ],
   "events": [
@@ -1882,6 +1956,32 @@
       ]
     },
     {
+      "id": 2061,
+      "name": {
+        "en": "",
+        "ko": "선상의 바니 체이서",
+        "ja": "船上のバニーチェイサー"
+      },
+      "stages": [
+        {
+          "id": 2060106,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2060302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2080,
       "name": {
         "en": "",
@@ -2099,6 +2199,32 @@
           "difficultyType": "challenge",
           "starConditions": {
             "rank": 9,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2170,
+      "name": {
+        "en": "",
+        "ko": "On your mark ＠ millennium",
+        "ja": "On your mark ＠ millennium"
+      },
+      "stages": [
+        {
+          "id": 2170302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2170304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
             "phase": 5
           }
         }
