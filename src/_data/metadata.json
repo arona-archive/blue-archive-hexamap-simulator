@@ -2104,7 +2104,7 @@
       "id": 2120,
       "name": {
         "en": "",
-        "ko": "고서관의 마술사와 덜렁대는 수녀님 ",
+        "ko": "덜렁대는 수녀님과 고서관의 마술사",
         "ja": "どたばたシスターと古書館の魔術師"
       },
       "stages": [
@@ -2222,6 +2222,32 @@
         },
         {
           "id": 2170304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2180,
+      "name": {
+        "en": "",
+        "ko": "Get set, go!",
+        "ja": "Get set、go！"
+      },
+      "stages": [
+        {
+          "id": 2180302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 3
+          }
+        },
+        {
+          "id": 2180304,
           "difficultyType": "challenge",
           "starConditions": {
             "rank": 8,
