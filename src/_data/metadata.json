@@ -2040,6 +2040,40 @@
       ]
     },
     {
+      "id": 2081,
+      "name": {
+        "en": "",
+        "ko": "227호 온천장 운영일지!",
+        "ja": "227号温泉郷の運営記録！"
+      },
+      "stages": [
+        {
+          "id": 2080106,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 3,
+            "phase": 6
+          }
+        },
+        {
+          "id": 2080302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2080304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2090,
       "name": {
         "en": "",
@@ -2248,6 +2282,32 @@
         },
         {
           "id": 2180304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2190,
+      "name": {
+        "en": "",
+        "ko": "성당의 메리 크리스마스",
+        "ja": "聖堂のメリークリスマス"
+      },
+      "stages": [
+        {
+          "id": 2190302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2190304,
           "difficultyType": "challenge",
           "starConditions": {
             "rank": 8,
