@@ -1479,6 +1479,80 @@
           }
         }
       ]
+    },
+    {
+      "id": 1210,
+      "name": {
+        "en": "",
+        "ko": "제 21임무",
+        "ja": "第 21任務"
+      },
+      "stages": [
+        {
+          "id": 1210101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1210102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1210103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1210104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1210105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1210201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1210202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1210203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
     }
   ],
   "events": [
@@ -1685,7 +1759,7 @@
       "id": 2030,
       "name": {
         "en": "",
-        "ko": "여름 하늘의 위시 리스트",
+        "ko": "여름 하늘의 위시리스트",
         "ja": "夏空のウィッシュリスト"
       },
       "stages": [
@@ -1767,7 +1841,7 @@
       "id": 2031,
       "name": {
         "en": "",
-        "ko": "여름 하늘의 위시 리스트",
+        "ko": "여름 하늘의 위시리스트",
         "ja": "夏空のウィッシュリスト"
       },
       "stages": [
@@ -2126,7 +2200,42 @@
       ]
     },
     {
+      "id": 2101,
+      "name": {
+        "en": "",
+        "ko": "샬레의 해피♡발렌타인 순찰",
+        "ja": "シャーレのハッピー♡バレンタインパトロール"
+      },
+      "stages": [
+        {
+          "id": 2100302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2100304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 4,
+            "phase": 3
+          }
+        }
+      ]
+    },
+    {
       "id": 2110,
+      "name": {
+        "en": "",
+        "ko": "코사카 와카모의 침묵과 축연",
+        "ja": "狐坂ワカモの沈黙と祝宴"
+      },
+      "stages": []
+    },
+    {
+      "id": 2111,
       "name": {
         "en": "",
         "ko": "코사카 와카모의 침묵과 축연",
@@ -2295,7 +2404,7 @@
       "name": {
         "en": "",
         "ko": "성당의 메리 크리스마스",
-        "ja": "聖堂のメリークリスマス"
+        "ja": "聖堂のメリークリスマス〜救護騎士団の贈り物〜"
       },
       "stages": [
         {
@@ -2308,6 +2417,32 @@
         },
         {
           "id": 2190304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2200,
+      "name": {
+        "en": "",
+        "ko": "새해의 아페리티프",
+        "ja": "喰積の 前にいささか"
+      },
+      "stages": [
+        {
+          "id": 2200302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2200304,
           "difficultyType": "challenge",
           "starConditions": {
             "rank": 8,
