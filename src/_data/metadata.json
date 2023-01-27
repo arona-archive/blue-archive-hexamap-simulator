@@ -2270,6 +2270,32 @@
       ]
     },
     {
+      "id": 2121,
+      "name": {
+        "en": "",
+        "ko": "덜렁대는 수녀님과 고서관의 마술사",
+        "ja": "どたばたシスターと古書館の魔術師"
+      },
+      "stages": [
+        {
+          "id": 2120302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 5,
+            "phase": 3
+          }
+        },
+        {
+          "id": 2120304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 9,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2130,
       "name": {
         "en": "",
@@ -2404,7 +2430,7 @@
       "name": {
         "en": "",
         "ko": "성당의 메리 크리스마스",
-        "ja": "聖堂のメリークリスマス〜救護騎士団の贈り物〜"
+        "ja": "聖堂のメリークリスマス"
       },
       "stages": [
         {
