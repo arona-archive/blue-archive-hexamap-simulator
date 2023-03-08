@@ -2476,6 +2476,32 @@
           }
         }
       ]
+    },
+    {
+      "id": 2240,
+      "name": {
+        "en": "",
+        "ko": "복구 작업: D.U. 시라토리 구",
+        "ja": "復旧作業：D.U.シラトリ区"
+      },
+      "stages": [
+        {
+          "id": 2240302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2240304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 4
+          }
+        }
+      ]
     }
   ]
 }
