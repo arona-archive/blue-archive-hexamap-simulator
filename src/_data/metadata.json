@@ -2174,6 +2174,32 @@
       ]
     },
     {
+      "id": 2091,
+      "name": {
+        "en": "",
+        "ko": "신춘광상곡 제68번",
+        "ja": "新春狂想曲第68番"
+      },
+      "stages": [
+        {
+          "id": 2090302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2090304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2100,
       "name": {
         "en": "",
@@ -2297,6 +2323,32 @@
     },
     {
       "id": 2130,
+      "name": {
+        "en": "",
+        "ko": "불인의 마음",
+        "ja": "不忍ノ心"
+      },
+      "stages": [
+        {
+          "id": 2130302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2130304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 7,
+            "phase": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 2131,
       "name": {
         "en": "",
         "ko": "불인의 마음",
@@ -2481,7 +2533,7 @@
       "id": 2240,
       "name": {
         "en": "",
-        "ko": "복구 작업: D.U. 시라토리 구",
+        "ko": "복구 작업: D.U. 시라토리구",
         "ja": "復旧作業：D.U.シラトリ区"
       },
       "stages": [
