@@ -1982,8 +1982,8 @@
       "id": 2041,
       "name": {
         "en": "",
-        "ko": "특수 작전 데카그라마톤 편",
-        "ja": "特殊作戦・デカグラマトン編"
+        "ko": "히나 선도부장님의 여름방학!",
+        "ja": "ヒナ委員長のなつやすみっ！"
       },
       "stages": []
     },
@@ -2000,8 +2000,8 @@
       "id": 2051,
       "name": {
         "en": "",
-        "ko": "히나 선도부장님의 여름방학!",
-        "ja": "ヒナ委員長のなつやすみっ！"
+        "ko": "네버랜드에서의 술래잡기",
+        "ja": "ネバーランドでつかまえて"
       },
       "stages": []
     },
@@ -2500,11 +2500,37 @@
       ]
     },
     {
+      "id": 2161,
+      "name": {
+        "en": "",
+        "ko": "방과 후 디저트 이야기",
+        "ja": "放課後スイーツ物語"
+      },
+      "stages": [
+        {
+          "id": 2160302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2160304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 9,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2170,
       "name": {
         "en": "",
-        "ko": "On your mark ＠ millennium",
-        "ja": "On your mark ＠ millennium"
+        "ko": "ON YOUR MARK @ MILLENNIUM",
+        "ja": "ON YOUR MARK ＠ MILLENNIUM"
       },
       "stages": [
         {
@@ -2529,8 +2555,8 @@
       "id": 2180,
       "name": {
         "en": "",
-        "ko": "Get set, go!",
-        "ja": "Get set、go！"
+        "ko": "Get Set, Go!",
+        "ja": "Get Set, Go！"
       },
       "stages": [
         {
@@ -2625,6 +2651,32 @@
           "starConditions": {
             "rank": 8,
             "phase": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 2250,
+      "name": {
+        "en": "",
+        "ko": "순백의 예고장",
+        "ja": "白亜の予告状"
+      },
+      "stages": [
+        {
+          "id": 2250302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 1,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2250304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 1,
+            "phase": 6
           }
         }
       ]
