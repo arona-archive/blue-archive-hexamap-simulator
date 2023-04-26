@@ -1553,6 +1553,80 @@
           }
         }
       ]
+    },
+    {
+      "id": 1220,
+      "name": {
+        "en": "",
+        "ko": "제 22임무",
+        "ja": "第 22任務"
+      },
+      "stages": [
+        {
+          "id": 1220101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1220102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1220103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1220104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1220105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1220201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1220202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1220203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
     }
   ],
   "events": [
