@@ -2529,7 +2529,7 @@
       "id": 2170,
       "name": {
         "en": "",
-        "ko": "ON YOUR MARK @ MILLENNIUM",
+        "ko": "ON YOUR MARK ＠ MILLENNIUM",
         "ja": "ON YOUR MARK ＠ MILLENNIUM"
       },
       "stages": [
@@ -2677,6 +2677,32 @@
           "starConditions": {
             "rank": 1,
             "phase": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": 2260,
+      "name": {
+        "en": "",
+        "ko": "용무동주",
+        "ja": "龍武同舟"
+      },
+      "stages": [
+        {
+          "id": 2260302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2260304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 7,
+            "phase": 5
           }
         }
       ]
