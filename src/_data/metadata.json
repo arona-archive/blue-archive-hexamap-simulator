@@ -1627,6 +1627,80 @@
           }
         }
       ]
+    },
+    {
+      "id": 1230,
+      "name": {
+        "en": "",
+        "ko": "제 23임무",
+        "ja": "第 23任務"
+      },
+      "stages": [
+        {
+          "id": 1230101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1230102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1230103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1230104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1230105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1230201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1230202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1230203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 8,
+            "phase": 6
+          }
+        }
+      ]
     }
   ],
   "events": [
