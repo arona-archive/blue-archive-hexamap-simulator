@@ -2548,6 +2548,32 @@
       ]
     },
     {
+      "id": 2141,
+      "name": {
+        "en": "",
+        "ko": "아비도스 리조트 복구 대책위원회",
+        "ja": "アビドスリゾート復旧対策委員会"
+      },
+      "stages": [
+        {
+          "id": 2140302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2140304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 4
+          }
+        }
+      ]
+    },
+    {
       "id": 2160,
       "name": {
         "en": "",
@@ -2777,6 +2803,32 @@
           "starConditions": {
             "rank": 7,
             "phase": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 2270,
+      "name": {
+        "en": "",
+        "ko": "사라진 새우를 향한 토끼의 추적",
+        "ja": "RABBIT小隊と消えたエビの謎"
+      },
+      "stages": [
+        {
+          "id": 2270302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2270304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
           }
         }
       ]
