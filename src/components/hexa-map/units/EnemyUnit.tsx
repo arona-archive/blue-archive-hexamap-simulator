@@ -74,6 +74,9 @@ export const EnemyUnit: React.FC<Props> = (props) => {
 			case DefenceType.SPECIAL_ARMOR: {
 				return 'var(--bs-blue)';
 			}
+			case DefenceType.ELASTIC_ARMOR: {
+				return 'var(--bs-purple)';
+			}
 		}
 	}, [enemyUnit.defenceType]);
 

@@ -90,7 +90,7 @@
     {
       "id": 1,
       "enemyRank": 2,
-      "defenceType": "special_armor",
+      "defenceType": "heavy_armor",
       "movementType": "a",
       "position": [
         -3,
@@ -100,7 +100,7 @@
     {
       "id": 2,
       "enemyRank": 3,
-      "defenceType": "special_armor",
+      "defenceType": "heavy_armor",
       "movementType": "b",
       "position": [
         0,
@@ -120,7 +120,7 @@
     {
       "id": 4,
       "enemyRank": 3,
-      "defenceType": "special_armor",
+      "defenceType": "heavy_armor",
       "movementType": "b",
       "position": [
         -7,

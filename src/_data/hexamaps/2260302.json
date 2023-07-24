@@ -144,7 +144,7 @@
     {
       "id": 5,
       "enemyRank": "boss",
-      "defenceType": "heavy_armor",
+      "defenceType": "light_armor",
       "movementType": "b",
       "position": [
         2,

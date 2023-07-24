@@ -153,7 +153,7 @@
     {
       "id": 1,
       "enemyRank": 3,
-      "defenceType": "heavy_armor",
+      "defenceType": "light_armor",
       "movementType": "c",
       "position": [
         0,
@@ -163,7 +163,7 @@
     {
       "id": 2,
       "enemyRank": 3,
-      "defenceType": "heavy_armor",
+      "defenceType": "light_armor",
       "movementType": "b",
       "position": [
         -6,
