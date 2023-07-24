@@ -83,7 +83,7 @@
     {
       "id": 1,
       "enemyRank": 3,
-      "defenceType": "special_armor",
+      "defenceType": "heavy_armor",
       "movementType": "b",
       "position": [
         -7,
@@ -93,7 +93,7 @@
     {
       "id": 2,
       "enemyRank": 3,
-      "defenceType": "special_armor",
+      "defenceType": "heavy_armor",
       "movementType": "a",
       "position": [
         -4,
@@ -103,7 +103,7 @@
     {
       "id": 3,
       "enemyRank": 3,
-      "defenceType": "special_armor",
+      "defenceType": "heavy_armor",
       "movementType": "a",
       "position": [
         -4,
@@ -133,7 +133,7 @@
     {
       "id": 6,
       "enemyRank": 3,
-      "defenceType": "special_armor",
+      "defenceType": "heavy_armor",
       "movementType": "b",
       "position": [
         -2,

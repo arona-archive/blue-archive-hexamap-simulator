@@ -76,7 +76,7 @@
     {
       "id": 1,
       "enemyRank": 2,
-      "defenceType": "special_armor",
+      "defenceType": "light_armor",
       "movementType": "a",
       "position": [
         5,
@@ -86,7 +86,7 @@
     {
       "id": 2,
       "enemyRank": 3,
-      "defenceType": "special_armor",
+      "defenceType": "light_armor",
       "movementType": "b",
       "position": [
         3,

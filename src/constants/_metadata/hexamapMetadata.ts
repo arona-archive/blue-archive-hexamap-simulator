@@ -27,6 +27,7 @@ export enum DefenceType {
 	LIGHT_ARMOR = 'light_armor',
 	HEAVY_ARMOR = 'heavy_armor',
 	SPECIAL_ARMOR = 'special_armor',
+	ELASTIC_ARMOR = 'elastic_armor',
 }
 
 export enum ItemType {

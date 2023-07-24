@@ -69,7 +69,7 @@
     {
       "id": 1,
       "enemyRank": 2,
-      "defenceType": "light_armor",
+      "defenceType": "heavy_armor",
       "movementType": "b",
       "position": [
         0,

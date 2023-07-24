@@ -90,7 +90,7 @@
     {
       "id": 1,
       "enemyRank": 3,
-      "defenceType": "heavy_armor",
+      "defenceType": "light_armor",
       "movementType": "c",
       "position": [
         -3,
@@ -110,7 +110,7 @@
     {
       "id": 3,
       "enemyRank": "boss",
-      "defenceType": "heavy_armor",
+      "defenceType": "light_armor",
       "movementType": "c",
       "position": [
         4,
