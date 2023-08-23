@@ -2652,6 +2652,32 @@
       ]
     },
     {
+      "id": 2171,
+      "name": {
+        "en": "",
+        "ko": "ON YOUR MARK ＠ MILLENNIUM",
+        "ja": "ON YOUR MARK ＠ MILLENNIUM"
+      },
+      "stages": [
+        {
+          "id": 2170302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2170304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2180,
       "name": {
         "en": "",
@@ -2839,6 +2865,15 @@
         "en": "",
         "ko": "숨겨진 유산을 찾아서",
         "ja": "隠されし遺産を求めて"
+      },
+      "stages": []
+    },
+    {
+      "id": 2290,
+      "name": {
+        "en": "",
+        "ko": "학원 동인 이야기",
+        "ja": "学漫同人物語"
       },
       "stages": []
     }
