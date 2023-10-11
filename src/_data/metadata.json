@@ -1701,6 +1701,80 @@
           }
         }
       ]
+    },
+    {
+      "id": 1240,
+      "name": {
+        "en": "",
+        "ko": "제 24임무",
+        "ja": "第 24任務"
+      },
+      "stages": [
+        {
+          "id": 1240101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1240102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1240103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 8
+          }
+        },
+        {
+          "id": 1240104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1240105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 7,
+            "phase": 9
+          }
+        },
+        {
+          "id": 1240201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 4,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1240202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1240203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 9,
+            "phase": 6
+          }
+        }
+      ]
     }
   ],
   "events": [
