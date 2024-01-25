@@ -2804,6 +2804,32 @@
       ]
     },
     {
+      "id": 2191,
+      "name": {
+        "en": "",
+        "ko": "성당의 메리 크리스마스",
+        "ja": "聖堂のメリークリスマス"
+      },
+      "stages": [
+        {
+          "id": 2190302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2190304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2200,
       "name": {
         "en": "",
@@ -2975,6 +3001,15 @@
         "en": "",
         "ko": "전뇌신춘행진곡",
         "ja": "（電脳）新春行進曲"
+      },
+      "stages": []
+    },
+    {
+      "id": 2330,
+      "name": {
+        "en": "",
+        "ko": "빛으로 나아가는 그녀들의 소야곡",
+        "ja": "陽ひらく彼女たちの小夜曲"
       },
       "stages": []
     }
