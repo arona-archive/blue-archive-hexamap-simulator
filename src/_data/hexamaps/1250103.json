@@ -1,0 +1,243 @@
+{
+  "id": 1250103,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        -4,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -4,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -3,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -6,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        -5,
+        3
+      ]
+    },
+    {
+      "id": 6,
+      "position": [
+        -3,
+        3
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        -2,
+        3
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -5,
+        4
+      ]
+    },
+    {
+      "id": 9,
+      "position": [
+        -4,
+        4
+      ]
+    },
+    {
+      "id": 10,
+      "position": [
+        -7,
+        5
+      ]
+    },
+    {
+      "id": 11,
+      "position": [
+        -6,
+        5
+      ]
+    },
+    {
+      "id": 12,
+      "position": [
+        -4,
+        5
+      ]
+    },
+    {
+      "id": 13,
+      "position": [
+        -6,
+        6
+      ]
+    },
+    {
+      "id": 14,
+      "position": [
+        -7,
+        7
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "a",
+      "position": [
+        -4,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "b",
+      "position": [
+        -4,
+        5
+      ]
+    },
+    {
+      "id": 3,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "b",
+      "position": [
+        -2,
+        3
+      ]
+    },
+    {
+      "id": 4,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "b",
+      "position": [
+        -3,
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "b",
+      "position": [
+        -7,
+        5
+      ]
+    },
+    {
+      "id": 6,
+      "enemyRank": "boss",
+      "defenceType": "elastic_armor",
+      "movementType": "b",
+      "position": [
+        -7,
+        7
+      ]
+    }
+  ],
+  "items": [],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -6,
+        3
+      ],
+      "hidden": false
+    },
+    {
+      "id": 2,
+      "type": "start_tile",
+      "position": [
+        -6,
+        5
+      ],
+      "hidden": false
+    },
+    {
+      "id": 3,
+      "type": "switch_tile",
+      "position": [
+        -4,
+        2
+      ],
+      "hidden": false,
+      "targetTileEventId": 4
+    },
+    {
+      "id": 4,
+      "type": "switch_target_tile",
+      "position": [
+        -4,
+        4
+      ],
+      "hidden": true
+    },
+    {
+      "id": 5,
+      "type": "switch_tile",
+      "position": [
+        -5,
+        4
+      ],
+      "hidden": false,
+      "targetTileEventId": 6
+    },
+    {
+      "id": 6,
+      "type": "switch_target_tile",
+      "position": [
+        -5,
+        3
+      ],
+      "hidden": true
+    },
+    {
+      "id": 7,
+      "type": "button_tile",
+      "position": [
+        -3,
+        3
+      ],
+      "hidden": false,
+      "targetTileEventId": 8
+    },
+    {
+      "id": 8,
+      "type": "button_target_tile",
+      "position": [
+        -6,
+        6
+      ],
+      "hidden": true
+    }
+  ]
+}

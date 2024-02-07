@@ -1,0 +1,200 @@
+{
+  "id": 1250101,
+  "tiles": [
+    {
+      "id": 1,
+      "position": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "position": [
+        -4,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "position": [
+        -1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "position": [
+        -6,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "position": [
+        -4,
+        3
+      ]
+    },
+    {
+      "id": 6,
+      "position": [
+        -3,
+        3
+      ]
+    },
+    {
+      "id": 7,
+      "position": [
+        -2,
+        3
+      ]
+    },
+    {
+      "id": 8,
+      "position": [
+        -6,
+        4
+      ]
+    },
+    {
+      "id": 9,
+      "position": [
+        -6,
+        5
+      ]
+    },
+    {
+      "id": 10,
+      "position": [
+        -5,
+        5
+      ]
+    },
+    {
+      "id": 11,
+      "position": [
+        -4,
+        5
+      ]
+    },
+    {
+      "id": 12,
+      "position": [
+        -7,
+        6
+      ]
+    }
+  ],
+  "enemyUnits": [
+    {
+      "id": 1,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "c",
+      "position": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "b",
+      "position": [
+        -4,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "a",
+      "position": [
+        -6,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "enemyRank": 3,
+      "defenceType": "elastic_armor",
+      "movementType": "b",
+      "position": [
+        -7,
+        6
+      ]
+    },
+    {
+      "id": 5,
+      "enemyRank": "boss",
+      "defenceType": "elastic_armor",
+      "movementType": "a",
+      "position": [
+        -4,
+        5
+      ]
+    }
+  ],
+  "items": [],
+  "tileEvents": [
+    {
+      "id": 1,
+      "type": "start_tile",
+      "position": [
+        -6,
+        3
+      ],
+      "hidden": false
+    },
+    {
+      "id": 2,
+      "type": "start_tile",
+      "position": [
+        -2,
+        3
+      ],
+      "hidden": false
+    },
+    {
+      "id": 3,
+      "type": "switch_tile",
+      "position": [
+        -3,
+        3
+      ],
+      "hidden": false,
+      "targetTileEventId": 4
+    },
+    {
+      "id": 4,
+      "type": "switch_target_tile",
+      "position": [
+        -5,
+        5
+      ],
+      "hidden": false
+    },
+    {
+      "id": 5,
+      "type": "switch_tile",
+      "position": [
+        -4,
+        3
+      ],
+      "hidden": false,
+      "targetTileEventId": 6
+    },
+    {
+      "id": 6,
+      "type": "switch_target_tile",
+      "position": [
+        -6,
+        5
+      ],
+      "hidden": true
+    }
+  ]
+}
