@@ -1775,6 +1775,80 @@
           }
         }
       ]
+    },
+    {
+      "id": 1250,
+      "name": {
+        "en": "",
+        "ko": "제 25임무",
+        "ja": "第 25任務"
+      },
+      "stages": [
+        {
+          "id": 1250101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1250102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1250103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1250104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1250105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 8
+          }
+        },
+        {
+          "id": 1250201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1250202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 7,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1250203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 9,
+            "phase": 5
+          }
+        }
+      ]
     }
   ],
   "events": [
