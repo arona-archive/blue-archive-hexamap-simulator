@@ -2930,6 +2930,32 @@
       ]
     },
     {
+      "id": 2201,
+      "name": {
+        "en": "",
+        "ko": "새해의 아페리티프",
+        "ja": "喰積の 前にいささか"
+      },
+      "stages": [
+        {
+          "id": 2200302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 2200304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2240,
       "name": {
         "en": "",
@@ -3084,6 +3110,15 @@
         "en": "",
         "ko": "빛으로 나아가는 그녀들의 소야곡",
         "ja": "陽ひらく彼女たちの小夜曲"
+      },
+      "stages": []
+    },
+    {
+      "id": 2340,
+      "name": {
+        "en": "",
+        "ko": "0068 오페라로부터 사랑을 담아서!",
+        "ja": "0068 オペラより愛をこめて！"
       },
       "stages": []
     }
