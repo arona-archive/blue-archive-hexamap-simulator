@@ -3034,6 +3034,32 @@
       ]
     },
     {
+      "id": 2261,
+      "name": {
+        "en": "",
+        "ko": "용무동주",
+        "ja": "龍武同舟"
+      },
+      "stages": [
+        {
+          "id": 2260302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 5,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2260304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 7,
+            "phase": 5
+          }
+        }
+      ]
+    },
+    {
       "id": 2270,
       "name": {
         "en": "",
@@ -3128,6 +3154,15 @@
         "en": "",
         "ko": "와글와글하며 오손도손하게",
         "ja": "にぎにぎと ゆきゆきて"
+      },
+      "stages": []
+    },
+    {
+      "id": 2360,
+      "name": {
+        "en": "",
+        "ko": "-ive aLIVE!",
+        "ja": "-ive aLIVE!"
       },
       "stages": []
     }
