@@ -3008,6 +3008,32 @@
       ]
     },
     {
+      "id": 2251,
+      "name": {
+        "en": "",
+        "ko": "순백의 예고장",
+        "ja": "白亜の予告状"
+      },
+      "stages": [
+        {
+          "id": 2250302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 1,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2250304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 1,
+            "phase": 6
+          }
+        }
+      ]
+    },
+    {
       "id": 2260,
       "name": {
         "en": "",
