@@ -1849,6 +1849,80 @@
           }
         }
       ]
+    },
+    {
+      "id": 1260,
+      "name": {
+        "en": "",
+        "ko": "제 26임무",
+        "ja": "第 26任務"
+      },
+      "stages": [
+        {
+          "id": 1260101,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1260102,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 5,
+            "phase": 6
+          }
+        },
+        {
+          "id": 1260103,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1260104,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1260105,
+          "difficultyType": "normal",
+          "starConditions": {
+            "rank": 6,
+            "phase": 7
+          }
+        },
+        {
+          "id": 1260201,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 5,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1260202,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 6,
+            "phase": 5
+          }
+        },
+        {
+          "id": 1260203,
+          "difficultyType": "hard",
+          "starConditions": {
+            "rank": 8,
+            "phase": 5
+          }
+        }
+      ]
     }
   ],
   "events": [
