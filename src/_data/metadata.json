@@ -3186,6 +3186,32 @@
       ]
     },
     {
+      "id": 2271,
+      "name": {
+        "en": "",
+        "ko": "사라진 새우를 향한 토끼의 추적",
+        "ja": "RABBIT小隊と消えたエビの謎"
+      },
+      "stages": [
+        {
+          "id": 2270302,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 4,
+            "phase": 4
+          }
+        },
+        {
+          "id": 2270304,
+          "difficultyType": "challenge",
+          "starConditions": {
+            "rank": 4,
+            "phase": 6
+          }
+        }
+      ]
+    },
+    {
       "id": 2280,
       "name": {
         "en": "",
@@ -3263,6 +3289,15 @@
         "en": "",
         "ko": "-ive aLIVE!",
         "ja": "-ive aLIVE!"
+      },
+      "stages": []
+    },
+    {
+      "id": 2370,
+      "name": {
+        "en": "",
+        "ko": "Say-Bing!",
+        "ja": "Say-Bing!"
       },
       "stages": []
     }
